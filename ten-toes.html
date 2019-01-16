@@ -10,6 +10,7 @@
         Latest Update
         
         - Youtube & Vimeo fullscreen video banner added.
+        - Header Avatar option added.
         
 -->
 
@@ -27,6 +28,8 @@
     
         <!-- Body Options -->
         <meta name="image:Logo" content=""/>
+        <meta name="image:Header Avatar" content=""/>
+        <meta name="select:Avatar Style" content="square" Title="Square"/><meta name="select:Avatar Style" content="round" Title="Round"/>
         <meta name="image:Background" content=""/>
         <meta name="color:Background" content="#ffffff">
         <meta name="color:Text" content="#000000">
@@ -215,13 +218,18 @@
     <style type="text/css">
         
         @media (min-width:740px) {
-            .tmblr-iframe--unified-controls {
-                z-index: 999999999 !important;
-            }
-            
-            .post.wrap {
-                padding:0 !important;
-            }
+        	.tmblr-iframe--unified-controls {
+        		z-index: 999999999 !important;
+        	}
+        	
+        	.post.wrap {
+        	    padding:0 !important;
+        	}
+        }
+        
+        .avatar.square img {
+            -webkit-border-radius: 0;
+            border-radius: 0;
         }
         
         body {
@@ -531,9 +539,9 @@
         
         @media (min-width: 740px) {
         
-            body.permalink .tumblr_video_container, body.permalink .tumblr_video_container iframe {
-                height: 450px !important;
-            }
+        	body.permalink .tumblr_video_container, body.permalink .tumblr_video_container iframe {
+        	    height: 450px !important;
+        	}
         
         }
         
@@ -1414,6 +1422,12 @@
     <div id="header" class="{select:Header Text Case} ">
     <div class="wrap">
         <div class="inner">
+        
+            {block:ifheaderavatarimage}
+                <div class="avatar widget {select:Avatar Style}">
+                    <img src="{image:Header Avatar}"/>
+                </div>
+            {/block:ifheaderavatarimage}
         
             <div class="logo">
                 {block:ifnotlogoimage}
