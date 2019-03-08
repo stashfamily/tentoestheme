@@ -1,10 +1,10 @@
 <!DOCTYPE html>
 <!-- 
         Theme: Ten Toes  
-        Help and FAQ: http://themes.stashfamily.com/help 
+        Help and FAQ: https://themes.stashfamily.com/help 
         Download: https://www.tumblr.com/theme/40683
-        Documentation: http://themes.stashfamily.com/docs/ten-toes/
-        Remove Stash Credit: http://themes.stashfamily.com/add-ons/full-license/
+        Documentation: https://themes.stashfamily.com/docs/ten-toes/
+        Remove Stash Credit: https://themes.stashfamily.com/add-ons/full-license/
         
         
         Latest Update
@@ -14,7 +14,7 @@
         
 -->
 
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html xmlns="https://www.w3.org/1999/xhtml">
 <head>
 
     <meta charset="utf-8">
@@ -213,18 +213,18 @@
     {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
     {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
 
-    <link href="https://static.tumblr.com/jzzkxgh/8RTpi6sga/core.css" rel="stylesheet">
+    <link href="https://static.tumblr.com/jzzkxgh/qGFpo0tu7/core.css" rel="stylesheet">
     
     <style type="text/css">
         
         @media (min-width:740px) {
-        	.tmblr-iframe--unified-controls {
-        		z-index: 999999999 !important;
-        	}
-        	
-        	.post.wrap {
-        	    padding:0 !important;
-        	}
+            .tmblr-iframe--unified-controls {
+                z-index: 999999999 !important;
+            }
+            
+            .post.wrap {
+                padding:0 !important;
+            }
         }
         
         .avatar.square img {
@@ -539,9 +539,9 @@
         
         @media (min-width: 740px) {
         
-        	body.permalink .tumblr_video_container, body.permalink .tumblr_video_container iframe {
-        	    height: 450px !important;
-        	}
+            body.permalink .tumblr_video_container, body.permalink .tumblr_video_container iframe {
+                height: 450px !important;
+            }
         
         }
         
@@ -746,10 +746,6 @@
                 .banner-img, .mobile-banner-img {
                     display:block;
                 }   
-                
-                #banner-vimeo-video, .banner-video-options {
-                    display:none;
-                }
             }
         {/block:IfBannerVimeoVideoID}
         
@@ -1120,13 +1116,13 @@
             
             <div class="get-started-overlay demo-overlay">
                 <p>1. On the Customize screen turn off the Use default mobile theme option under Advanced Options. </br><img src="https://static.tumblr.com/jzzkxgh/o2Yoomruj/default_mobile_theme.png"/></p>
-                <p>2. Remove the stash logo from your website by getting a <a href="http://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
-                <p>3. For the Instagram feed generate your <a href="http://themes.stashfamily.com/instagram" target="_blank">Access Token & User ID here</a>.</p>
-                <p>4. If you still need help check out our <a href="http://themes.stashfamily.com/help/" target="_blank">help section</a> or the <a href="http://themes.stashfamily.com/docs/ten-toes/" target="_blank">theme documentation</a>.</p>
+                <p>2. Remove the stash logo from your website by getting a <a href="https://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
+                <p>3. For the Instagram feed generate your <a href="https://themes.stashfamily.com/instagram" target="_blank">Access Token & User ID here</a>.</p>
+                <p>4. If you still need help check out our <a href="https://themes.stashfamily.com/help/" target="_blank">help section</a> or the <a href="https://themes.stashfamily.com/docs/ten-toes/" target="_blank">theme documentation</a>.</p>
             </div>
             
             <div class="remove-stash-overlay demo-overlay">
-                <p>To remove the Stash logo from your theme you will need a <a href="http://themes.stashfamily.com/add-ons/full-license/">Full License</a>.</p>
+                <p>To remove the Stash logo from your theme you will need a <a href="https://themes.stashfamily.com/add-ons/full-license/">Full License</a>.</p>
             </div>
         </div>
 
@@ -1148,16 +1144,15 @@
                     </div>
                 </div>
                 
-                {block:IfBannerYoutubeVideoID}
+               {block:IfBannerYoutubeVideoID}
                     <div class="banner-video-options cl">
-                        Sound:
                          <div class="banner-video-option yt-mute-button mute-button {select:Banner Video Volume}">
-                            <i id="vol-high">On</i>
-                            <i id="vol-mute">Off</i>
+                            <i id="vol-high" class="im im-volume"></i>
+                            <i id="vol-mute" class="im im-volume-off"></i>
                         </div>
                          <div class="banner-video-option yt-play-button play-button autoplay-{select:Banner Video Autoplay} ">
-                            <i id="vid-play">Play</i>
-                            <i id="vid-pause">Pause</i>
+                            <i id="vid-play" class="im im-play"></i>
+                            <i id="vid-pause" class="im im-pause"></i>
                         </div>
                     </div>
                 {/block:IfBannerYoutubeVideoID}
@@ -1165,18 +1160,18 @@
                 {block:ifbanneryoutubeplaylistid}
                     <div class="banner-video-options cl">
                          <div class="banner-video-option yt-mute-button mute-button {select:Banner Video Volume}">
-                            <i id="vol-high">On</i>
-                            <i id="vol-mute">Off</i>
+                            <i id="vol-high" class="im im-volume"></i>
+                            <i id="vol-mute" class="im im-volume-off"></i>
                         </div>
                          <div class="banner-video-option yt-play-button play-button autoplay-{select:Banner Video Autoplay} ">
-                            <i id="vid-play">Play</i>
-                            <i id="vid-pause">Pause</i>
+                            <i id="vid-play" class="im im-play"></i>
+                            <i id="vid-pause" class="im im-pause"></i>
                         </div>
                         <div class="banner-video-option yt-previous-button">
-                            <i>Prev</i>
+                            <i class="im im-angle-left"></i>
                         </div>
                         <div class="banner-video-option yt-next-button">
-                            <i>Next</i>
+                            <i class="im im-angle-right"></i>
                         </div>
                     </div>
                 {/block:ifbanneryoutubeplaylistid}
@@ -1195,7 +1190,21 @@
                                   playerVars: { 'showinfo': 0, 'autoplay': {select:Banner Video Autoplay}, 'controls': 0, 'showinfo':0, 'autohide':1,'wmode':'opaque', 'rel':0, 'playlist':'{text:Banner Youtube Video ID}', 'loop':1 },
                                   videoId: "{text:Banner Youtube Video ID}",
                                   events: {
-                                    'onReady': onPlayerReady
+                                    'onReady': onPlayerReady,
+                                    'onStateChange': function (event) {
+                                      if (event.data == YT.PlayerState.PLAYING) {  
+                                        var playadobea = new TimelineMax()
+                                          .add(TweenMax.to("#vid-play", 0.4, {opacity:0, ease: Power2.easeOut}),0)
+                                          .add(TweenMax.to("#vid-pause", 0.4, {opacity:1, ease: Power2.easeOut}),0.4);
+                                        TweenMax.to(".banner-video-title", 0.4, {opacity:0, ease:Power2.easeOut});
+                                      }
+                                      else if (event.data == YT.PlayerState.PAUSED) { 
+                                        var pauseadobea = new TimelineMax()
+                                          .add(TweenMax.to("#vid-pause", 0.4, {opacity:0, ease: Power2.easeOut}),0)
+                                          .add(TweenMax.to("#vid-play", 0.4, {opacity:1, ease: Power2.easeOut}),0.4);
+                                        TweenMax.to(".banner-video-title", 0.4, {opacity:1, ease:Power2.easeOut});
+                                      }
+                                    }
                                   }
                                 });
                               }
@@ -1223,7 +1232,21 @@
                                 player = new YT.Player('player', {
                                   playerVars: { 'showinfo': 0, 'autoplay': {select:Banner Video Autoplay}, 'controls': 0, 'showinfo':0, 'autohide':1,'wmode':'opaque', 'rel':0, listType:'playlist', list: '{text:Banner Youtube Playlist ID}', 'loop':1 },
                                   events: {
-                                    'onReady': onPlayerReady
+                                    'onReady': onPlayerReady,
+                                    'onStateChange': function (event) {
+                                      if (event.data == YT.PlayerState.PLAYING) {  
+                                        var playadobea = new TimelineMax()
+                                          .add(TweenMax.to("#vid-play", 0.4, {opacity:0, ease: Power2.easeOut}),0)
+                                          .add(TweenMax.to("#vid-pause", 0.4, {opacity:1, ease: Power2.easeOut}),0.4);
+                                        TweenMax.to(".banner-logo, .arr-down", 0.4, {opacity:0, ease:Power2.easeOut});
+                                      }
+                                      else if (event.data == YT.PlayerState.PAUSED) { 
+                                        var pauseadobea = new TimelineMax()
+                                          .add(TweenMax.to("#vid-pause", 0.4, {opacity:0, ease: Power2.easeOut}),0)
+                                          .add(TweenMax.to("#vid-play", 0.4, {opacity:1, ease: Power2.easeOut}),0.4);
+                                        TweenMax.to(".banner-logo, .arr-down", 0.4, {opacity:1, ease:Power2.easeOut});
+                                      }
+                                    }
                                   }
                                 });
                               }
@@ -1239,20 +1262,7 @@
               
                 {block:IfBannerVimeoVideoID}
                     <!-- Vimeo Player -->
-                    
-                    <div class="banner-video-options cl">
-                        Sound:
-                         <div class="banner-video-option vimeo-mute-button mute-button {select:Banner Video Volume}">
-                            <i id="vol-high">On</i>
-                            <i id="vol-mute">Off</i>
-                        </div>
-                         <div class="banner-video-option vimeo-play-button play-button autoplay-{select:Banner Video Autoplay} ">
-                            <i id="vid-play">Play</i>
-                            <i id="vid-pause">Pause</i>
-                        </div>
-                    </div>
-                    
-                    <iframe id="banner-vimeo-video" src="https://player.vimeo.com/video/{text:Banner Vimeo Video ID}?background=1&loop=1" width="100%" height="100%" frameborder="0" webkitallowfullScreen mozallowfullscreen allowfullscreen></iframe>
+                    <iframe id="banner-vimeo-video" src="https://player.vimeo.com/video/{text:Banner Vimeo Video ID}?background=0&muted=1&loop=1" width="100%" height="100%" frameborder="0" webkitallowfullScreen mozallowfullscreen allowfullscreen></iframe>
                 {/block:IfBannerVimeoVideoID}
                 
                 {block:ifbannerbackgroundimage}
@@ -1273,7 +1283,7 @@
 
 
     <div class="close-modal">
-        <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z"></path></g></svg>
+        <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z"></path></g></svg>
     </div>
     
     <div class="progress-indicator">
@@ -1288,8 +1298,8 @@
     </div>
 
     <div class="stash-credit">
-        <a href="http://themes.stashfamily.com" target="_blank">
-            <svg width="74px" height="20px" viewBox="0 0 87 15" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+        <a href="https://themes.stashfamily.com" target="_blank">
+            <svg width="74px" height="20px" viewBox="0 0 87 15" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                 <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                     <path d="M0.696,10.1241072 C0.873715092,11.7630353 1.44635261,12.6121185 2.86807334,13.3822172 C4.19106347,14.1128237 6.32364457,14.488 9.14733992,14.488 C15.0514302,14.488 17.8751255,12.9872948 17.8751255,9.8476615 C17.8751255,8.20873343 17.0457884,7.02396615 15.4463526,6.41183639 C14.3208237,5.99716784 13.6494556,5.85894499 11.3194133,5.62199154 C7.25171227,5.20732299 6.8172976,5.08884626 6.8172976,4.43722426 C6.8172976,3.90407898 7.46891961,3.56839492 8.51546403,3.56839492 C9.81870804,3.56839492 10.5690606,3.94357123 10.8849986,4.77290832 L17.460457,4.77290832 C17.0457884,3.23271086 16.5521354,2.48235825 15.4660987,1.79124401 C14.1233625,0.922414669 12.0500197,0.488 9.24607052,0.488 C3.71715656,0.488 0.814476728,2.04794358 0.814476728,5.0296079 C0.814476728,6.64878984 1.70305219,7.813811 3.34198025,8.32721016 C4.38852468,8.68264034 6.00770663,8.99857828 7.48866573,9.13680113 C10.5493145,9.43299295 10.8060141,9.47248519 11.2206827,9.59096192 C11.6353512,9.70943865 11.8328124,9.90689986 11.8328124,10.2820762 C11.8328124,10.8349676 11.2206827,11.1311594 10.0359154,11.1311594 C8.79190973,11.1311594 8.14028773,10.8547137 7.68612694,10.1241072 L0.696,10.1241072 Z M23.6804852,14.0733315 L28.7157461,14.0733315 L28.7157461,4.25950917 L33.7904993,4.25950917 L33.7904993,0.902668547 L18.6649704,0.902668547 L18.6649704,4.25950917 L23.6804852,4.25950917 L23.6804852,14.0733315 Z M33.8497377,14.0733315 L39.121952,0.902668547 L45.7763949,0.902668547 L51.0486093,14.0733315 L45.5394415,14.0733315 L44.9865501,12.8688181 L39.6156051,12.8688181 L39.121952,14.0733315 L33.8497377,14.0733315 Z M40.5239267,9.51197743 L43.999244,9.51197743 L42.3010776,4.67417772 L40.5239267,9.51197743 Z M51.483024,10.1241072 C51.6607391,11.7630353 52.2333766,12.6121185 53.6550973,13.3822172 C54.9780874,14.1128237 57.1106685,14.488 59.9343639,14.488 C65.8384542,14.488 68.6621495,12.9872948 68.6621495,9.8476615 C68.6621495,8.20873343 67.8328124,7.02396615 66.2333766,6.41183639 C65.1078477,5.99716784 64.4364795,5.85894499 62.1064372,5.62199154 C58.0387362,5.20732299 57.6043216,5.08884626 57.6043216,4.43722426 C57.6043216,3.90407898 58.2559436,3.56839492 59.302488,3.56839492 C60.605732,3.56839492 61.3560846,3.94357123 61.6720226,4.77290832 L68.247481,4.77290832 C67.8328124,3.23271086 67.3391594,2.48235825 66.2531227,1.79124401 C64.9103865,0.922414669 62.8370437,0.488 60.0330945,0.488 C54.5041805,0.488 51.6015007,2.04794358 51.6015007,5.0296079 C51.6015007,6.64878984 52.4900762,7.813811 54.1290042,8.32721016 C55.1755487,8.68264034 56.7947306,8.99857828 58.2756897,9.13680113 C61.3363385,9.43299295 61.5930381,9.47248519 62.0077066,9.59096192 C62.4223752,9.70943865 62.6198364,9.90689986 62.6198364,10.2820762 C62.6198364,10.8349676 62.0077066,11.1311594 60.8229394,11.1311594 C59.5789337,11.1311594 58.9273117,10.8547137 58.4731509,10.1241072 L51.483024,10.1241072 Z M70.538031,14.0733315 L75.573292,14.0733315 L75.573292,8.89984767 L81.4576361,8.89984767 L81.4576361,14.0733315 L86.492897,14.0733315 L86.492897,0.902668547 L81.4576361,0.902668547 L81.4576361,5.54300705 L75.573292,5.54300705 L75.573292,0.902668547 L70.538031,0.902668547 L70.538031,14.0733315 Z" fill="{color:Text}"></path>
                 </g>
@@ -1326,7 +1336,7 @@
 
             
             <div class='stash-back-btn'>
-                <svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
+                <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
                 <path d="M10.707 10.5l8.646-8.646c0.195-0.195 0.195-0.512 0-0.707s-0.512-0.195-0.707 0l-8.646 8.646-8.646-8.646c-0.195-0.195-0.512-0.195-0.707 0s-0.195 0.512 0 0.707l8.646 8.646-8.646 8.646c-0.195 0.195-0.195 0.512 0 0.707 0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146l8.646-8.646 8.646 8.646c0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146c0.195-0.195 0.195-0.512 0-0.707l-8.646-8.646z"></path>
                 </svg>
             </div>
@@ -1364,17 +1374,17 @@
                     {block:IfCustomLink10URL}<li><a href="{text:Custom Link 10 URL}">{text:Custom Link 10 Name}</a></li>{/block:IfCustomLink10URL}
                     
                      {block:AskEnabled}
-                    <li> <a class="stash-ask-page" href="http://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>
+                    <li> <a class="stash-ask-page" href="https://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>
                     {/block:AskEnabled}
                     
                     {block:SubmissionsEnabled}
-                    <li> <a href="http://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>
+                    <li> <a href="https://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>
                     {/block:SubmissionsEnabled}
                     {block:IfArchiveLink}
-                    <li><a href="http://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>
+                    <li><a href="https://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>
                     {/block:IfArchiveLink}
                     {block:ifRandomLink}
-                    <li><a href="http://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>
+                    <li><a href="https://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>
                     {/block:ifRandomLink}
                     
                     {block:ifRSSLink}
@@ -1458,17 +1468,17 @@
                     {block:IfCustomLink10URL}<li><a href="{text:Custom Link 10 URL}">{text:Custom Link 10 Name}</a></li>{/block:IfCustomLink10URL}
                     
                      {block:AskEnabled}
-                    <li> <a class="stash-ask-page" href="http://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>
+                    <li> <a class="stash-ask-page" href="https://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>
                     {/block:AskEnabled}
                     
                     {block:SubmissionsEnabled}
-                    <li> <a href="http://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>
+                    <li> <a href="https://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>
                     {/block:SubmissionsEnabled}
                     {block:IfArchiveLink}
-                    <li><a href="http://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>
+                    <li><a href="https://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>
                     {/block:IfArchiveLink}
                     {block:ifRandomLink}
-                    <li><a href="http://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>
+                    <li><a href="https://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>
                     {/block:ifRandomLink}
                     
                     {block:ifRSSLink}
@@ -1518,7 +1528,7 @@
             </div>
         
             <div class="close-mobile-modal">
-                <svg width="16px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                <svg width="16px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
                     <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
                         <path d="M7.172,10 L3.642,6.47 L0.102,2.93 L2.928,0.1 L10,7.173 L17.07,0.103 L19.9,2.93 L12.827,10 L19.897,17.07 L17.07,19.9 L10,12.827 L2.93,19.897 L0.1,17.07 L7.173,10 L7.172,10 Z"></path>
                     </g>
@@ -1567,11 +1577,11 @@
                                             <div class="overlay">
                                                 <div class="post-share">
                                                     <div class="close-post-share">
-                                                        <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\<path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z" fill="#FFFFFF">
+                                                        <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\<path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z" fill="#FFFFFF">
                                             </path></g></svg>
                                                     </div>
                                                     
-                                                    <div class="social-media"><span class="share-facebook" title="Share on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"></a></span><span class="share-twitter" title="Share on Twitter"><a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"></a></span><span class="share-google" title="Share on Google+"><a class="fa fa-google-plus" ref="https://plus.google.com/share?url={Permalink}" target="_new"></a></span><span class="share-pinterest"><a class="fa fa-pinterest" target="_new" href="http://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"></a></span>
+                                                    <div class="social-media"><span class="share-facebook" title="Share on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"></a></span><span class="share-twitter" title="Share on Twitter"><a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"></a></span><span class="share-google" title="Share on Google+"><a class="fa fa-google-plus" ref="https://plus.google.com/share?url={Permalink}" target="_new"></a></span><span class="share-pinterest"><a class="fa fa-pinterest" target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"></a></span>
                                                     </div>
                                             
                                                     <div class="social-media-footer">
@@ -1815,7 +1825,7 @@
                                         <a><span>{text:Translate Share Text}</span> <i class="im im-share"></i></a>
                                         
                                         <div class="show-share">
-                                            <figure class="show-share-facebook"><a href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"><i class="im im-facebook"></i></a></figure><figure class="show-share-twitter"><a href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"><i class="im im-twitter"></i></a></figure><figure class="show-share-google"><a href="https://plus.google.com/share?url={Permalink}" target="_new"><i class="im im-google-plus"></i></a></figure><figure class="show-share-pinterest"><a target="_new" href="http://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"><i class="im im-pinterest"></i></a></figure>
+                                            <figure class="show-share-facebook"><a href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"><i class="im im-facebook"></i></a></figure><figure class="show-share-twitter"><a href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"><i class="im im-twitter"></i></a></figure><figure class="show-share-google"><a href="https://plus.google.com/share?url={Permalink}" target="_new"><i class="im im-google-plus"></i></a></figure><figure class="show-share-pinterest"><a target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"><i class="im im-pinterest"></i></a></figure>
                                         </div>
                                     </li>
                                 </ul>
