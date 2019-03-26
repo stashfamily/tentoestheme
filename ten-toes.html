@@ -1,16 +1,26 @@
 <!DOCTYPE html>
 <!-- 
-        Theme: Ten Toes v1.3
-        Help and FAQ: https://themes.stashfamily.com/help 
+
+
+
+        Theme: Ten Toes v1.32
         Download: https://www.tumblr.com/theme/40683
+        License: https://themes.stashfamily.com/add-ons/full-license/   
+        
+        
+        Help and FAQ: https://themes.stashfamily.com/help 
         Documentation: https://themes.stashfamily.com/docs/ten-toes/
-        Remove Stash Credit: https://themes.stashfamily.com/add-ons/full-license/
         
         
-        Latest Updates
         
-        - Post caption added to photo overlay.
+        
+        Latest Update
+        
         - Like button hotfix.
+        - Description added to the Header.
+        
+        
+        
         
 -->
 
@@ -37,7 +47,8 @@
         <meta name="color:Logo" content="#000000">
         <meta name="color:Photo Overlay Background" content="#000000">
         <meta name="color:Photo Overlay Text" content="#ffffff">
-        <meta name="color:Header Background" content="#ffffff">
+        <meta name="color:Sidebar Background" content="#ffffff">
+        <meta name="color:Sidebar Text" content="#000000">
         <meta name="color:Header Text" content="#000000">
         <meta name="color:Banner Background" content="#141414">
         <meta name="color:Banner Text" content="#ffffff">
@@ -46,10 +57,12 @@
         <meta name="if:Repeat Background Image" content="0">
         
        <!-- Fonts -->
-        <meta name="text:Font Size" content="14px"/>
+        <meta name="text:Font Size" content="13px"/>
+        <meta name="text:Logo Size" content="16px"/>
+        <meta name="text:Header Text Size" content="16px"/>
+        <meta name="text:Description Text Size" content="11px"/>
+        <meta name="text:Mobile Header Text Size" content="16px"/>
         <meta name="text:Title Font Size" content="30px"/>
-        <meta name="text:Header Size" content="10px"/>
-        <meta name="text:Logo Size" content="10px"/>
         <meta name="text:Body Font" content=""/>
         <meta name="text:Logo Font" content=""/>
         <meta name="text:Banner Font" content=""/>
@@ -61,7 +74,7 @@
         
         <meta name="select:Logo Font Weight" content="700" Title="Bold"/><meta name="select:Logo Font Weight" content="400" Title="Normal"/><meta name="select:Logo Font Weight" content="100" Title="100"/><meta name="select:Logo Font Weight" content="200" Title="200"/><meta name="select:Logo Font Weight" content="300" Title="300"/><meta name="select:Logo Font Weight" content="500" Title="500"/><meta name="select:Logo Font Weight" content="600" Title="600"/><meta name="select:Logo Font Weight" content="800" Title="800"/><meta name="select:Logo Font Weight" content="900" Title="900"/>
         
-        <meta name="select:Logo Text" content="normal" Title="Normal"/><meta name="select:Logo Text" content="uppercase" Title="Uppercase"/><meta name="select:Logo Text" content="lowercase" Title="Lowercase"/>
+        <meta name="select:Logo Text" content="lowercase" Title="Lowercase"/><meta name="select:Logo Text" content="normal" Title="Normal"/><meta name="select:Logo Text" content="uppercase" Title="Uppercase"/>
         
         <meta name="select:Photo Overlay Font Weight" content="400" Title="Normal"/><meta name="select:Photo Overlay Font Weight" content="700" Title="Bold"/>
         
@@ -89,6 +102,7 @@
         <meta name="select:Banner Video Autoplay" content="1" Title="On"/><meta name="select:Banner Video Autoplay" content="0" Title="Off"/>
 
         <!-- Nav -->
+        <meta name="if:Header Text Hover Underline" content="0"/>
         <meta name="if:Random Link" content="0"/>    
         <meta name="if:Archive Link" content="0"/>    
         <meta name="if:RSS Link" content="0"/> 
@@ -103,7 +117,9 @@
         <meta name="if:Show Post Notes" content="0"/>
         <meta name="if:Scrollbar" content="0"/>
         <meta name="if:Modal Post" content="1"/>
+        <meta name="if:Modal Post Navigation" content="0">
         <meta name="if:High Quality Images" content="1"/>
+        <meta name="if:Back To Top Icon" content="1"/>
         
         <meta name="text:Ask Link Label" content="Ask">
         <meta name="text:Submit Link Label" content="Submit">
@@ -170,7 +186,7 @@
     
         <meta name="text:Google Analytics ID" content=''/>
   
-        <meta name="select:Header Text Case" content="uppercase" Title="Uppercase"/><meta name="select:Header Text Case" content="normal" Title="Normal"/><meta name="select:Header Text Case" content="lowercase" Title="Lowercase"/>
+       <meta name="select:Header Text Case" content="lowercase" Title="Lowercase"/><meta name="select:Header Text Case" content="normal" Title="Normal"/><meta name="select:Header Text Case" content="uppercase" Title="Uppercase"/>
         
         <meta name="select:Posts Columns" content="three" Title="3"/><meta name="select:Posts Columns" content="one" Title="1"/><meta name="select:Posts Columns" content="two" Title="2"/>
         
@@ -220,7 +236,7 @@
     {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
     {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
 
-    <link href="https://static.tumblr.com/jzzkxgh/wN8pol2wp/core.css" rel="stylesheet">
+    <link href="https://static.tumblr.com/jzzkxgh/C7Upozalf/core.css" rel="stylesheet">
     
     <style type="text/css">
         
@@ -264,6 +280,12 @@
                 }
             }
         {/block:ifnotscrollbar}
+        
+        {block:ifnotbacktotopicon}
+            #backToTop {
+                display:none !important;
+            }
+        {/block:ifnotbacktotopicon}
 
         blockquote {
             font:{text:Font Size} {block:IfBodyFont}"{text:Body Font}",{/block:IfBodyFont} "{select:Font}", Helvetica Neue, Helvetica, Times New Roman, sans-serif;
@@ -321,16 +343,18 @@
             text-decoration:none;
         }
         
-        .content p a, .navigation a:hover, .header-social a:hover {
+        .content p a, .navigation a:hover, .header-social a:hover, .logo a:hover {
             color:{color:Accent};
         }
         
+        {block:IfHeaderTextHoverUnderline}
         .navigation li a:hover {
             border-bottom: 1px solid {color:Accent};
         }
         .header-social ul li a:hover {
             border-bottom: 1px solid {color:Accent};
         }
+        {/block:IfHeaderTextHoverUnderline}
         
         .content p a:hover {
             color:{color:Text};
@@ -380,7 +404,20 @@
         
         #header {
             color:{color:Header Text};
-            font-size:{text:Header Size};
+            font-size:{text:Header Text Size};
+        }
+        
+        .header-description {
+            font-size:{text:Description Text Size};
+            text-transform:none;
+        }
+        
+        .header-description a {
+            color:{color:Accent};
+        }
+        
+        .header-description a:hover {
+            color:{color:Header Text};
         }
         
         /*Custom CSS*/
@@ -445,21 +482,21 @@
         }
         
         #sidebar {
-            color:{color:Header Text};
-            background:{color:Header Background};
-            font-size:{text:Header Size};
+            color:{color:Sidebar Text};
+            background:{color:Sidebar Background};
+            font-size:{text:Mobile Header Text Size};
         }
         #sidebar h3 {
             margin-bottom:20px;
-            color:{color:Header Text};
+            color:{color:Sidebar Text};
             font-size:13px;
         }
         
         .search input {
             border: none;
             box-sizing: border-box;
-            background:{color:Header Text};
-            color: {color:Header Background};
+            background:{color:Sidebar Text};
+            color: {color:Sidebar Background};
             text-align:left;
             font-family: {block:IfBodyFont}"{text:Body Font}",{/block:IfBodyFont} "{select:Font}", 'Gill Sans MT', Calibri, Helvetica Neue, sans-serif;
             -webkit-transition: .2s;
@@ -472,30 +509,30 @@
         }
         
         .search input[type="submit"] {
-            background:{color:Header Background};
-            color:{color:Header Text};
+            background:{color:Sidebar Background};
+            color:{color:Sidebar Text};
             text-transform:uppercase;
             padding:10px 0;
             text-align:center;
             cursor:pointer;
         }
         #sidebar a {
-            color:{color:Header Text};
+            color:{color:Sidebar Text};
         }
         .widget h3 {
-            color:{color:Header Text};
+            color:{color:Sidebar Text};
             text-transform:uppercase;
         }
         
         .widget {
-            color:{color:Header Text};
+            color:{color:Sidebar Text};
         }
 
         #twitter a {
-            color:{color:Header Text};
+            color:{color:Sidebar Text};
         }
         .social-links ul li a {
-            color:{color:Header Text};
+            color:{color:Sidebar Text};
         }
         
     
@@ -591,6 +628,12 @@
         .tmblr-iframe--desktop-logged-in-controls.iframe-controls--desktop {
             z-index: 1000000!important;
         }
+        
+        {block:ifNotModalPostNavigation}
+            .post-navigation {
+                display:none !important;
+            }
+        {/block:ifNotModalPostNavigation}
         
         .post-navigation li, .post-navigation li, .post-navigation li span {
             background:{color:Text};
@@ -718,7 +761,7 @@
         }
         
  
-        .overlay .post-footer li:hover {
+        .overlay .post-footer li:hover, .overlay .post-footer li:hover .post-reblog a {
             color:{color:Accent};
             border-bottom:1px solid {color:Accent};
         }
@@ -941,7 +984,7 @@
         }
         
         @media (min-width: 740px) { 
-            #header.over-banner .logo a, #header.over-banner .header-social a, #header.over-banner .navigation a {
+            #header.over-banner a, #header.over-banner {
                 color:{color:Banner Text};
             }
             
@@ -969,7 +1012,7 @@
             font-weight:{select:Logo Font Weight};
         }
 
-        .navigation a {
+        .navigation a, .header-social a  {
             color:{color:Header Text};
         }
 
@@ -1005,18 +1048,18 @@
             }
         
             .logo a {
-                font:{select:Logo Font Weight} 9px/30px {block:IfLogoFont}"{text:Logo Font}",{/block:IfLogoFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
+                font:{select:Logo Font Weight} {text:Mobile Header Text Size}/30px {block:IfLogoFont}"{text:Logo Font}",{/block:IfLogoFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
                 {block:IfTypeKitLogoFont}
-                    font:{select:Logo Font Weight} 9px/30px "{text:Typekit Logo Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
+                    font:{select:Logo Font Weight} {text:Mobile Header Text Size}/30px "{text:Typekit Logo Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
                 {/block:IfTypeKitLogoFont}
                 width:auto;
             }
             
             body.sidebar-open .sidebar-toggle span, body.sidebar-open .sidebar-toggle span:before, body.sidebar-open .sidebar-toggle span:after {
-                background:{color:Header Text};
+                background:{color:Sidebar Text};
             }
             #header {
-                background:{color:Header Background};
+                background:{color:Sidebar Background};
                 height:50px;
                 line-height:50px;
             }
@@ -1025,8 +1068,13 @@
                 display:none;
             }
             
-            #header a, .logo a, .logo, .sidebar-toggle {
+            #header a, .logo a, .logo {
                 color:{color:Header Text};
+            }
+            
+            .sidebar-toggle {
+                font-size:{text:Mobile Header Text Size};
+                color:{color:Sidebar Text};
             }
             
             html.modal-open .sidebar-toggle {
@@ -1034,7 +1082,7 @@
             }                
             
             .sidebar-toggle span, .sidebar-toggle span:before, .sidebar-toggle span:after {
-                background:{color:Header Text};
+                background:{color:Sidebar Text};
             }
             .close-mobile-modal svg g {
                 fill:{color:Header Text};
@@ -1153,6 +1201,11 @@
         .demo-overlay img {
             margin-top: 6px;
             max-width:95%;
+        }
+        
+        body.tagged-page .post {
+            opacity:1;
+            visibility:hidden;
         }
     </style>
 
@@ -1577,8 +1630,16 @@
                     {block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}">Vimeo</a></li>{/block:ifVimeoURL} 
                     {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}">VK</a></li>{/block:ifVKURL}   
                     {block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}">Wordpress</a></li>{/block:ifWordpressURL}
+                    
+                    &nbsp;
                 </ul>
             </nav>
+            
+            {block:ShowDescription}
+                <div class="header-description"><p>{Description}</p></div>
+                    
+                    &nbsp;
+            {/block:ShowDescription}
     
             
             <div class="sidebar-toggle">
@@ -1607,12 +1668,6 @@
             <div id="posts">
             
                 <div class="wrap">
-                
-                    {block:IndexPage}
-                    {block:ShowDescription}
-                        <div class="home-description"><p>{Description}</p></div>
-                    {/block:ShowDescription}
-                    {/block:IndexPage}
 
                     <div id="stash-ants">
                     
@@ -1964,7 +2019,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
     <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/Hn5pi6qej/plugins.js">
     </script>
-    <script src="https://static.tumblr.com/jzzkxgh/NSgpi6sr9/ten-toes.js"></script>
+    <script src="https://static.tumblr.com/jzzkxgh/8s8pozaly/ten-toes.js"></script>
     {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/6tLpomtyu/modal.js"></script>{/block:IfModalPost}
 
     {block:IfTypeKitID}
@@ -1980,23 +2035,29 @@
                 
                 setTimeout(function(){
                     $('#posts').css({
-                        'opacity': '1'
+                        'opacity': '1',
+                        'visibility' : 'visible'
                     });
                 }, 5000);
-                
-                $(window).scroll(function(){
-                    if ($("body").scrollTop() > 50) {
-                        $('#backToTop').css({
-                            'visibility': 'visible',
-                            'opacity': '1'
-                        });
-                    } else {
-                        $('#backToTop').css({
-                            'visibility': 'hidden',
-                            'opacity': '0'
-                        });
-                    }
-                });
+       
+                // $(window).scroll(function(){
+                //     if ($("body").scrollTop() > 200) {
+                //         console.log('has scrolled more than 200');
+                //         $('#backToTop').css({
+                //             'visibility': 'visible',
+                //             'opacity': '1'
+                //         });
+                //     } else {
+                //         $('#backToTop').css({
+                //             'visibility': 'hidden',
+                //             'opacity': '0'
+                //         });
+                //         $('.banner-text').css({
+                //             'opacity': '1'
+                //         });
+                //     }
+                // });
+
                 $('#backToTop').on('click', function(){
                     TweenLite.to( window, .5, {scrollTo:{y: 0 }, ease:Power2.easeOut});
                 })
