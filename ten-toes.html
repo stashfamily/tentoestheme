@@ -2132,11 +2132,12 @@
                             scene.addTo(controller);
                             scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
                     });
-                        
-                    $container.isotope( 'appended', $newElems, true );  
-                        
+    
                     $('.stash-photoset.ips').stashIPS();
                     $("article").fitVids();
+                    
+                    $container.isotope( 'appended', $newElems, true );  
+                    
                 });
                 
                 Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
