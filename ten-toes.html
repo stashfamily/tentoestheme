@@ -72,6 +72,8 @@
         
         <meta name="select:Body Font Weight" content="400" Title="Normal"/><meta name="select:Body Font Weight" content="700" Title="Bold"/><meta name="select:Body Font Weight" content="100" Title="100"/><meta name="select:Body Font Weight" content="200" Title="200"/><meta name="select:Body Font Weight" content="300" Title="300"/><meta name="select:Body Font Weight" content="500" Title="500"/><meta name="select:Body Font Weight" content="600" Title="600"/><meta name="select:Body Font Weight" content="800" Title="800"/><meta name="select:Body Font Weight" content="900" Title="900"/>
         
+        <meta name="select:Header Font Weight" content="700" Title="Bold"/><meta name="select:Header Font Weight" content="400" Title="Normal"/><meta name="select:Header Font Weight" content="100" Title="100"/><meta name="select:Header Font Weight" content="200" Title="200"/><meta name="select:Header Font Weight" content="300" Title="300"/><meta name="select:Header Font Weight" content="500" Title="500"/><meta name="select:Header Font Weight" content="600" Title="600"/><meta name="select:Header Font Weight" content="800" Title="800"/><meta name="select:Header Font Weight" content="900" Title="900"/>
+        
         <meta name="select:Logo Font Weight" content="700" Title="Bold"/><meta name="select:Logo Font Weight" content="400" Title="Normal"/><meta name="select:Logo Font Weight" content="100" Title="100"/><meta name="select:Logo Font Weight" content="200" Title="200"/><meta name="select:Logo Font Weight" content="300" Title="300"/><meta name="select:Logo Font Weight" content="500" Title="500"/><meta name="select:Logo Font Weight" content="600" Title="600"/><meta name="select:Logo Font Weight" content="800" Title="800"/><meta name="select:Logo Font Weight" content="900" Title="900"/>
         
         <meta name="select:Logo Text" content="lowercase" Title="Lowercase"/><meta name="select:Logo Text" content="normal" Title="Normal"/><meta name="select:Logo Text" content="uppercase" Title="Uppercase"/>
@@ -79,6 +81,14 @@
         <meta name="select:Photo Overlay Font Weight" content="400" Title="Normal"/><meta name="select:Photo Overlay Font Weight" content="700" Title="Bold"/>
         
         <meta name="select:Banner Text Font Weight" content="400" Title="Normal"/><meta name="select:Banner Text Font Weight" content="700" Title="Bold"/><meta name="select:Banner Text Font Weight" content="100" Title="100"/><meta name="select:Banner Text Font Weight" content="200" Title="200"/><meta name="select:Banner Text Font Weight" content="300" Title="300"/><meta name="select:Banner Text Font Weight" content="500" Title="500"/><meta name="select:Banner Text Font Weight" content="600" Title="600"/><meta name="select:Banner Text Font Weight" content="800" Title="800"/><meta name="select:Banner Text Font Weight" content="900" Title="900"/>
+        
+        
+        <!-- Widgets -->
+        
+        <meta name="text:Instagram Widget Title" content="Instagram">
+        <meta name="text:Instagram Widget Feed Count" content="8">
+        <meta name="text:Instagram Widget Access Token" content="">
+        <meta name="text:Instagram Widget UserID" content="">
         
         <meta name="image:Banner Background" content=""/>
         <meta name="image:Mobile Banner Background" content=""/>
@@ -418,6 +428,10 @@
         
         .header-description a:hover {
             color:{color:Header Text};
+        }
+        
+        .header-widget {
+            font-size:{text:Description Text Size};
         }
         
         /*Custom CSS*/
@@ -1008,8 +1022,8 @@
         
         
         
-        .navigation, .header-social {
-            font-weight:{select:Logo Font Weight};
+        .navigation, .header-social, .sidebar-toggle {
+            font-weight:{select:Header Font Weight};
         }
 
         .navigation a, .header-social a  {
@@ -1064,7 +1078,7 @@
                 line-height:50px;
             }
             
-            .navigation, .header-social {
+            .navigation, .header-social, .header-widget {
                 display:none;
             }
             
@@ -1148,7 +1162,7 @@
         }
         
         .get-started-toggle {
-            background:url('https://static.tumblr.com/jzzkxgh/8xOot2lsl/get-started.gif');
+            background:url('https://static.tumblr.com/jzzkxgh/abdppcbi1/ssj.gif');
         }
         
         .get-started-toggle a {
@@ -1161,8 +1175,12 @@
         }
         
         .remove-stash-credit {
-            background:url('https://static.tumblr.com/jzzkxgh/dr5ot2lss/remove-stash-credit.gif');
-            color: white;
+            background:white url('https://static.tumblr.com/jzzkxgh/Ud7ppcbpu/remove-stash-credit.gif');
+            background-position:center center;
+        }
+        
+        .remove-stash-credit a {
+            color:black;
         }
 
         .remove-stash-credit a:hover {
@@ -1640,6 +1658,13 @@
                     
                     &nbsp;
             {/block:ShowDescription}
+            
+            {block:IfInstagramWidgetUserID}
+                <div class="instagram header-widget cl"> 
+                    <p>{block:ifInstagramURL}<a href="{text:Instagram URL}">{/block:ifInstagramURL}{text:Instagram Widget Title}{block:ifInstagramURL}</a>{/block:ifInstagramURL}</p> 
+                    <ul id="instafeed" class="instagram-feed social-widget"></ul> 
+                </div>
+            {/block:IfInstagramWidgetUserID}
     
             
             <div class="sidebar-toggle">
@@ -2189,6 +2214,10 @@
                 $('.get-started-overlay').addClass('open');
             }
         });
+        
+        {block:IfInstagramWidgetUserID}
+        var userFeed = new Instafeed({get:"user",userId:{text:Instagram Widget UserID},resolution:"standard_resolution", limit:{text:Instagram Widget Feed Count},accessToken:"{text:Instagram Widget Access Token}"});userFeed.run();
+        {/block:IfInstagramWidgetUserID} 
     </script>
     
     {block:IfGoogleAnalyticsID}
