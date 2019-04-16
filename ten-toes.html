@@ -69,6 +69,7 @@
 <meta name="if:Banner Overlay" content="0" />
 <meta name="if:Mobile Hide Banner" content="0">
 <meta name="if:Banner Only No Posts" content="0" />
+<meta name="if:Banner On Tagged Page" content="0" />
 <meta name="select:Banner Video Volume" content="off" Title="Off" /><meta name="select:Banner Video Volume" content="on" Title="On" />
 <meta name="select:Banner Video Autoplay" content="1" Title="On" /><meta name="select:Banner Video Autoplay" content="0" Title="Off" />
 
@@ -858,6 +859,12 @@
             }
         {/block:ifBannerOnlyNoPosts}
         
+        {block:ifNotBannerOnTaggedPage}
+        body.tagged-page #banner {
+            display:none !important;
+        }
+        {/block:ifNotBannerOnTaggedPage}
+        
         .arr-down, .mute-button, .play-button, .banner-video-option, .banner-video-options {
             color:{color:Banner Text};
         }
@@ -935,6 +942,10 @@
         @media (min-width: 740px) { 
             #header.over-banner a, #header.over-banner {
                 color:{color:Banner Text};
+            }
+            
+            #header.has-no-banner a, #header.has-no-banner {
+                color:{color:Header Text};
             }
             
             #header.over-banner .sidebar-toggle span:after, #header.over-banner .sidebar-toggle span:before {
@@ -1160,6 +1171,8 @@
             opacity:1;
             visibility:visible;
         }
+        
+        
     </style>
 </head>
 <body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner}">
@@ -1446,7 +1459,7 @@
 </div>
 </div>
 </div>
-<div id="header" class="{select:Header Text Case} ">
+<div id="header" class="{select:Header Text Case} {block:ifNotBannerOnTaggedPage}has-no-banner{/block:ifNotBannerOnTaggedPage} ">
 <div class="wrap">
 <div class="inner">
 {block:ifheaderavatarimage}
