@@ -1863,6 +1863,12 @@ Menu
             var windowwidth = $(document).width();
             $(document).ready(function(){
                 
+                {block:ifNotBannerOnTaggedPage}
+                    if ( $('body').hasClass('tagged-page') ) {
+                        $("#banner").empty();
+                    }
+                {/block:ifNotBannerOnTaggedPage}
+                
                 setTimeout(function(){
                     $('#posts').css({
                         'opacity': '1',
