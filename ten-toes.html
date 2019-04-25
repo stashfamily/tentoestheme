@@ -944,9 +944,12 @@
                 color:{color:Banner Text};
             }
             
-            #header.has-no-banner a, #header.has-no-banner {
-                color:{color:Header Text};
-            }
+            
+            {block:ifNotBannerOnTaggedPage}
+                body.tagged-page #header a, body.tagged-page #header {
+                    color:{color:Header Text} !important;
+                }
+            {/block:ifNotBannerOnTaggedPage}
             
             #header.over-banner .sidebar-toggle span:after, #header.over-banner .sidebar-toggle span:before {
                 background-color: {color:Banner Text};
@@ -1459,7 +1462,7 @@
 </div>
 </div>
 </div>
-<div id="header" class="{select:Header Text Case} {block:ifNotBannerOnTaggedPage}has-no-banner{/block:ifNotBannerOnTaggedPage} ">
+<div id="header" class="{select:Header Text Case} ">
 <div class="wrap">
 <div class="inner">
 {block:ifheaderavatarimage}
