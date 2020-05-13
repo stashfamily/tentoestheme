@@ -1179,23 +1179,7 @@
     </style>
 </head>
 <body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner}">
-<div class='customize-demo demo-note'>
-<nav class="cl">
-<ul>
-<li class="get-started-toggle demo-toggle"><a>Get Started <i class="im im-angle-down"></i></a></li>
-<li class="remove-stash-credit demo-toggle"><a>License <i class="im im-angle-down"></i></a></li>
-</ul>
-</nav>
-<div class="get-started-overlay demo-overlay">
-<p>1. On the Customize screen turn off the Use default mobile theme option under Advanced Options. </br><img src="https://static.tumblr.com/jzzkxgh/o2Yoomruj/default_mobile_theme.png" /></p>
-<p>2. Remove the stash logo from your website by getting a <a href="https://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
-<p>3. For the Instagram feed generate your <a href="https://themes.stashfamily.com/instagram" target="_blank">Access Token & User ID here</a>.</p>
-<p>4. If you still need help check out our <a href="https://themes.stashfamily.com/help/" target="_blank">help section</a> or the <a href="https://themes.stashfamily.com/docs/ten-toes/" target="_blank">theme documentation</a>.</p>
-</div>
-<div class="remove-stash-overlay demo-overlay">
-<p><a href="https://themes.stashfamily.com/add-ons/full-license/">Full License</a>.</p>
-</div>
-</div>
+
 <div id="stash-preloader">
 <div id="stash-loader"><div class="loading-icon"></div></div>
 </div>
@@ -1579,6 +1563,7 @@ Menu
 {/block:IndexPage}
 <div id="posts">
 <div class="wrap">
+
 <div id="stash-ants">
 <div class="ants-sizer-{select:Posts Columns}"></div>
 <div class="ants-gutter-{select:Posts Columns}"></div>
@@ -1855,7 +1840,7 @@ Menu
 <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/Hn5pi6qej/plugins.js">
     </script>
 <script src="https://static.tumblr.com/jzzkxgh/8s8pozaly/ten-toes.js"></script>
-{block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/6tLpomtyu/modal.js"></script>{/block:IfModalPost}
+{block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/zVmq84bst/modal.js"></script>{/block:IfModalPost}
 {block:IfTypeKitID}
 
 <script type="text/javascript" src="//use.typekit.net/{text:TypeKit ID}.js"></script>
@@ -1963,22 +1948,29 @@ Menu
                 var $newElems = $(newElements).css({ opacity: 0, visibility:'hidden'});
                 var $newElemsIDs = $(newElements).map(function () { return this.id; }).get();
     
-                $newElems.imagesLoaded(function(){
-                    
-                    $($newElems).each(function(){
-                        var currentPost = this;
-                        var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
-                            scene.addTo(controller);
-                            scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
-                    });
     
-                    $('.stash-photoset.ips').stashIPS();
-                    $("article").fitVids();
-                    
-                    $container.isotope( 'appended', $newElems, true );  
-                    
+                $($newElems).each(function(){
+                    if($(this).hasClass( "post-photo" ) || $(this).hasClass( "post-photoset" )) {
+                        $newElems.imagesLoaded(function(){
+                            $($newElems).each(function(){
+                                var currentPost = this;
+                                var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
+                                    scene.addTo(controller);
+                                    scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
+                            });
+                        });
+                    } else {
+                            var currentPost = this;
+                            var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
+                                scene.addTo(controller);
+                                scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
+                    }
                 });
+                    
+                $('.stash-photoset.ips').stashIPS();
+                $("article").fitVids();
                 
+                $container.isotope( 'appended', $newElems, true );  
                 Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
               });
 
@@ -2041,5 +2033,25 @@ Menu
         s.parentNode.insertBefore(g,s)}(document,'script'));
     </script>
 {/block:IfGoogleAnalyticsID}
+
+<div class='customize-demo demo-note'>
+    <nav class="cl">
+    <ul>
+    <li class="get-started-toggle demo-toggle"><a>Get Started <i class="im im-angle-down"></i></a></li>
+    <li class="remove-stash-credit demo-toggle"><a>License <i class="im im-angle-down"></i></a></li>
+    </ul>
+    </nav>
+    <div class="get-started-overlay demo-overlay">
+    <p>1. On the Customize screen turn off the Use default mobile theme option under Advanced Options. </br><img src="https://static.tumblr.com/jzzkxgh/o2Yoomruj/default_mobile_theme.png" /></p>
+    <p>2. Remove the stash logo from your website by getting a <a href="https://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
+    <p>3. For the Instagram feed generate your <a href="https://themes.stashfamily.com/instagram" target="_blank">Access Token & User ID here</a>.</p>
+    <p>4. If you still need help check out our <a href="https://themes.stashfamily.com/help/" target="_blank">help section</a> or the <a href="https://themes.stashfamily.com/docs/ten-toes/" target="_blank">theme documentation</a>.</p>
+    </div>
+    <div class="remove-stash-overlay demo-overlay">
+    <p><a href="https://themes.stashfamily.com/add-ons/full-license/">Full License</a>.</p>
+    </div>
+</div>
+
+
 </body>
 </html>
