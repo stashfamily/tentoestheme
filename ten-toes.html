@@ -293,6 +293,10 @@
             text-decoration:none;
         }
         
+        .content p a {
+            font-weight:bold;
+        }
+        
         .content p a, .navigation a:hover, .header-social a:hover, .logo a:hover {
             color:{color:Accent};
         }
@@ -1944,33 +1948,23 @@ Menu
                     }
                 },
               },function( newElements ) {
-                  
                 var $newElems = $(newElements).css({ opacity: 0, visibility:'hidden'});
-                var $newElemsIDs = $(newElements).map(function () { return this.id; }).get();
     
-    
-                $($newElems).each(function(){
-                    if($(this).hasClass( "post-photo" ) || $(this).hasClass( "post-photoset" )) {
-                        $newElems.imagesLoaded(function(){
-                            $($newElems).each(function(){
-                                var currentPost = this;
-                                var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
-                                    scene.addTo(controller);
-                                    scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
-                            });
-                        });
-                    } else {
-                            var currentPost = this;
-                            var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
-                                scene.addTo(controller);
-                                scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
-                    }
-                });
+                $newElems.imagesLoaded(function(){
                     
-                $('.stash-photoset.ips').stashIPS();
-                $("article").fitVids();
+                    $($newElems).each(function(){
+                        var currentPost = this;
+                        var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
+                            scene.addTo(controller);
+                            scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
+                    });
+                        
+                    $container.isotope( 'appended', $newElems, true );  
+                    $('.stash-photoset.ips').stashIPS();
+                    $("article").fitVids();
+                });
                 
-                $container.isotope( 'appended', $newElems, true );  
+                var $newElemsIDs = $(newElements).map(function () { return this.id; }).get();
                 Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
               });
 
