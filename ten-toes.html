@@ -842,11 +842,15 @@
 
         {block:ifMobileHideBanner}
             @media (max-width:740px) {
-                #banner {
+                #banner, #banner.has-video, #banner.has-banner-image, html body #banner.has-video, html body #banner.has-banner-image, body.has-banner #banner, body.has-banner-image #banner {
                     display:none !important;
                     opacity:0 !important;
                     visibility:hidden !important;
                     height:0 !important;
+                }
+                
+                body.has-banner.index .page-container, body.has-banner-image.index .page-container, body.has-mobile-banner-image.index .page-container {
+                    padding-top:50px !important;
                 }
             }
         {/block:ifMobileHideBanner}
