@@ -78,6 +78,7 @@
         <meta name="if:Banner Overlay" content="0" />
         <meta name="if:Mobile Hide Banner" content="0">
         <meta name="if:Banner Only No Posts" content="0" />
+        <meta name="if:On Banner Hide Sidebar" content="0" />
         <meta name="if:Banner On Tagged Page" content="0" />
         <meta name="select:Banner Video Volume" content="off" Title="Off" /><meta name="select:Banner Video Volume" content="on" Title="On" />
         <meta name="select:Banner Video Autoplay" content="1" Title="On" /><meta name="select:Banner Video Autoplay" content="0" Title="Off" />
@@ -904,6 +905,13 @@
                 display:none;
             }
         {/block:ifBannerOnlyNoPosts}
+        
+        {block:ifOnBannerHideSidebar}
+            #header.over-banner {
+                opacity:0;
+                visibility:hidden;
+            }
+        {/block:ifOnBannerHideSidebar}
         
         {block:ifNotBannerOnTaggedPage}
         body.tagged-page #banner {
