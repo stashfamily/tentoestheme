@@ -1,175 +1,189 @@
 <!DOCTYPE html>
 
+<!-- 
+
+    Ten Toes v2 Platinum
+    by: Stashthemes
+    
+    Updates:
+        - Instagram Feed added (Instagram Username method)
+
+-->
+
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-<title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
-<meta name="description" content="{block:Description}{MetaDescription}{/block:Description}" />
-{MobileAppHeaders}
-<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-{block:Hidden}
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
+    <meta name="description" content="{block:Description}{MetaDescription}{/block:Description}" />
+    {MobileAppHeaders}
+    <meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    {block:Hidden}
+        <meta name="image:Logo" content="" />
+        <meta name="image:Header Avatar" content="" />
+        <meta name="select:Avatar Style" content="square" Title="Square" /><meta name="select:Avatar Style" content="round" Title="Round" />
+        <meta name="image:Background" content="" />
+        <meta name="color:Background" content="#ffffff">
+        <meta name="color:Text" content="#000000">
+        <meta name="color:Accent" content="#000000">
+        <meta name="color:Logo" content="#000000">
+        <meta name="color:Photo Overlay Background" content="#000000">
+        <meta name="color:Photo Overlay Text" content="#ffffff">
+        <meta name="if:Mobile Menu" content="1">
+        <meta name="color:Sidebar Background" content="#ffffff">
+        <meta name="color:Sidebar Text" content="#000000">
+        <meta name="color:Header Text" content="#000000">
+        <meta name="color:Banner Background" content="#141414">
+        <meta name="color:Banner Text" content="#ffffff">
+        <meta name="color:Banner Button Background" content="#ffffff">
+        <meta name="color:Banner Button Text" content="#141414">
+        <meta name="if:Repeat Background Image" content="0">
 
-<meta name="image:Logo" content="" />
-<meta name="image:Header Avatar" content="" />
-<meta name="select:Avatar Style" content="square" Title="Square" /><meta name="select:Avatar Style" content="round" Title="Round" />
-<meta name="image:Background" content="" />
-<meta name="color:Background" content="#ffffff">
-<meta name="color:Text" content="#000000">
-<meta name="color:Accent" content="#000000">
-<meta name="color:Logo" content="#000000">
-<meta name="color:Photo Overlay Background" content="#000000">
-<meta name="color:Photo Overlay Text" content="#ffffff">
-<meta name="color:Sidebar Background" content="#ffffff">
-<meta name="color:Sidebar Text" content="#000000">
-<meta name="color:Header Text" content="#000000">
-<meta name="color:Banner Background" content="#141414">
-<meta name="color:Banner Text" content="#ffffff">
-<meta name="color:Banner Button Background" content="#ffffff">
-<meta name="color:Banner Button Text" content="#141414">
-<meta name="if:Repeat Background Image" content="0">
+        <meta name="text:Instagram Username" content="" />
+        <meta name="text:Instagram Feed Photo Count" content="6" />
 
-<meta name="text:Font Size" content="13px" />
-<meta name="text:Logo Size" content="16px" />
-<meta name="text:Header Text Size" content="16px" />
-<meta name="text:Description Text Size" content="11px" />
-<meta name="text:Mobile Header Text Size" content="16px" />
-<meta name="text:Title Font Size" content="30px" />
-<meta name="text:Body Font" content="" />
-<meta name="text:Logo Font" content="" />
-<meta name="text:Banner Font" content="" />
-<meta name="text:Photo Overlay Opacity" content="0.5" />
-<meta name="select:Font" content="Helvetica Neue" title="Helvetica Neue" /><meta name="select:Font" content="Arial" title="Arial" /><meta name="select:Font" content="courier new" title="Courier" /><meta name="select:Font" content="Domine" title="Domine" /><meta name="select:Font" content="Droid Sans" title="Droid Sans" /><meta name="select:Font" content="Droid Serif" title="Droid Serif" /><meta name="select:Font" content="Fira Sans" Title="Fira Sans" /><meta name="select:Font" content="Georgia" title="Georgia" /><meta name="select:Font" content="Gill Sans" Title="Gill Sans" /><meta name="select:Font" content="Karla" Title="Karla" /><meta name="select:Font" content="Lato" title="Lato" /><meta name="select:Font" content="Libre Baskerville" title="Libre Baskerville" /><meta name="select:Font" content="Lora" title="Lora" /><meta name="select:Font" content="Mako" title="Mako" /><meta name="select:Font" content="Merriweather" title="Merriweather" /><meta name="select:Font" content="Montserrat" title="Montserrat" /><meta name="select:Font" content="Noto Sans" title="Noto Sans" /><meta name="select:Font" content="Oswald" title="Oswald" /><meta name="select:Font" content="Playfair Display" title="Playfair Display" /><meta name="select:Font" content="PT Mono" title="PT Mono" /><meta name="select:Font" content="PT Sans" title="PT Sans" /><meta name="select:Font" content="PT Serif" title="PT Serif" /><meta name="select:Font" content="Raleway" title="Raleway" /><meta name="select:Font" content="Roboto" title="Roboto" /><meta name="select:Font" content="Roboto Condensed" title="Roboto Condensed" /><meta name="select:Font" content="Roboto Slab" title="Roboto Slab" /><meta name="select:Font" content="Source Sans Pro" title="Source Sans Pro" /><meta name="select:Font" content="Times New Roman" title="Times New Roman" />
-<meta name="select:Body Font Weight" content="400" Title="Normal" /><meta name="select:Body Font Weight" content="700" Title="Bold" /><meta name="select:Body Font Weight" content="100" Title="100" /><meta name="select:Body Font Weight" content="200" Title="200" /><meta name="select:Body Font Weight" content="300" Title="300" /><meta name="select:Body Font Weight" content="500" Title="500" /><meta name="select:Body Font Weight" content="600" Title="600" /><meta name="select:Body Font Weight" content="800" Title="800" /><meta name="select:Body Font Weight" content="900" Title="900" />
-<meta name="select:Header Font Weight" content="700" Title="Bold" /><meta name="select:Header Font Weight" content="400" Title="Normal" /><meta name="select:Header Font Weight" content="100" Title="100" /><meta name="select:Header Font Weight" content="200" Title="200" /><meta name="select:Header Font Weight" content="300" Title="300" /><meta name="select:Header Font Weight" content="500" Title="500" /><meta name="select:Header Font Weight" content="600" Title="600" /><meta name="select:Header Font Weight" content="800" Title="800" /><meta name="select:Header Font Weight" content="900" Title="900" />
-<meta name="select:Logo Font Weight" content="700" Title="Bold" /><meta name="select:Logo Font Weight" content="400" Title="Normal" /><meta name="select:Logo Font Weight" content="100" Title="100" /><meta name="select:Logo Font Weight" content="200" Title="200" /><meta name="select:Logo Font Weight" content="300" Title="300" /><meta name="select:Logo Font Weight" content="500" Title="500" /><meta name="select:Logo Font Weight" content="600" Title="600" /><meta name="select:Logo Font Weight" content="800" Title="800" /><meta name="select:Logo Font Weight" content="900" Title="900" />
-<meta name="select:Logo Text" content="lowercase" Title="Lowercase" /><meta name="select:Logo Text" content="normal" Title="Normal" /><meta name="select:Logo Text" content="uppercase" Title="Uppercase" />
-<meta name="select:Photo Overlay Font Weight" content="400" Title="Normal" /><meta name="select:Photo Overlay Font Weight" content="700" Title="Bold" />
-<meta name="select:Banner Text Font Weight" content="400" Title="Normal" /><meta name="select:Banner Text Font Weight" content="700" Title="Bold" /><meta name="select:Banner Text Font Weight" content="100" Title="100" /><meta name="select:Banner Text Font Weight" content="200" Title="200" /><meta name="select:Banner Text Font Weight" content="300" Title="300" /><meta name="select:Banner Text Font Weight" content="500" Title="500" /><meta name="select:Banner Text Font Weight" content="600" Title="600" /><meta name="select:Banner Text Font Weight" content="800" Title="800" /><meta name="select:Banner Text Font Weight" content="900" Title="900" />
+        <meta name="text:Font Size" content="13px" />
+        <meta name="text:Logo Size" content="16px" />
+        <meta name="text:Header Text Size" content="16px" />
+        <meta name="text:Description Text Size" content="11px" />
+        <meta name="text:Mobile Header Text Size" content="16px" />
+        <meta name="text:Title Font Size" content="30px" />
+        <meta name="text:Body Font" content="" />
+        <meta name="text:Logo Font" content="" />
+        <meta name="text:Banner Font" content="" />
+        <meta name="text:Photo Overlay Opacity" content="0.5" />
+        <meta name="select:Font" content="Helvetica Neue" title="Helvetica Neue" /><meta name="select:Font" content="Arial" title="Arial" /><meta name="select:Font" content="courier new" title="Courier" /><meta name="select:Font" content="Domine" title="Domine" /><meta name="select:Font" content="Droid Sans" title="Droid Sans" /><meta name="select:Font" content="Droid Serif" title="Droid Serif" /><meta name="select:Font" content="Fira Sans" Title="Fira Sans" /><meta name="select:Font" content="Georgia" title="Georgia" /><meta name="select:Font" content="Gill Sans" Title="Gill Sans" /><meta name="select:Font" content="Karla" Title="Karla" /><meta name="select:Font" content="Lato" title="Lato" /><meta name="select:Font" content="Libre Baskerville" title="Libre Baskerville" /><meta name="select:Font" content="Lora" title="Lora" /><meta name="select:Font" content="Mako" title="Mako" /><meta name="select:Font" content="Merriweather" title="Merriweather" /><meta name="select:Font" content="Montserrat" title="Montserrat" /><meta name="select:Font" content="Noto Sans" title="Noto Sans" /><meta name="select:Font" content="Oswald" title="Oswald" /><meta name="select:Font" content="Playfair Display" title="Playfair Display" /><meta name="select:Font" content="PT Mono" title="PT Mono" /><meta name="select:Font" content="PT Sans" title="PT Sans" /><meta name="select:Font" content="PT Serif" title="PT Serif" /><meta name="select:Font" content="Raleway" title="Raleway" /><meta name="select:Font" content="Roboto" title="Roboto" /><meta name="select:Font" content="Roboto Condensed" title="Roboto Condensed" /><meta name="select:Font" content="Roboto Slab" title="Roboto Slab" /><meta name="select:Font" content="Source Sans Pro" title="Source Sans Pro" /><meta name="select:Font" content="Times New Roman" title="Times New Roman" />
+        <meta name="select:Body Font Weight" content="400" Title="Normal" /><meta name="select:Body Font Weight" content="700" Title="Bold" /><meta name="select:Body Font Weight" content="100" Title="100" /><meta name="select:Body Font Weight" content="200" Title="200" /><meta name="select:Body Font Weight" content="300" Title="300" /><meta name="select:Body Font Weight" content="500" Title="500" /><meta name="select:Body Font Weight" content="600" Title="600" /><meta name="select:Body Font Weight" content="800" Title="800" /><meta name="select:Body Font Weight" content="900" Title="900" />
+        <meta name="select:Header Font Weight" content="700" Title="Bold" /><meta name="select:Header Font Weight" content="400" Title="Normal" /><meta name="select:Header Font Weight" content="100" Title="100" /><meta name="select:Header Font Weight" content="200" Title="200" /><meta name="select:Header Font Weight" content="300" Title="300" /><meta name="select:Header Font Weight" content="500" Title="500" /><meta name="select:Header Font Weight" content="600" Title="600" /><meta name="select:Header Font Weight" content="800" Title="800" /><meta name="select:Header Font Weight" content="900" Title="900" />
+        <meta name="select:Logo Font Weight" content="700" Title="Bold" /><meta name="select:Logo Font Weight" content="400" Title="Normal" /><meta name="select:Logo Font Weight" content="100" Title="100" /><meta name="select:Logo Font Weight" content="200" Title="200" /><meta name="select:Logo Font Weight" content="300" Title="300" /><meta name="select:Logo Font Weight" content="500" Title="500" /><meta name="select:Logo Font Weight" content="600" Title="600" /><meta name="select:Logo Font Weight" content="800" Title="800" /><meta name="select:Logo Font Weight" content="900" Title="900" />
+        <meta name="select:Logo Text" content="lowercase" Title="Lowercase" /><meta name="select:Logo Text" content="normal" Title="Normal" /><meta name="select:Logo Text" content="uppercase" Title="Uppercase" />
+        <meta name="select:Photo Overlay Font Weight" content="400" Title="Normal" /><meta name="select:Photo Overlay Font Weight" content="700" Title="Bold" />
+        <meta name="select:Banner Text Font Weight" content="400" Title="Normal" /><meta name="select:Banner Text Font Weight" content="700" Title="Bold" /><meta name="select:Banner Text Font Weight" content="100" Title="100" /><meta name="select:Banner Text Font Weight" content="200" Title="200" /><meta name="select:Banner Text Font Weight" content="300" Title="300" /><meta name="select:Banner Text Font Weight" content="500" Title="500" /><meta name="select:Banner Text Font Weight" content="600" Title="600" /><meta name="select:Banner Text Font Weight" content="800" Title="800" /><meta name="select:Banner Text Font Weight" content="900" Title="900" />
 
-<meta name="text:Instagram Widget Title" content="Instagram">
-<meta name="text:Instagram Widget Feed Count" content="8">
-<meta name="text:Instagram Widget Access Token" content="">
-<meta name="text:Instagram Widget UserID" content="">
-<meta name="image:Banner Background" content="" />
-<meta name="image:Mobile Banner Background" content="" />
-<meta name="text:Banner Youtube Video ID" content="" />
-<meta name="text:Banner Youtube Playlist ID" content="" />
-<meta name="text:Banner Vimeo Video ID" content="" />
-<meta name="text:Banner Text" content="">
-<meta name="text:Banner Text Size" content="18px" />
-<meta name="text:Banner Text Width" content="60%">
-<meta name="text:Banner Button 1 Text" content="">
-<meta name="text:Banner Button 1 URL" content="">
-<meta name="text:Banner Button 2 Text" content="">
-<meta name="text:Banner Button 2 URL" content="">
-<meta name="text:Banner Overlay Opacity" content="0.7">
-<meta name="if:Banner" content="0" />
-<meta name="if:Banner Video Buttons" content="1" />
-<meta name="if:Banner Overlay" content="0" />
-<meta name="if:Mobile Hide Banner" content="0">
-<meta name="if:Banner Only No Posts" content="0" />
-<meta name="if:Banner On Tagged Page" content="0" />
-<meta name="select:Banner Video Volume" content="off" Title="Off" /><meta name="select:Banner Video Volume" content="on" Title="On" />
-<meta name="select:Banner Video Autoplay" content="1" Title="On" /><meta name="select:Banner Video Autoplay" content="0" Title="Off" />
+        <meta name="image:Banner Background" content="" />
+        <meta name="image:Mobile Banner Background" content="" />
+        <meta name="text:Banner Youtube Video ID" content="" />
+        <meta name="text:Banner Youtube Playlist ID" content="" />
+        <meta name="text:Banner Vimeo Video ID" content="" />
+        <meta name="text:Banner Text" content="">
+        <meta name="text:Banner Text Size" content="18px" />
+        <meta name="text:Banner Text Width" content="60%">
+        <meta name="text:Banner Button 1 Text" content="">
+        <meta name="text:Banner Button 1 URL" content="">
+        <meta name="text:Banner Button 2 Text" content="">
+        <meta name="text:Banner Button 2 URL" content="">
+        <meta name="text:Banner Overlay Opacity" content="0.7">
+        <meta name="if:Banner" content="0" />
+        <meta name="if:Banner Video Buttons" content="1" />
+        <meta name="if:Banner Overlay" content="0" />
+        <meta name="if:Mobile Hide Banner" content="0">
+        <meta name="if:Banner Only No Posts" content="0" />
+        <meta name="if:Banner On Tagged Page" content="0" />
+        <meta name="select:Banner Video Volume" content="off" Title="Off" /><meta name="select:Banner Video Volume" content="on" Title="On" />
+        <meta name="select:Banner Video Autoplay" content="1" Title="On" /><meta name="select:Banner Video Autoplay" content="0" Title="Off" />
 
-<meta name="if:Header Text Hover Underline" content="0" />
-<meta name="if:Random Link" content="0" />
-<meta name="if:Archive Link" content="0" />
-<meta name="if:RSS Link" content="0" />
-<meta name="if:Home Link" content="0" />
-<meta name="if:Show Photo Overlay" content="1" />
-<meta name="if:Show Post Tags" content="1" />
-<meta name="if:Show Post Caption" content="1" />
-<meta name="if:Show Post Meta" content="1" />
-<meta name="if:Show Post Date" content="0" />
-<meta name="if:Show Post Share" content="1" />
-<meta name="if:Show Post Note Count" content="1" />
-<meta name="if:Show Post Notes" content="0" />
-<meta name="if:Scrollbar" content="0" />
-<meta name="if:Modal Post" content="1" />
-<meta name="if:Modal Post Navigation" content="0">
-<meta name="if:High Quality Images" content="1" />
-<meta name="if:Back To Top Icon" content="1" />
-<meta name="text:Ask Link Label" content="Ask">
-<meta name="text:Submit Link Label" content="Submit">
-<meta name="text:Archive Link Label" content="Archive">
-<meta name="text:Random Link Label" content="Random">
+        <meta name="if:Header Text Hover Underline" content="0" />
+        <meta name="if:Random Link" content="0" />
+        <meta name="if:Archive Link" content="0" />
+        <meta name="if:RSS Link" content="0" />
+        <meta name="if:Home Link" content="0" />
+        <meta name="if:Show Photo Overlay" content="1" />
+        <meta name="if:Show Photo Overlay Meta" content="1" />
+        <meta name="if:Show Post Tags" content="1" />
+        <meta name="if:Show Post Caption" content="1" />
+        <meta name="if:Show Post Meta" content="1" />
+        <meta name="if:Show Post Date" content="0" />
+        <meta name="if:Show Post Share" content="1" />
+        <meta name="if:Show Post Like" content="1" />
+        <meta name="if:Show Post Reblog" content="1" />
+        <meta name="if:Show Post Note Count" content="1" />
+        <meta name="if:Show Post Notes" content="0" />
+        <meta name="if:Scrollbar" content="0" />
+        <meta name="if:Modal Post" content="1" />
+        <meta name="if:Modal Post Navigation" content="0">
+        <meta name="if:High Quality Images" content="1" />
+        <meta name="if:Back To Top Icon" content="1" />
+        <meta name="if:Instagram Feed Show Description" content="1" />
+        <meta name="if:Instagram Feed Show Avatar" content="1" />
+        <meta name="text:Ask Link Label" content="Ask">
+        <meta name="text:Submit Link Label" content="Submit">
+        <meta name="text:Archive Link Label" content="Archive">
+        <meta name="text:Random Link Label" content="Random">
 
-<meta name="text:Twitter URL" content="">
-<meta name="text:Instagram URL" content="">
-<meta name="text:Facebook URL" content="">
-<meta name="text:Youtube URL" content="">
-<meta name="text:Snapchat URL" content="">
-<meta name="text:Email Address" content="">
-<meta name="text:500px URL" content="">
-<meta name="text:Amazon URL" content="">
-<meta name="text:Apple URL" content="">
-<meta name="text:Bandcamp URL" content="">
-<meta name="text:Behance URL" content="">
-<meta name="text:Dribbble URL" content="">
-<meta name="text:Etsy URL" content="">
-<meta name="text:Flickr URL" content="">
-<meta name="text:Github URL" content="">
-<meta name="text:Google Plus URL" content="">
-<meta name="text:Linkedin URL" content="">
-<meta name="text:PayPal URL" content="">
-<meta name="text:Pinterest URL" content="">
-<meta name="text:Podcast URL" content="">
-<meta name="text:Mixcloud URL" content="">
-<meta name="text:SoundCloud URL" content="">
-<meta name="text:Skype URL" content="">
-<meta name="text:Spotify URL" content="">
-<meta name="text:Twitch URL" content="">
-<meta name="text:Vimeo URL" content="">
-<meta name="text:VK URL" content="">
-<meta name="text:Wordpress URL" content="">
-<meta name="text:Custom Link 1 URL" content="" />
-<meta name="text:Custom Link 1 Name" content="" />
-<meta name="text:Custom Link 2 URL" content="" />
-<meta name="text:Custom Link 2 Name" content="" />
-<meta name="text:Custom Link 3 URL" content="" />
-<meta name="text:Custom Link 3 Name" content="" />
-<meta name="text:Custom Link 4 URL" content="" />
-<meta name="text:Custom Link 4 Name" content="" />
-<meta name="text:Custom Link 5 URL" content="" />
-<meta name="text:Custom Link 5 Name" content="" />
-<meta name="text:Custom Link 6 URL" content="" />
-<meta name="text:Custom Link 6 Name" content="" />
-<meta name="text:Custom Link 7 URL" content="" />
-<meta name="text:Custom Link 7 Name" content="" />
-<meta name="text:Custom Link 8 URL" content="" />
-<meta name="text:Custom Link 8 Name" content="" />
-<meta name="text:Custom Link 9 URL" content="" />
-<meta name="text:Custom Link 9 Name" content="" />
-<meta name="text:Custom Link 10 URL" content="" />
-<meta name="text:Custom Link 10 Name" content="" />
+        <meta name="text:Twitter URL" content="">
+        <meta name="text:Instagram URL" content="">
+        <meta name="text:Facebook URL" content="">
+        <meta name="text:Youtube URL" content="">
+        <meta name="text:Snapchat URL" content="">
+        <meta name="text:Email Address" content="">
+        <meta name="text:500px URL" content="">
+        <meta name="text:Amazon URL" content="">
+        <meta name="text:Apple URL" content="">
+        <meta name="text:Bandcamp URL" content="">
+        <meta name="text:Behance URL" content="">
+        <meta name="text:Dribbble URL" content="">
+        <meta name="text:Etsy URL" content="">
+        <meta name="text:Flickr URL" content="">
+        <meta name="text:Github URL" content="">
+        <meta name="text:Google Plus URL" content="">
+        <meta name="text:Linkedin URL" content="">
+        <meta name="text:PayPal URL" content="">
+        <meta name="text:Pinterest URL" content="">
+        <meta name="text:Podcast URL" content="">
+        <meta name="text:Mixcloud URL" content="">
+        <meta name="text:SoundCloud URL" content="">
+        <meta name="text:Skype URL" content="">
+        <meta name="text:Spotify URL" content="">
+        <meta name="text:Twitch URL" content="">
+        <meta name="text:Vimeo URL" content="">
+        <meta name="text:VK URL" content="">
+        <meta name="text:Wordpress URL" content="">
+        <meta name="text:Custom Link 1 URL" content="" />
+        <meta name="text:Custom Link 1 Name" content="" />
+        <meta name="text:Custom Link 2 URL" content="" />
+        <meta name="text:Custom Link 2 Name" content="" />
+        <meta name="text:Custom Link 3 URL" content="" />
+        <meta name="text:Custom Link 3 Name" content="" />
+        <meta name="text:Custom Link 4 URL" content="" />
+        <meta name="text:Custom Link 4 Name" content="" />
+        <meta name="text:Custom Link 5 URL" content="" />
+        <meta name="text:Custom Link 5 Name" content="" />
+        <meta name="text:Custom Link 6 URL" content="" />
+        <meta name="text:Custom Link 6 Name" content="" />
+        <meta name="text:Custom Link 7 URL" content="" />
+        <meta name="text:Custom Link 7 Name" content="" />
+        <meta name="text:Custom Link 8 URL" content="" />
+        <meta name="text:Custom Link 8 Name" content="" />
+        <meta name="text:Custom Link 9 URL" content="" />
+        <meta name="text:Custom Link 9 Name" content="" />
+        <meta name="text:Custom Link 10 URL" content="" />
+        <meta name="text:Custom Link 10 Name" content="" />
 
-<meta name="text:TypeKit ID" content="" />
-<meta name="text:TypeKit Body Font" content="" />
-<meta name="text:TypeKit Logo Font" content="" />
-<meta name="text:Google Analytics ID" content='' />
-<meta name="select:Header Text Case" content="lowercase" Title="Lowercase" /><meta name="select:Header Text Case" content="normal" Title="Normal" /><meta name="select:Header Text Case" content="uppercase" Title="Uppercase" />
-<meta name="select:Posts Columns" content="three" Title="3" /><meta name="select:Posts Columns" content="one" Title="1" /><meta name="select:Posts Columns" content="two" Title="2" />
-<meta name="select:Modal Post Image Size" content="modal-post-fit" Title="Fit" /><meta name="select:Modal Post Image Size" content="modal-post-full" Title="Full" />
+        <meta name="text:TypeKit ID" content="" />
+        <meta name="text:TypeKit Body Font" content="" />
+        <meta name="text:TypeKit Logo Font" content="" />
+        <meta name="text:Google Analytics ID" content='' />
+        <meta name="select:Header Text Case" content="lowercase" Title="Lowercase" /><meta name="select:Header Text Case" content="normal" Title="Normal" /><meta name="select:Header Text Case" content="uppercase" Title="Uppercase" />
+        <meta name="select:Posts Columns" content="three" Title="3" /><meta name="select:Posts Columns" content="one" Title="1" /><meta name="select:Posts Columns" content="two" Title="2" />
+        <meta name="select:Modal Post Image Size" content="modal-post-fit" Title="Fit" /><meta name="select:Modal Post Image Size" content="modal-post-full" Title="Full" />
 
-<meta name="text:Translate Home Text" content="Home">
-<meta name="text:Translate Share Text" content="Share">
-<meta name="text:Translate Like Text" content="Like">
-<meta name="text:Translate Liked Text" content="Liked">
-<meta name="text:Translate Reblog Text" content="Reblog">
-<meta name="text:Translate Notes Text" content="Notes">
-<meta name="text:Translate Close Text" content="Close">
-<meta name="text:Translate Next Text" content="Next">
-<meta name="text:Translate Prev Text" content="Prev">
-<meta name="text:Translate Posted On Text" content="Posted on">
-<meta name="text:Translate asked Text" content="asked">
-{/block:Hidden}
+        <meta name="text:Translate Home Text" content="Home">
+        <meta name="text:Translate Share Text" content="Share">
+        <meta name="text:Translate Like Text" content="Like">
+        <meta name="text:Translate Liked Text" content="Liked">
+        <meta name="text:Translate Reblog Text" content="Reblog">
+        <meta name="text:Translate Notes Text" content="Notes">
+        <meta name="text:Translate Close Text" content="Close">
+        <meta name="text:Translate Next Text" content="Next">
+        <meta name="text:Translate Prev Text" content="Prev">
+        <meta name="text:Translate Posted On Text" content="Posted on">
+        <meta name="text:Translate asked Text" content="asked">
+    {/block:Hidden}
 
-<link rel="shortcut icon" href="{Favicon}" />
-<link rel="alternate" type="application/rss+xml" href="{RSS}" />
+    <link rel="shortcut icon" href="{Favicon}" />
+    <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
-<script>
+    <script>
         var TUMBLR_API_KEY = "5c9EqEvjoBVXriaQDOluhj9kUOElq0oIl9EQCxSWTmQ0Ifk7Cs",
             TUMBLR_HOSTNAME = {JSPlaintextHost},
             TUMBLR_TITLE = {JSPlaintextTitle},
@@ -181,14 +195,16 @@
             BANNER_VIDEO_AUTOPLAY = "{select:Banner Video Autoplay}",
             VIMEO_BANNER = {block:IfNotBannerVimeoVideoID} false{/block:IfNotBannerVimeoVideoID}{block:IndexPage}{block:IfBannerVimeoVideoID} true{/block:IfBannerVimeoVideoID}{/block:IndexPage}{block:PermalinkPage}{block:IfBannerVimeoVideoID} false{/block:IfBannerVimeoVideoID}{/block:PermalinkPage};
     </script>
-<link href='https://static.tumblr.com/jzzkxgh/KW9opoygt/font-awesome.css' rel='stylesheet' type='text/css'>
-<link href='https://cdn.iconmonstr.com/1.1.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet' type='text/css'>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={select:Font}:{select:Body Font Weight}, 400,400italic,700,700italic">
-{block:IfBodyFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Body Font}:{select:Body Font Weight}, 400,400italic,700,700italic">{/block:IfBodyFont}
-{block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
-{block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
-<link href="https://static.tumblr.com/jzzkxgh/6Q0qb0dn4/core.css" rel="stylesheet">
-<style type="text/css">
+
+    <link href='https://static.tumblr.com/jzzkxgh/KW9opoygt/font-awesome.css' rel='stylesheet' type='text/css'>
+    <link href='https://cdn.iconmonstr.com/1.1.0/css/iconmonstr-iconic-font.min.css' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={select:Font}:{select:Body Font Weight}, 400,400italic,700,700italic">
+    {block:IfBodyFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Body Font}:{select:Body Font Weight}, 400,400italic,700,700italic">{/block:IfBodyFont}
+    {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
+    {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
+    <link href="https://static.tumblr.com/jzzkxgh/pCDqi8zuc/core.css" rel="stylesheet">
+
+    <style type="text/css">
         
         @media (min-width:740px) {
             .tmblr-iframe--unified-controls {
@@ -302,12 +318,18 @@
         }
         
         {block:IfHeaderTextHoverUnderline}
-        .navigation li a:hover {
-            border-bottom: 1px solid {color:Accent};
-        }
-        .header-social ul li a:hover {
-            border-bottom: 1px solid {color:Accent};
-        }
+            .navigation li a:hover {
+                border-bottom: 1px solid {color:Accent};
+            }
+            .header-social ul li a:hover {
+                border-bottom: 1px solid {color:Accent};
+            }
+            .header-description a, .instagram_username a {
+                text-decoration:underline;
+            }
+            .header-description a:hover, .instagram_username a:hover {
+                text-decoration:none;
+            }
         {/block:IfHeaderTextHoverUnderline}
         
         .content p a:hover {
@@ -331,8 +353,6 @@
         .footer-icon {
             color: {color:Text};
         }
-        
-        
         
         .post-quote blockquote, .quote blockquote {
             border:none;
@@ -361,8 +381,8 @@
             font-size:{text:Header Text Size};
         }
         
-        .header-description {
-            font-size:{text:Description Text Size};
+        .header-description, .instagram_biography, .instagram_username {
+            font-size:{text:Description Text Size} !important;
             text-transform:none;
         }
         
@@ -668,6 +688,18 @@
             }
         {/block:IfNotShowPostShare}
         
+        {block:IfNotShowPostLike}
+            .post-like, .overlay .post-footer .post-like {
+                display:none !important;
+            }
+        {/block:IfNotShowPostLike}
+        
+        {block:IfNotShowPostReblog}
+            .post-reblog, .overlay .post-footer .post-reblog {
+                display:none !important;
+            }
+        {/block:IfNotShowPostReblog}
+        
         {block:IfNotShowPostTags}
             #stash-ants .post .tags, .tags, .the-tag {
                 display:none !important;
@@ -704,6 +736,12 @@
                 display:none;
             }
         {/block:IfNotShowPhotoOverlay}
+        
+        {block:IfNotShowPhotoOverlayMeta}
+            .overlay .post-footer {
+                display:none;
+            }
+        {/block:IfNotShowPhotoOverlayMeta}
         
         .overlay {
             font-weight:{select:Photo Overlay Font Weight};
@@ -878,6 +916,10 @@
         }
         
         @media (max-width: 740px) { 
+            #instagram-feed {
+                display:none;
+            }
+            
             .post {
                 opacity:1 !important;
                 visibility:visible !important;
@@ -980,8 +1022,11 @@
             }
         }
         
+        .sidebar-toggle .fa-lg {
+            font-size:20px;
+        }
         
-        .navigation, .header-social, .sidebar-toggle {
+        .navigation, .header-social, .sidebar-toggle, .sidebar-navigation, .post-title {
             font-weight:{select:Header Font Weight};
         }
 
@@ -1072,14 +1117,19 @@
             font-size: 14px;
             text-align: left;
             line-height: 1;
-            font-family: "HelveticaNeue-CondensedBold", "HelveticaNeueBoldCondensed", "HelveticaNeue-Bold-Condensed", "Helvetica Neue Bold Condensed", "HelveticaNeueBold", "HelveticaNeue-Bold", "Helvetica Neue Bold",Helvetica Neue, Arial, sans-serif;
+            font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             z-index: 999999;
             width:100%;
-            max-width:360px;
+            max-width:240px;
             opacity:0;
             visibility:hidden;
             transform:translateY(100%);
             transition:all 0.3s ease;
+            opacity:0.5;
+        }
+        
+        .demo-note:hover {
+            opacity:1;
         }
         
         .demo-note.visible {
@@ -1090,7 +1140,7 @@
         
         .demo-note nav {
             text-transform:uppercase;
-            font-size:13px;
+            font-size:16px;
         }
         
         .demo-note nav ul {
@@ -1101,7 +1151,7 @@
         .demo-note nav ul li {
             float:left;
             list-style:none;
-            width:50%;
+            width:100%;
         }
         
         .demo-note nav ul li a {
@@ -1115,17 +1165,17 @@
         }
         
         .demo-note nav .im {
-            font-size:9px;
+            font-size:11px;
             margin-left:3px;
             transition:all 0.2s;
         }
         
         .get-started-toggle {
-            background:url('https://static.tumblr.com/jzzkxgh/abdppcbi1/ssj.gif');
+            background:url('https://static.tumblr.com/jzzkxgh/Nn0qi7lym/glitter-og.gif');
         }
         
         .get-started-toggle a {
-            color:black;
+            color:white;
         }
         
         .demo-toggle.open .im {
@@ -1156,7 +1206,7 @@
         }
 
         .demo-overlay.open {
-            margin-top:28px;
+            margin-top:10px;
             height:auto;
             -webkit-transition:all 0.8s ease;
             transition:all 0.8s ease;
@@ -1167,7 +1217,7 @@
         
         .demo-overlay p {
             margin-bottom:10px;
-            font-size:12px;
+            font-size:13px;
             line-height:1.3;
         }
         
@@ -1184,67 +1234,70 @@
             opacity:1;
             visibility:visible;
         }
-        
-        
+          
     </style>
 </head>
+
+
 <body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner}">
 
-<div id="stash-preloader">
-<div id="stash-loader"><div class="loading-icon"></div></div>
-</div>
-<div class="dark-overlay"></div>
-{block:IndexPage}
-{block:ifbanner}
-<div id="banner" class="{block:IfBannerYoutubeVideoID}has-video {/block:IfBannerYoutubeVideoID} {block:IfBannerVimeoVideoID}has-video has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifbannerbackgroundimage}has-banner-image {/block:ifbannerbackgroundimage}{block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}">
-<div class="inner">
-<div class="banner-center">
-<div class="banner-text cl">
-<p>{text:Banner Text}</p>
-{block:IfBannerButton1URL}<a class="button banner-button" target="_blank" href="{text:Banner Button 1 URL}">{text:Banner Button 1 Text}</a>{/block:IfBannerButton1URL}{block:IfBannerButton2URL}<a class="button banner-button" target="_blank" href="{text:Banner Button 2 URL}">{text:Banner Button 2 Text}</a>{/block:IfBannerButton2URL}
-</div>
-</div>
-{block:IfBannerYoutubeVideoID}
-<div class="banner-video-options cl">
-<div class="banner-video-option yt-mute-button mute-button {select:Banner Video Volume}">
-<i id="vol-high" class="im im-volume"></i>
-<i id="vol-mute" class="im im-volume-off"></i>
-</div>
-<div class="banner-video-option yt-play-button play-button autoplay-{select:Banner Video Autoplay} ">
-<i id="vid-play" class="im im-play"></i>
-<i id="vid-pause" class="im im-pause"></i>
-</div>
-</div>
-{/block:IfBannerYoutubeVideoID}
-{block:ifbanneryoutubeplaylistid}
-<div class="banner-video-options cl">
-<div class="banner-video-option yt-mute-button mute-button {select:Banner Video Volume}">
-<i id="vol-high" class="im im-volume"></i>
-<i id="vol-mute" class="im im-volume-off"></i>
-</div>
-<div class="banner-video-option yt-play-button play-button autoplay-{select:Banner Video Autoplay} ">
-<i id="vid-play" class="im im-play"></i>
-<i id="vid-pause" class="im im-pause"></i>
-</div>
-<div class="banner-video-option yt-previous-button">
-<i class="im im-angle-left"></i>
-</div>
-<div class="banner-video-option yt-next-button">
-<i class="im im-angle-right"></i>
-</div>
-</div>
-{/block:ifbanneryoutubeplaylistid}
-{block:IfBannerYoutubeVideoID}
-<div class="banner-youtube-video" data-height="247" data-width="440">
-<div id="player"></div>
-<script>
-                              var tag = document.createElement('script');
-                              tag.src = "https://www.youtube.com/player_api";
-                              var firstScriptTag = document.getElementsByTagName('script')[0];
-                              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                              var player;
-                              
-                              function onYouTubePlayerAPIReady() {
+    <div id="stash-preloader"><div id="stash-loader"><div class="loading-icon"></div></div></div>
+    <div class="dark-overlay"></div>
+
+    {block:IndexPage}
+        {block:ifbanner}
+            <div id="banner" class="{block:IfBannerYoutubeVideoID}has-video {/block:IfBannerYoutubeVideoID} {block:IfBannerVimeoVideoID}has-video has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifbannerbackgroundimage}has-banner-image {/block:ifbannerbackgroundimage}{block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}">
+                <div class="inner">
+                    <div class="banner-center">
+                        <div class="banner-text cl">
+                            <p>{text:Banner Text}</p>
+                                {block:IfBannerButton1URL}<a class="button banner-button" target="_blank" href="{text:Banner Button 1 URL}">{text:Banner Button 1 Text}</a>{/block:IfBannerButton1URL}{block:IfBannerButton2URL}<a class="button banner-button" target="_blank" href="{text:Banner Button 2 URL}">{text:Banner Button 2 Text}</a>{/block:IfBannerButton2URL}
+                        </div>
+                    </div>
+
+                    {block:IfBannerYoutubeVideoID}
+                        <div class="banner-video-options cl">
+                            <div class="banner-video-option yt-mute-button mute-button {select:Banner Video Volume}">
+                                <i id="vol-high" class="im im-volume"></i>
+                                <i id="vol-mute" class="im im-volume-off"></i>
+                            </div>
+                            <div class="banner-video-option yt-play-button play-button autoplay-{select:Banner Video Autoplay} ">
+                                <i id="vid-play" class="im im-play"></i>
+                                <i id="vid-pause" class="im im-pause"></i>
+                            </div>
+                        </div>
+                    {/block:IfBannerYoutubeVideoID}
+
+                    {block:ifbanneryoutubeplaylistid}
+                        <div class="banner-video-options cl">
+                            <div class="banner-video-option yt-mute-button mute-button {select:Banner Video Volume}">
+                                <i id="vol-high" class="im im-volume"></i>
+                                <i id="vol-mute" class="im im-volume-off"></i>
+                            </div>
+                            <div class="banner-video-option yt-play-button play-button autoplay-{select:Banner Video Autoplay} ">
+                                <i id="vid-play" class="im im-play"></i>
+                                <i id="vid-pause" class="im im-pause"></i>
+                            </div>
+                            <div class="banner-video-option yt-previous-button">
+                                <i class="im im-angle-left"></i>
+                            </div>
+                            <div class="banner-video-option yt-next-button">
+                                <i class="im im-angle-right"></i>
+                            </div>
+                        </div>
+                    {/block:ifbanneryoutubeplaylistid}
+
+                    {block:IfBannerYoutubeVideoID}
+                        <div class="banner-youtube-video" data-height="247" data-width="440">
+                            <div id="player"></div>
+                            <script>
+                                var tag = document.createElement('script');
+                                tag.src = "https://www.youtube.com/player_api";
+                                var firstScriptTag = document.getElementsByTagName('script')[0];
+                                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                                var player;
+
+                                function onYouTubePlayerAPIReady() {
                                 player = new YT.Player('player', {
                                   playerVars: { 'showinfo': 0, 'autoplay': {select:Banner Video Autoplay}, 'controls': 0, 'showinfo':0, 'autohide':1,'wmode':'opaque', 'rel':0, 'playlist':'{text:Banner Youtube Video ID}', 'loop':1 },
                                   videoId: "{text:Banner Youtube Video ID}",
@@ -1266,27 +1319,28 @@
                                     }
                                   }
                                 });
-                              }
-                              
-                              if(BANNER_VIDEO_VOLUME == "off") {
+                                }
+
+                                if(BANNER_VIDEO_VOLUME == "off") {
                                   function onPlayerReady(event) {
                                     event.target.mute();
                                   }
-                              }
-                        </script>
-</div>
-{/block:IfBannerYoutubeVideoID}
-{block:ifbanneryoutubeplaylistid}
-<div class="banner-youtube-video" data-height="247" data-width="440">
-<div id="player"></div>
-<script>
-                              var tag = document.createElement('script');
-                              tag.src = "https://www.youtube.com/player_api";
-                              var firstScriptTag = document.getElementsByTagName('script')[0];
-                              firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
-                              var player;
-                              
-                              function onYouTubePlayerAPIReady() {
+                                }
+                            </script>
+                        </div>
+                    {/block:IfBannerYoutubeVideoID}
+
+                    {block:ifbanneryoutubeplaylistid}
+                        <div class="banner-youtube-video" data-height="247" data-width="440">
+                            <div id="player"></div>
+                            <script>
+                                var tag = document.createElement('script');
+                                tag.src = "https://www.youtube.com/player_api";
+                                var firstScriptTag = document.getElementsByTagName('script')[0];
+                                firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+                                var player;
+
+                                function onYouTubePlayerAPIReady() {
                                 player = new YT.Player('player', {
                                   playerVars: { 'showinfo': 0, 'autoplay': {select:Banner Video Autoplay}, 'controls': 0, 'showinfo':0, 'autohide':1,'wmode':'opaque', 'rel':0, listType:'playlist', list: '{text:Banner Youtube Playlist ID}', 'loop':1 },
                                   events: {
@@ -1307,556 +1361,583 @@
                                     }
                                   }
                                 });
-                              }
-                              
-                              if(BANNER_VIDEO_VOLUME == "off") {
+                                }
+
+                                if(BANNER_VIDEO_VOLUME == "off") {
                                   function onPlayerReady(event) {
                                     event.target.mute();
                                   }
-                              }
-                        </script>
-</div>
-{/block:ifbanneryoutubeplaylistid}
-{block:IfBannerVimeoVideoID}
+                                }
+                            </script>
+                        </div>
+                    {/block:ifbanneryoutubeplaylistid}
 
-<iframe id="banner-vimeo-video" src="https://player.vimeo.com/video/{text:Banner Vimeo Video ID}?background=0&autoplay={select:Banner Video Autoplay}&muted=1&loop=1" width="100%" height="100%" frameborder="0" webkitallowfullScreen mozallowfullscreen allowfullscreen></iframe>
-{/block:IfBannerVimeoVideoID}
-{block:ifbannerbackgroundimage}
-<div class="banner-img"></div>
-{/block:ifbannerbackgroundimage}
-{block:ifmobilebannerbackgroundimage}
-<div class="mobile-banner-img"></div>
-{/block:ifmobilebannerbackgroundimage}
-<div class="arr-down">
-<i>Scroll</i>
-</div>
-</div>
-</div>
-{/block:ifbanner}
-{/block:IndexPage}
-<div class="close-modal">
-<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z"></path></g></svg>
-</div>
-<div class="progress-indicator">
-<svg>
-<g>
-<circle cx="0" cy="0" r="20" class="animated-circle" transform="translate(50,50) rotate(-90)" />
-</g>
-<g>
-<circle cx="0" cy="0" r="38" transform="translate(50,50)" />
-</g>
-</svg>
-</div>
-<div class="stash-credit">
-<a href="https://themes.stashfamily.com/themes/ten-toes/" target="_blank">
-<svg width="74px" height="20px" viewBox="0 0 87 15" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-<path d="M0.696,10.1241072 C0.873715092,11.7630353 1.44635261,12.6121185 2.86807334,13.3822172 C4.19106347,14.1128237 6.32364457,14.488 9.14733992,14.488 C15.0514302,14.488 17.8751255,12.9872948 17.8751255,9.8476615 C17.8751255,8.20873343 17.0457884,7.02396615 15.4463526,6.41183639 C14.3208237,5.99716784 13.6494556,5.85894499 11.3194133,5.62199154 C7.25171227,5.20732299 6.8172976,5.08884626 6.8172976,4.43722426 C6.8172976,3.90407898 7.46891961,3.56839492 8.51546403,3.56839492 C9.81870804,3.56839492 10.5690606,3.94357123 10.8849986,4.77290832 L17.460457,4.77290832 C17.0457884,3.23271086 16.5521354,2.48235825 15.4660987,1.79124401 C14.1233625,0.922414669 12.0500197,0.488 9.24607052,0.488 C3.71715656,0.488 0.814476728,2.04794358 0.814476728,5.0296079 C0.814476728,6.64878984 1.70305219,7.813811 3.34198025,8.32721016 C4.38852468,8.68264034 6.00770663,8.99857828 7.48866573,9.13680113 C10.5493145,9.43299295 10.8060141,9.47248519 11.2206827,9.59096192 C11.6353512,9.70943865 11.8328124,9.90689986 11.8328124,10.2820762 C11.8328124,10.8349676 11.2206827,11.1311594 10.0359154,11.1311594 C8.79190973,11.1311594 8.14028773,10.8547137 7.68612694,10.1241072 L0.696,10.1241072 Z M23.6804852,14.0733315 L28.7157461,14.0733315 L28.7157461,4.25950917 L33.7904993,4.25950917 L33.7904993,0.902668547 L18.6649704,0.902668547 L18.6649704,4.25950917 L23.6804852,4.25950917 L23.6804852,14.0733315 Z M33.8497377,14.0733315 L39.121952,0.902668547 L45.7763949,0.902668547 L51.0486093,14.0733315 L45.5394415,14.0733315 L44.9865501,12.8688181 L39.6156051,12.8688181 L39.121952,14.0733315 L33.8497377,14.0733315 Z M40.5239267,9.51197743 L43.999244,9.51197743 L42.3010776,4.67417772 L40.5239267,9.51197743 Z M51.483024,10.1241072 C51.6607391,11.7630353 52.2333766,12.6121185 53.6550973,13.3822172 C54.9780874,14.1128237 57.1106685,14.488 59.9343639,14.488 C65.8384542,14.488 68.6621495,12.9872948 68.6621495,9.8476615 C68.6621495,8.20873343 67.8328124,7.02396615 66.2333766,6.41183639 C65.1078477,5.99716784 64.4364795,5.85894499 62.1064372,5.62199154 C58.0387362,5.20732299 57.6043216,5.08884626 57.6043216,4.43722426 C57.6043216,3.90407898 58.2559436,3.56839492 59.302488,3.56839492 C60.605732,3.56839492 61.3560846,3.94357123 61.6720226,4.77290832 L68.247481,4.77290832 C67.8328124,3.23271086 67.3391594,2.48235825 66.2531227,1.79124401 C64.9103865,0.922414669 62.8370437,0.488 60.0330945,0.488 C54.5041805,0.488 51.6015007,2.04794358 51.6015007,5.0296079 C51.6015007,6.64878984 52.4900762,7.813811 54.1290042,8.32721016 C55.1755487,8.68264034 56.7947306,8.99857828 58.2756897,9.13680113 C61.3363385,9.43299295 61.5930381,9.47248519 62.0077066,9.59096192 C62.4223752,9.70943865 62.6198364,9.90689986 62.6198364,10.2820762 C62.6198364,10.8349676 62.0077066,11.1311594 60.8229394,11.1311594 C59.5789337,11.1311594 58.9273117,10.8547137 58.4731509,10.1241072 L51.483024,10.1241072 Z M70.538031,14.0733315 L75.573292,14.0733315 L75.573292,8.89984767 L81.4576361,8.89984767 L81.4576361,14.0733315 L86.492897,14.0733315 L86.492897,0.902668547 L81.4576361,0.902668547 L81.4576361,5.54300705 L75.573292,5.54300705 L75.573292,0.902668547 L70.538031,0.902668547 L70.538031,14.0733315 Z" fill="{color:Text}"></path>
-</g>
-</svg>
-</a>
-</div>
-<div class="post-navigation stash-navigation">
-<li class="stash-close-btn close">
-<a><span>{text:Translate Close Text}</span><i class="im im-x-mark"></i></a>
-</li>
-<li class="stash-prev-btn">
-<a><span>{text:Translate Prev Text}</span><i class="im im-arrow-left"></i></a>
-</li>
-<li class="stash-next-btn">
-<a><span>{text:Translate Next Text}</span><i class="im im-arrow-right"></i></a>
-</li>
-</div>
-<div class="stash-overlay">
-<div class='stash-container container'>
-<div class="stash-content">
-</div>
-<div class='stash-post-meta'>
-<div class='stash-caption'>
-<div class="inner">
-</div>
-</div>
-</div>
-<div class='stash-back-btn'>
-<svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20">
-<path d="M10.707 10.5l8.646-8.646c0.195-0.195 0.195-0.512 0-0.707s-0.512-0.195-0.707 0l-8.646 8.646-8.646-8.646c-0.195-0.195-0.512-0.195-0.707 0s-0.195 0.512 0 0.707l8.646 8.646-8.646 8.646c-0.195 0.195-0.195 0.512 0 0.707 0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146l8.646-8.646 8.646 8.646c0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146c0.195-0.195 0.195-0.512 0-0.707l-8.646-8.646z"></path>
-</svg>
-</div>
-</div>
-</div>
-<div id="sidebar" class="{select:Header Text Case} ">
-<div class="inner animated slow">
-<div class="wrap">
-<nav class="sidebar-navigation cl">
-<ul>
-{block:IfHomeLink}
-<li><a href="/">{text:Translate Home Text}</a></li>
-{/block:IfHomeLink}
-{block:HasPages}
-{block:Pages}
-<li> <a href="{URL}">{Label}</a></li>
-{/block:Pages}
-{/block:HasPages}
-{block:IfCustomLink1URL}<li><a href="{text:Custom Link 1 URL}">{text:Custom Link 1 Name}</a></li>{/block:IfCustomLink1URL}
-{block:IfCustomLink2URL}<li><a href="{text:Custom Link 2 URL}">{text:Custom Link 2 Name}</a></li>{/block:IfCustomLink2URL}
-{block:IfCustomLink3URL}<li><a href="{text:Custom Link 3 URL}">{text:Custom Link 3 Name}</a></li>{/block:IfCustomLink3URL}
-{block:IfCustomLink4URL}<li><a href="{text:Custom Link 4 URL}">{text:Custom Link 4 Name}</a></li>{/block:IfCustomLink4URL}
-{block:IfCustomLink5URL}<li><a href="{text:Custom Link 5 URL}">{text:Custom Link 5 Name}</a></li>{/block:IfCustomLink5URL}
-{block:IfCustomLink6URL}<li><a href="{text:Custom Link 6 URL}">{text:Custom Link 6 Name}</a></li>{/block:IfCustomLink6URL}
-{block:IfCustomLink7URL}<li><a href="{text:Custom Link 7 URL}">{text:Custom Link 7 Name}</a></li>{/block:IfCustomLink7URL}
-{block:IfCustomLink8URL}<li><a href="{text:Custom Link 8 URL}">{text:Custom Link 8 Name}</a></li>{/block:IfCustomLink8URL}
-{block:IfCustomLink9URL}<li><a href="{text:Custom Link 9 URL}">{text:Custom Link 9 Name}</a></li>{/block:IfCustomLink9URL}
-{block:IfCustomLink10URL}<li><a href="{text:Custom Link 10 URL}">{text:Custom Link 10 Name}</a></li>{/block:IfCustomLink10URL}
-{block:AskEnabled}
-<li> <a class="stash-ask-page" href="https://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>
-{/block:AskEnabled}
-{block:SubmissionsEnabled}
-<li> <a href="https://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>
-{/block:SubmissionsEnabled}
- {block:IfArchiveLink}
-<li><a href="https://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>
-{/block:IfArchiveLink}
-{block:ifRandomLink}
-<li><a href="https://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>
-{/block:ifRandomLink}
-{block:ifRSSLink}
-<li><a href="{RSS}" title="{lang:RSS}">{lang:RSS}</a></li>
-{/block:ifRSSLink}
-{block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><i class="fa fa-twitter"></i></a></li>{/block:ifTwitterURL}
-{block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}"><i class="fa fa-instagram"></i></a></li>{block:ifInstagramURL}
-{block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa fa-facebook"></i></a></li>{/block:ifFacebookURL}
-{block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa fa-youtube"></i></a></li>{/block:ifYoutubeURL}
-{block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
-{block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}"><i class="fa fa-envelope"></i></a></li>{/block:ifEmailAddress}
-{block:if500pxURL}<li><a target="_blank" href="{text:500px URL}"><i class="fa fa-500px"></i></a></li>{/block:if500pxURL}
-{block:ifAmazonURL}<li><a target="_blank" href="{text:Amazon URL}"><i class="fa fa-amazon"></i></a></li>{/block:ifAmazonURL}
-{block:ifAppleURL}<li><a target="_blank" href="{text:Apple URL}"><i class="fa fa-apple"></i></a></li>{/block:ifAppleURL}
-{block:ifBandcampURL}<li><a target="_blank" href="{text:Bandcamp URL}"><i class="fa fa-bandcamp"></i></a></li>{/block:ifBandcampURL}
-{block:ifBehanceURL}<li><a target="_blank" href="{text:Behance URL}"><i class="fa fa-behance"></i></a></li>{/block:ifBehanceURL}
-{block:ifDribbbleURL}<li><a target="_blank" href="{text:Dribbble URL}"><i class="fa fa-dribbble"></i></a></li>{/block:ifDribbbleURL}
-{block:ifEtsyURL}<li><a target="_blank" href="{text:Etsy URL}"><i class="fa fa-etsy"></i></a></li>{/block:ifEtsyURL}
-{block:ifFlickrURL}<li><a target="_blank" href="{text:Flickr URL}"><i class="fa fa-flickr"></i></a></li>{/block:ifFlickrURL}
-{block:ifGithubURL}<li><a target="_blank" href="{text:Github URL}"><i class="fa fa-github"></i></a></li>{/block:ifGithubURL}
-{block:ifGooglePlusURL}<li><a target="_blank" href="{text:GooglePlus URL}"><i class="fa fa-google-plus"></i></a></li>{/block:ifGooglePlusURL}
-{block:ifLinkedinURL}<li><a target="_blank" href="{text:Linkedin URL}"><i class="fa fa-linkedin"></i></a></li>{/block:ifLinkedinURL}
-{block:ifPayPalURL}<li><a target="_blank" href="{text:PayPal URL}"><i class="fa fa-paypal"></i></a></li>{/block:ifPayPalURL}
-{block:ifPinterestURL}<li><a target="_blank" href="{text:Pinterest URL}"><i class="fa fa-pinterest"></i></a></li>{/block:ifPinterestURL}
-{block:ifPodcastURL}<li><a target="_blank" href="{text:Podcast URL}"><i class="fa fa-podcast"></i></a></li>{/block:ifPodcastURL}
-{block:ifMixcloudURL}<li><a target="_blank" href="{text:Mixcloud URL}"><i class="fa fa-mixcloud"></i></a></li>{/block:ifMixcloudURL}
-{block:ifSoundcloudURL}<li><a target="_blank" href="{text:Soundcloud URL}"><i class="fa fa-soundcloud"></i></a></li>{/block:ifSoundcloudURL}
-{block:ifSkypeURL}<li><a target="_blank" href="{text:Skype URL}"><i class="fa fa-skype"></i></a></li>{/block:ifSkypeURL}
-{block:ifSpotifyURL}<li><a target="_blank" href="{text:Spotify URL}"><i class="fa fa-spotify"></i></a></li>{/block:ifSpotifyURL}
-{block:ifTwitchURL}<li><a target="_blank" href="{text:Twitch URL}"><i class="fa fa-twitch"></i></a></li>{/block:ifTwitchURL}
-{block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}"><i class="fa fa-vimeo"></i></a></li>{/block:ifVimeoURL}
-{block:ifVKURL}<li><a target="_blank" href="{text:VK URL}"><i class="fa fa-vk"></i></a></li>{/block:ifVKURL}
-{block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}"><i class="fa fa-wordpress"></i></a></li>{/block:ifWordpressURL}
-&nbsp;
-</ul>
-</nav>
-</div>
-</div>
-</div>
-<div id="header" class="{select:Header Text Case} ">
-<div class="wrap">
-<div class="inner">
-{block:ifheaderavatarimage}
-<div class="avatar widget {select:Avatar Style}">
-<img src="{image:Header Avatar}" />
-</div>
-{/block:ifheaderavatarimage}
-<div class="logo">
-{block:ifnotlogoimage}
-<a href="/" title="{lang:Home}">{Title}</a>
-{/block:ifnotlogoimage}
-{block:iflogoimage}
-<a href="/"><img src="{image:Logo}" alt="logo" /></a>
-{/block:iflogoimage}
-</div>
-<nav class="navigation cl">
-<ul>
-{block:IfHomeLink}
-<li><a href="/">{text:Translate Home Text}</a></li>
-{/block:IfHomeLink}
-{block:HasPages}
-{block:Pages}
-<li> <a href="{URL}">{Label}</a></li>
-{/block:Pages}
-{/block:HasPages}
-{block:IfCustomLink1URL}<li><a href="{text:Custom Link 1 URL}">{text:Custom Link 1 Name}</a></li>{/block:IfCustomLink1URL}
-{block:IfCustomLink2URL}<li><a href="{text:Custom Link 2 URL}">{text:Custom Link 2 Name}</a></li>{/block:IfCustomLink2URL}
-{block:IfCustomLink3URL}<li><a href="{text:Custom Link 3 URL}">{text:Custom Link 3 Name}</a></li>{/block:IfCustomLink3URL}
-{block:IfCustomLink4URL}<li><a href="{text:Custom Link 4 URL}">{text:Custom Link 4 Name}</a></li>{/block:IfCustomLink4URL}
-{block:IfCustomLink5URL}<li><a href="{text:Custom Link 5 URL}">{text:Custom Link 5 Name}</a></li>{/block:IfCustomLink5URL}
-{block:IfCustomLink6URL}<li><a href="{text:Custom Link 6 URL}">{text:Custom Link 6 Name}</a></li>{/block:IfCustomLink6URL}
-{block:IfCustomLink7URL}<li><a href="{text:Custom Link 7 URL}">{text:Custom Link 7 Name}</a></li>{/block:IfCustomLink7URL}
-{block:IfCustomLink8URL}<li><a href="{text:Custom Link 8 URL}">{text:Custom Link 8 Name}</a></li>{/block:IfCustomLink8URL}
-{block:IfCustomLink9URL}<li><a href="{text:Custom Link 9 URL}">{text:Custom Link 9 Name}</a></li>{/block:IfCustomLink9URL}
-{block:IfCustomLink10URL}<li><a href="{text:Custom Link 10 URL}">{text:Custom Link 10 Name}</a></li>{/block:IfCustomLink10URL}
-{block:AskEnabled}
-<li> <a class="stash-ask-page" href="https://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>
-{/block:AskEnabled}
-{block:SubmissionsEnabled}
-<li> <a href="https://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>
-{/block:SubmissionsEnabled}
-{block:IfArchiveLink}
-<li><a href="https://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>
-{/block:IfArchiveLink}
-{block:ifRandomLink}
-<li><a href="https://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>
-{/block:ifRandomLink}
-{block:ifRSSLink}
-<li><a href="{RSS}" title="{lang:RSS}">{lang:RSS}</a></li>
-{/block:ifRSSLink}
-&nbsp;
-</ul>
-</nav>
-<nav class="header-social cl">
-<ul class="social-links-icons social-links">
-{block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}">Twitter</a></li>{/block:ifTwitterURL}
-{block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}">Instagram</a></li>{block:ifInstagramURL}
-{block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}">Facebook</a></li>{/block:ifFacebookURL}
-{block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}">Youtube</a></li>{/block:ifYoutubeURL}
-{block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}">Snapchat</a></li>{/block:ifSnapchatURL}
-{block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}">Email</a></li>{/block:ifEmailAddress}
-{block:if500pxURL}<li><a target="_blank" href="{text:500px URL}">500px</a></li>{/block:if500pxURL}
-{block:ifAmazonURL}<li><a target="_blank" href="{text:Amazon URL}">Amazon</a></li>{/block:ifAmazonURL}
-{block:ifAppleURL}<li><a target="_blank" href="{text:Apple URL}">Apple</a></li>{/block:ifAppleURL}
-{block:ifBandcampURL}<li><a target="_blank" href="{text:Bandcamp URL}">Bandcamp</a></li>{/block:ifBandcampURL}
-{block:ifBehanceURL}<li><a target="_blank" href="{text:Behance URL}">Behance</a></li>{/block:ifBehanceURL}
-{block:ifDribbbleURL}<li><a target="_blank" href="{text:Dribbble URL}">Dribbble</a></li>{/block:ifDribbbleURL}
-{block:ifEtsyURL}<li><a target="_blank" href="{text:Etsy URL}">Etsy</a></li>{/block:ifEtsyURL}
-{block:ifFlickrURL}<li><a target="_blank" href="{text:Flickr URL}">Flickr</a></li>{/block:ifFlickrURL}
-{block:ifGithubURL}<li><a target="_blank" href="{text:Github URL}">Github</a></li>{/block:ifGithubURL}
-{block:ifGooglePlusURL}<li><a target="_blank" href="{text:GooglePlus URL}">Google +</a></li>{/block:ifGooglePlusURL}
-{block:ifLinkedinURL}<li><a target="_blank" href="{text:Linkedin URL}">LinkedIn</a></li>{/block:ifLinkedinURL}
-{block:ifPayPalURL}<li><a target="_blank" href="{text:PayPal URL}">PayPal</a></li>{/block:ifPayPalURL}
-{block:ifPinterestURL}<li><a target="_blank" href="{text:Pinterest URL}">Pinterest</a></li>{/block:ifPinterestURL}
-{block:ifPodcastURL}<li><a target="_blank" href="{text:Podcast URL}">Podcast</a></li>{/block:ifPodcastURL}
-{block:ifMixcloudURL}<li><a target="_blank" href="{text:Mixcloud URL}">Mixcloud</a></li>{/block:ifMixcloudURL}
-{block:ifSoundcloudURL}<li><a target="_blank" href="{text:Soundcloud URL}">Soundcloud</a></li>{/block:ifSoundcloudURL}
-{block:ifSkypeURL}<li><a target="_blank" href="{text:Skype URL}">Skype</a></li>{/block:ifSkypeURL}
-{block:ifSpotifyURL}<li><a target="_blank" href="{text:Spotify URL}">Spotify</a></li>{/block:ifSpotifyURL}
-{block:ifTwitchURL}<li><a target="_blank" href="{text:Twitch URL}">Twitch</a></li>{/block:ifTwitchURL}
-{block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}">Vimeo</a></li>{/block:ifVimeoURL}
- {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}">VK</a></li>{/block:ifVKURL}
-{block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}">Wordpress</a></li>{/block:ifWordpressURL}
-&nbsp;
-</ul>
-</nav>
-{block:ShowDescription}
-<div class="header-description"><p>{Description}</p></div>
-&nbsp;
-{/block:ShowDescription}
-{block:IfInstagramWidgetUserID}
-<div class="instagram header-widget cl">
-<p>{block:ifInstagramURL}<a href="{text:Instagram URL}">{/block:ifInstagramURL}{text:Instagram Widget Title}{block:ifInstagramURL}</a>{/block:ifInstagramURL}</p>
-<ul id="instafeed" class="instagram-feed social-widget"></ul>
-</div>
-{/block:IfInstagramWidgetUserID}
-<div class="sidebar-toggle">
-Menu
-</div>
-<div class="close-mobile-modal">
-<svg width="16px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink">
-<g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
-<path d="M7.172,10 L3.642,6.47 L0.102,2.93 L2.928,0.1 L10,7.173 L17.07,0.103 L19.9,2.93 L12.827,10 L19.897,17.07 L17.07,19.9 L10,12.827 L2.93,19.897 L0.1,17.07 L7.173,10 L7.172,10 Z"></path>
-</g>
-</svg>
-</div>
-</div>
-</div>
-</div>
-<div class="page-container">
-<div id="stash" class="page {block:PermalinkPage}single {/block:PermalinkPage}">
-{block:IndexPage}
-<div id="ants-loader" style="opacity: 0;"><div class="loading-icon"></div></div>
-{/block:IndexPage}
-<div id="posts">
-<div class="wrap">
+                    {block:IfBannerVimeoVideoID}
+                        <iframe id="banner-vimeo-video" src="https://player.vimeo.com/video/{text:Banner Vimeo Video ID}?background=0&autoplay={select:Banner Video Autoplay}&muted=1&loop=1" width="100%" height="100%" frameborder="0" webkitallowfullScreen mozallowfullscreen allowfullscreen></iframe>
+                    {/block:IfBannerVimeoVideoID}
 
-<div id="stash-ants">
-<div class="ants-sizer-{select:Posts Columns}"></div>
-<div class="ants-gutter-{select:Posts Columns}"></div>
-{block:Posts inlineMediaWidth="1280"}
-{block:Photo}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-photo pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}{block:PermalinkPage}{block:Date} post-single{/block:Date}{/block:PermalinkPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photo">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="inner">
-<div class="media">
-{block:IndexPage}
-<a class="open-modal" href="{Permalink}" data-id="{PostID}">
-<div class="overlay-bg"></div>
-<img src="{block:IfHighQualityImages}{PhotoURL-HighRes}{/block:IfHighQualityImages}{block:IfNotHighQualityImages}{PhotoURL-500}{/block:IfNotHighQualityImages}" data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
-</a>
-<div class="overlay">
-{block:Caption}
-<div class="post-caption">
-{Caption}
-</div>
-{/block:Caption}
-<div class="post-share">
- <div class="close-post-share">
-<svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\<path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z" fill="#FFFFFF">
-</path></g></svg>
-</div>
-<div class="social-media"><span class="share-facebook" title="Share on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"></a></span><span class="share-twitter" title="Share on Twitter"><a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"></a></span><span class="share-google" title="Share on Google+"><a class="fa fa-google-plus" ref="https://plus.google.com/share?url={Permalink}" target="_new"></a></span><span class="share-pinterest"><a class="fa fa-pinterest" target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"></a></span>
-</div>
-<div class="social-media-footer">
-<a class="btn copy-btn" data-clipboard-text="{Permalink}">Copy Link</a>
-</div>
-</div>
-<ul class="post-footer">
-<li class="share-toggle" data-post-id="{PostID}" title="Share this post">{text:Translate Share Text}</li>
-<li class="post-like" title="Like this post">
-{LikeButton color="grey" size="15"}
-<span class="like-text">{text:Translate Like Text}</span>
-<span class="like-text like-text-liked">{text:Translate Liked Text}</span>
-</li>
-<li class="post-reblog" title="Reblog this post"><a href="{ReblogURL}">{text:Translate Reblog Text}</a></li>
-<li class="post-note-count"><span><a class="open-modal" data-id="{PostID}">
-{NoteCount} {text:Translate Notes Text}</a></span></li>
-</ul>
-</div>
-{/block:IndexPage}
-{block:PermalinkPage}
-{LinkOpenTag}
-<div class="overlay-bg"></div>
-<img src="{PhotoURL-HighRes}" data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
-{LinkCloseTag}
-{/block:PermalinkPage}
-</div>
 
-<div class="content">
-{block:Caption}{Caption}{/block:Caption}
-</div>
-{/block:Photo}
-{block:Photoset}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-photoset pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photoset">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="media">
-<div class="stash-photoset ips">
-<div class="overlay-bg"></div>
-<div class="ps-options ps-nav-left"><i class="im im-arrow-left"></i></div>
-<div class="ps-options ps-nav-right"><i class="im im-arrow-right"></i></div>
-<div class="ps-options photoset-count" data-id="{PostID}"><span>1</span> / {PhotoCount}</div>
-<div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
-{block:Photos}
-{block:IndexPage}
-<a class="open-modal single-photoset" href="{Permalink}" data-id="{PostID}">
-<img data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" src="{block:IfHighQualityImages}{PhotoURL-HighRes}{/block:IfHighQualityImages}{block:IfNotHighQualityImages}{PhotoURL-500}{/block:IfNotHighQualityImages}" />
-</a>
-{/block:IndexPage}
-{block:PermalinkPage}
-<a class="single-photoset" href="{PhotoURL-HighRes}"><img data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" src="{PhotoURL-HighRes}" /></a>
-{/block:PermalinkPage}
-{/block:Photos}
-</div>
-</div>
-</div>
-{block:Caption}
-<div class="content">
-{Caption}
-</div>
-{/block:Caption}
-{/block:Photoset}
-{block:Text}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-text {block:Tags}{Tag} {/block:Tags}{/block:IndexPage} {block:PermalinkPage}{block:Date} post-single single-text{/block:Date}{/block:PermalinkPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="text">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-{block:PermalinkPage}<div class="post-left">{/block:PermalinkPage}
-<div class="inside">
-<div class="content">
-{block:IndexPage}
-{block:Title}<h2 class="post-title"><a class="open-modal" href="{Permalink}" data-id="{PostID}">{Title}</a></h2>{/block:Title}
-{/block:IndexPage}
-{block:PermalinkPage}
-{block:Title}<h2 class="post-title">{Title}</h2>{/block:Title}
-{/block:PermalinkPage}
+                    {block:ifbannerbackgroundimage}
+                        <div class="banner-img"></div>
+                    {/block:ifbannerbackgroundimage}
+                    {block:ifmobilebannerbackgroundimage}
+                        <div class="mobile-banner-img"></div>
+                    {/block:ifmobilebannerbackgroundimage}
 
-{block:NotReblog}
-{Body}
-{/block:NotReblog}
-{block:RebloggedFrom}
-<div class="reblog-list">
-{block:Reblogs}
-<div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
-<div class="post-reblog-header">
-<div class="post-avatar">
-<div class="post-avatar-wrapper">
-{block:IsActive}
-<a class="post-avatar-link{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank">
-<img class="post-avatar-image" src="{PortraitURL-64}">
-</a>
-{/block:IsActive}
-{block:IsDeactivated}
-<span class="inactive reblog-avatar{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}">
-<img class="post-avatar-image" src="{PortraitURL-64}">
-</span>
-{/block:IsDeactivated}
-</div>
-</div>
-{block:IsActive}
-<a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>
-{/block:IsActive}
-{block:IsDeactivated}
-<span class="inactive post-tumblelog-name">{Username}</span>
-{/block:IsDeactivated}
-</div>
-<div class="post-reblog-content">
-<div class="post-body">
-{Body}
-</div>
-</div>
-</div>
-{/block:Reblogs}
-</div>
-{/block:RebloggedFrom}
-</div>
-{/block:Text}
-{block:Audio}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-audio {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="audio">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="inside">
-<div class="media">
-<div class="albumart">{block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500" />{/block:AlbumArt}</div>
-<div class="player">{AudioPlayerBlack}</div>
-{block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}
-</div>
-<a class="ps-options open-modal" href="{Permalink}" data-id="{PostID}"><i class="im im-maximize"></i></a>
-<div class="content">
-{block:Caption}{Caption}{/block:Caption}
-</div>
-{/block:Audio}
-{block:Video}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-video {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="video">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="inside">
-<div class="media">{Video-500}</div>
-<a class="ps-options open-modal" href="{Permalink}" data-id="{PostID}"><i class="im im-maximize"></i></a>
-<div class="content">
-{block:Caption}{Caption}{/block:Caption}
-</div>
-{/block:Video}
-{block:Quote}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-quote {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="quote">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="inside">
-<div class="content">
-<blockquote>{Quote}</blockquote>
-<figcaption>{block:Source}- {Source}{/block:Source}</figcaption>
-</div>
-{/block:Quote}
-{block:Link}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-link {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="link">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="inside">
-<div class="content">
-<h1><a class="link" href="{URL}">{Name}</a></h1>
-{block:Description}{Description}{/block:Description}
-</div>
-{/block:Link}
-{block:Chat}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-chat {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="chat">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="content">
-<ul class="chat">
-{block:Lines}<li class="{Alt}">{block:Label}<span class="person">{Label}</span>{/block:Label}<span class="said"> {Line} </span></li>{/block:Lines}
-</ul>
-</div>
-{/block:Chat}
-{block:Answer}
-<article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post post-answer {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="answer">
-<input id="post-notes-url" type="hidden" value="{PostNotesURL}">
-<div class="inside">
-<div class="content">
-<div class="asker-box">
- <img src="{AskerPortraitURL-24}" /><span class="the-asker">{Asker}</span> {text:Translate asked Text}: {Question}
-</div>
-<div class="answer">
-{Answer}
-</div>
-</div>
-{/block:Answer}
-{block:Date}
-<div class="post-meta cl">
-<div class="inner cl">
-<div class="meta">
-<time class="meta-date"> {text:Translate Posted On Text}: <a class="open-modal" href="{Permalink}" data-id="{PostID}">{DayOfMonth} {Month} {Year}</a></time>
-</div>
-<ul class="share">
-<li class="post-share-parent" title="Share this post">
-<a class="post-share-toggle">{text:Translate Share Text}</a>
-<ul class="standard-share">
-<span class="share-facebook" title="Share on Facebook"><a href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"><i class="fa fa-facebook"></i>Facebook</a></span>
-<span class="share-twitter" title="Share on Twitter"><a href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"><i class="fa fa-twitter"></i>Twitter</a></span>
-<span class="share-google" title="Share on Google+"><a href="https://plus.google.com/share?url={Permalink}" target="_new"><i class="fa fa-google-plus"></i>Google +</a></span>
-</ul>
-</li>
-<li class="post-like" title="Like this post">
-{LikeButton color="grey" size="15"}
-<span class="like-text">{text:Translate Like Text}</span>
-<span class="like-text like-text-liked">{text:Translate Liked Text}</span>
-</li>
-<li class="post-reblog" title="Reblog this post">
-<a href="{ReblogURL}">{text:Translate Reblog Text}</a>
-</li>
-{block:HasTags}
-{block:Tags}<li class="the-tag tag-{Tag}"> <a href="{TagURL}">{Tag}</a> </li>{/block:Tags}
-{/block:HasTags}
-<li class="post-note-count"><a href="{Permalink}" data-id="{PostID}" class="meta-notes open-modal">
-{NoteCount} {text:Translate Notes Text}
-</a></li>
-<li class="stash-show-share">
-<a><span>{text:Translate Share Text}</span> <i class="im im-share"></i></a>
-<div class="show-share">
-<figure class="show-share-facebook"><a href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"><i class="im im-facebook"></i></a></figure><figure class="show-share-twitter"><a href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"><i class="im im-twitter"></i></a></figure><figure class="show-share-google"><a href="https://plus.google.com/share?url={Permalink}" target="_new"><i class="im im-google-plus"></i></a></figure><figure class="show-share-pinterest"><a target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"><i class="im im-pinterest"></i></a></figure>
-</div>
-</li>
-</ul>
-</div>
-</div>
-{block:PermalinkPage}
-{block:IfShowPostNotes}
-{block:NoteCount}
-<div id="notes" class="cl">
-{PostNotes}
-</div>
-{/block:NoteCount}
-{/block:IfShowPostNotes}
-{/block:PermalinkPage}
-{/block:Date}
-</article>
+                    <div class="arr-down">
+                        <i>Scroll</i>
+                    </div>
+                </div>
+            </div>
+        {/block:ifbanner}
+    {/block:IndexPage}
 
-{block:ContentSource}
-{/block:ContentSource}
-{/block:Posts}
-{block:IndexPage}</div>{/block:IndexPage}
-</div>
-</div>
-{block:Pagination}
-<div class="standard-pagination">
-<div class="wrapper">
-{block:PreviousPage}<a class="left" href="{PreviousPage}"><i class="fa fa-long-arrow-left"></i> Newer</a>{/block:PreviousPage}
-{block:NextPage}<a class="right older" href="{NextPage}">Older <i class="fa fa-long-arrow-right"></i></a>{/block:NextPage}
-</div>
-</div>
-{/block:Pagination}
-</div>
-</div>
-<div id="backToTop" class="footer-icon">
-<i class="im im-arrow-up"></i>
-</div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-<script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/Hn5pi6qej/plugins.js">
-    </script>
-<script src="https://static.tumblr.com/jzzkxgh/8s8pozaly/ten-toes.js"></script>
-{block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/zVmq84bst/modal.js"></script>{/block:IfModalPost}
-{block:IfTypeKitID}
+    <div class="close-modal">
+        <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z"></path></g></svg>
+    </div>
 
-<script type="text/javascript" src="//use.typekit.net/{text:TypeKit ID}.js"></script>
-<script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-{/block:IfTypeKitID}
-<script type="text/javascript">
+    <div class="progress-indicator">
+        <svg><g><circle cx="0" cy="0" r="20" class="animated-circle" transform="translate(50,50) rotate(-90)" /></g><g><circle cx="0" cy="0" r="38" transform="translate(50,50)" /></g></svg>
+    </div>
+
+    <a href="https://themes.stashfamily.com/themes/ten-toes/" class="stash-credit" target="_blank">
+        Theme by</br><svg width="75px" height="10px" viewBox="0 0 75 10" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M11.5694444,3.72222222 C12.4675971,3.72222222 13.1203683,3.95833097 13.5277778,4.43055556 C13.9351872,4.90278014 14.1388889,5.51851472 14.1388889,6.27777778 L14.1388889,7.43055556 C14.1388889,7.74537194 14.0879635,8.05555403 13.9861111,8.36111111 C13.8842588,8.66666819 13.7291677,8.9421284 13.5208333,9.1875 C13.312499,9.4328716 13.0486127,9.62962889 12.7291667,9.77777778 C12.4097206,9.92592667 12.0231504,10 11.5694444,10 L0.236111111,10 L0.236111111,7.18055556 L9.75,7.18055556 C10.0185199,7.18055556 10.1898144,7.13194493 10.2638889,7.03472222 C10.3379633,6.93749951 10.375,6.82870431 10.375,6.70833333 C10.375,6.59722167 10.3379633,6.49537083 10.2638889,6.40277778 C10.1898144,6.31018472 10.0185199,6.26388889 9.75,6.26388889 L2.56944444,6.26388889 C2.21759083,6.26388889 1.88426083,6.21064868 1.56944444,6.10416667 C1.25462806,5.99768465 0.981482639,5.84722319 0.75,5.65277778 C0.518517361,5.45833236 0.335648819,5.22685319 0.201388889,4.95833333 C0.0671289583,4.68981347 0,4.38889056 0,4.05555556 L0,2.44444444 C0,2.09259083 0.0671289583,1.76620521 0.201388889,1.46527778 C0.335648819,1.16435035 0.518517361,0.905093681 0.75,0.6875 C0.981482639,0.469906319 1.25462806,0.300926528 1.56944444,0.180555556 C1.88426083,0.0601845833 2.21759083,0 2.56944444,0 L13.6388889,0 L13.6388889,2.81944444 L4.38888889,2.81944444 C4.12036903,2.81944444 3.94907444,2.86342549 3.875,2.95138889 C3.80092556,3.03935229 3.76388889,3.14351792 3.76388889,3.26388889 C3.76388889,3.37500056 3.80092556,3.47916618 3.875,3.57638889 C3.94907444,3.6736116 4.12036903,3.72222222 4.38888889,3.72222222 L11.5694444,3.72222222 Z M29.1805556,0 L29.1805556,3.09722222 L24.1388889,3.09722222 L24.1388889,10 L20.2361111,10 L20.2361111,3.09722222 L15.1111111,3.09722222 L15.1111111,0 L29.1805556,0 Z M33.9722222,5.68055556 L36.0555556,5.68055556 L37.7361111,8.76388889 L32.2638889,8.76388889 L31.5833333,10 L27.4444444,10 L33.1944444,0 L38.0972222,0 L43.8472222,10 L39.7083333,10 L35.6388889,2.66666667 L33.9722222,5.68055556 Z M56.3194444,3.72222222 C57.2175971,3.72222222 57.8703683,3.95833097 58.2777778,4.43055556 C58.6851872,4.90278014 58.8888889,5.51851472 58.8888889,6.27777778 L58.8888889,7.43055556 C58.8888889,7.74537194 58.8379635,8.05555403 58.7361111,8.36111111 C58.6342588,8.66666819 58.4791677,8.9421284 58.2708333,9.1875 C58.062499,9.4328716 57.7986127,9.62962889 57.4791667,9.77777778 C57.1597206,9.92592667 56.7731504,10 56.3194444,10 L44.9861111,10 L44.9861111,7.18055556 L54.5,7.18055556 C54.7685199,7.18055556 54.9398144,7.13194493 55.0138889,7.03472222 C55.0879633,6.93749951 55.125,6.82870431 55.125,6.70833333 C55.125,6.59722167 55.0879633,6.49537083 55.0138889,6.40277778 C54.9398144,6.31018472 54.7685199,6.26388889 54.5,6.26388889 L47.3194444,6.26388889 C46.9675908,6.26388889 46.6342608,6.21064868 46.3194444,6.10416667 C46.0046281,5.99768465 45.7314826,5.84722319 45.5,5.65277778 C45.2685174,5.45833236 45.0856488,5.22685319 44.9513889,4.95833333 C44.817129,4.68981347 44.75,4.38889056 44.75,4.05555556 L44.75,2.44444444 C44.75,2.09259083 44.817129,1.76620521 44.9513889,1.46527778 C45.0856488,1.16435035 45.2685174,0.905093681 45.5,0.6875 C45.7314826,0.469906319 46.0046281,0.300926528 46.3194444,0.180555556 C46.6342608,0.0601845833 46.9675908,0 47.3194444,0 L58.3888889,0 L58.3888889,2.81944444 L49.1388889,2.81944444 C48.870369,2.81944444 48.6990744,2.86342549 48.625,2.95138889 C48.5509256,3.03935229 48.5138889,3.14351792 48.5138889,3.26388889 C48.5138889,3.37500056 48.5509256,3.47916618 48.625,3.57638889 C48.6990744,3.6736116 48.870369,3.72222222 49.1388889,3.72222222 L56.3194444,3.72222222 Z M74.7916667,0 L74.7916667,10 L70.8888889,10 L70.8888889,6.54166667 L66.5694444,6.54166667 L64.875,3.44444444 L70.8888889,3.44444444 L70.8888889,0 L74.7916667,0 Z M64.4583333,0 L64.4583333,10 L60.5555556,10 L60.5555556,0 L64.4583333,0 Z"  fill="#FFFFFF"></path></g></svg>
+    </a>
+
+
+    <div class="post-navigation stash-navigation">
+        <li class="stash-close-btn close">
+            <a><span>{text:Translate Close Text}</span><i class="im im-x-mark"></i></a>
+        </li>
+        <li class="stash-prev-btn">
+            <a><span>{text:Translate Prev Text}</span><i class="im im-arrow-left"></i></a>
+        </li>
+        <li class="stash-next-btn">
+            <a><span>{text:Translate Next Text}</span><i class="im im-arrow-right"></i></a>
+        </li>
+    </div>
+
+    <div class="stash-overlay">
+        <div class='stash-container container'>
+            <div class="stash-content">
+            </div>
+
+            <div class='stash-post-meta'>
+                <div class='stash-caption'>
+                    <div class="inner"></div>
+                </div>
+            </div>
+
+            <div class='stash-back-btn'>
+                <svg version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink" width="20" height="20" viewBox="0 0 20 20"><path d="M10.707 10.5l8.646-8.646c0.195-0.195 0.195-0.512 0-0.707s-0.512-0.195-0.707 0l-8.646 8.646-8.646-8.646c-0.195-0.195-0.512-0.195-0.707 0s-0.195 0.512 0 0.707l8.646 8.646-8.646 8.646c-0.195 0.195-0.195 0.512 0 0.707 0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146l8.646-8.646 8.646 8.646c0.098 0.098 0.226 0.146 0.354 0.146s0.256-0.049 0.354-0.146c0.195-0.195 0.195-0.512 0-0.707l-8.646-8.646z"></path></svg>
+            </div>
+        </div>
+    </div>
+
+    <div id="sidebar" class="{select:Header Text Case} ">
+        <div class="inner animated slow">
+            <div class="wrap">
+                <nav class="sidebar-navigation cl">
+
+                    <ul>
+                        <li class="avatar widget {select:Avatar Style}">
+                            <img src="{image:Header Avatar}" />
+                        </li>
+
+                        {block:IfHomeLink}
+                            <li><a href="/">{text:Translate Home Text}</a></li>
+                        {/block:IfHomeLink}
+
+                        {block:HasPages}
+                            {block:Pages}<li> <a href="{URL}">{Label}</a></li>{/block:Pages}
+                        {/block:HasPages}
+                        {block:IfCustomLink1URL}<li><a href="{text:Custom Link 1 URL}">{text:Custom Link 1 Name}</a></li>{/block:IfCustomLink1URL}
+                        {block:IfCustomLink2URL}<li><a href="{text:Custom Link 2 URL}">{text:Custom Link 2 Name}</a></li>{/block:IfCustomLink2URL}
+                        {block:IfCustomLink3URL}<li><a href="{text:Custom Link 3 URL}">{text:Custom Link 3 Name}</a></li>{/block:IfCustomLink3URL}
+                        {block:IfCustomLink4URL}<li><a href="{text:Custom Link 4 URL}">{text:Custom Link 4 Name}</a></li>{/block:IfCustomLink4URL}
+                        {block:IfCustomLink5URL}<li><a href="{text:Custom Link 5 URL}">{text:Custom Link 5 Name}</a></li>{/block:IfCustomLink5URL}
+                        {block:IfCustomLink6URL}<li><a href="{text:Custom Link 6 URL}">{text:Custom Link 6 Name}</a></li>{/block:IfCustomLink6URL}
+                        {block:IfCustomLink7URL}<li><a href="{text:Custom Link 7 URL}">{text:Custom Link 7 Name}</a></li>{/block:IfCustomLink7URL}
+                        {block:IfCustomLink8URL}<li><a href="{text:Custom Link 8 URL}">{text:Custom Link 8 Name}</a></li>{/block:IfCustomLink8URL}
+                        {block:IfCustomLink9URL}<li><a href="{text:Custom Link 9 URL}">{text:Custom Link 9 Name}</a></li>{/block:IfCustomLink9URL}
+                        {block:IfCustomLink10URL}<li><a href="{text:Custom Link 10 URL}">{text:Custom Link 10 Name}</a></li>{/block:IfCustomLink10URL}
+                        {block:AskEnabled}
+                        <li> <a class="stash-ask-page" href="https://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>
+                        {/block:AskEnabled}
+                        {block:SubmissionsEnabled}
+                        <li> <a href="https://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>
+                        {/block:SubmissionsEnabled}
+                         {block:IfArchiveLink}
+                        <li><a href="https://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>
+                        {/block:IfArchiveLink}
+                        {block:ifRandomLink}
+                        <li><a href="https://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>
+                        {/block:ifRandomLink}
+                        {block:ifRSSLink}
+                        <li><a href="{RSS}" title="{lang:RSS}">{lang:RSS}</a></li>
+                        {/block:ifRSSLink}
+                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><i class="fa fa-twitter"></i></a></li>{/block:ifTwitterURL}
+                        {block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}"><i class="fa fa-instagram"></i></a></li>{block:ifInstagramURL}
+                        {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa fa-facebook"></i></a></li>{/block:ifFacebookURL}
+                        {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa fa-youtube"></i></a></li>{/block:ifYoutubeURL}
+                        {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
+                        {block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}"><i class="fa fa-envelope"></i></a></li>{/block:ifEmailAddress}
+                        {block:if500pxURL}<li><a target="_blank" href="{text:500px URL}"><i class="fa fa-500px"></i></a></li>{/block:if500pxURL}
+                        {block:ifAmazonURL}<li><a target="_blank" href="{text:Amazon URL}"><i class="fa fa-amazon"></i></a></li>{/block:ifAmazonURL}
+                        {block:ifAppleURL}<li><a target="_blank" href="{text:Apple URL}"><i class="fa fa-apple"></i></a></li>{/block:ifAppleURL}
+                        {block:ifBandcampURL}<li><a target="_blank" href="{text:Bandcamp URL}"><i class="fa fa-bandcamp"></i></a></li>{/block:ifBandcampURL}
+                        {block:ifBehanceURL}<li><a target="_blank" href="{text:Behance URL}"><i class="fa fa-behance"></i></a></li>{/block:ifBehanceURL}
+                        {block:ifDribbbleURL}<li><a target="_blank" href="{text:Dribbble URL}"><i class="fa fa-dribbble"></i></a></li>{/block:ifDribbbleURL}
+                        {block:ifEtsyURL}<li><a target="_blank" href="{text:Etsy URL}"><i class="fa fa-etsy"></i></a></li>{/block:ifEtsyURL}
+                        {block:ifFlickrURL}<li><a target="_blank" href="{text:Flickr URL}"><i class="fa fa-flickr"></i></a></li>{/block:ifFlickrURL}
+                        {block:ifGithubURL}<li><a target="_blank" href="{text:Github URL}"><i class="fa fa-github"></i></a></li>{/block:ifGithubURL}
+                        {block:ifGooglePlusURL}<li><a target="_blank" href="{text:GooglePlus URL}"><i class="fa fa-google-plus"></i></a></li>{/block:ifGooglePlusURL}
+                        {block:ifLinkedinURL}<li><a target="_blank" href="{text:Linkedin URL}"><i class="fa fa-linkedin"></i></a></li>{/block:ifLinkedinURL}
+                        {block:ifPayPalURL}<li><a target="_blank" href="{text:PayPal URL}"><i class="fa fa-paypal"></i></a></li>{/block:ifPayPalURL}
+                        {block:ifPinterestURL}<li><a target="_blank" href="{text:Pinterest URL}"><i class="fa fa-pinterest"></i></a></li>{/block:ifPinterestURL}
+                        {block:ifPodcastURL}<li><a target="_blank" href="{text:Podcast URL}"><i class="fa fa-podcast"></i></a></li>{/block:ifPodcastURL}
+                        {block:ifMixcloudURL}<li><a target="_blank" href="{text:Mixcloud URL}"><i class="fa fa-mixcloud"></i></a></li>{/block:ifMixcloudURL}
+                        {block:ifSoundcloudURL}<li><a target="_blank" href="{text:Soundcloud URL}"><i class="fa fa-soundcloud"></i></a></li>{/block:ifSoundcloudURL}
+                        {block:ifSkypeURL}<li><a target="_blank" href="{text:Skype URL}"><i class="fa fa-skype"></i></a></li>{/block:ifSkypeURL}
+                        {block:ifSpotifyURL}<li><a target="_blank" href="{text:Spotify URL}"><i class="fa fa-spotify"></i></a></li>{/block:ifSpotifyURL}
+                        {block:ifTwitchURL}<li><a target="_blank" href="{text:Twitch URL}"><i class="fa fa-twitch"></i></a></li>{/block:ifTwitchURL}
+                        {block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}"><i class="fa fa-vimeo"></i></a></li>{/block:ifVimeoURL}
+                        {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}"><i class="fa fa-vk"></i></a></li>{/block:ifVKURL}
+                        {block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}"><i class="fa fa-wordpress"></i></a></li>{/block:ifWordpressURL}
+                        &nbsp;
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div id="header" class="{select:Header Text Case} ">
+        <div class="wrap">
+            <div class="inner">
+
+                {block:ifheaderavatarimage}
+                    <div class="avatar widget {select:Avatar Style}">
+                        <a href="/"><img src="{image:Header Avatar}" /></a>
+                    </div>
+                {/block:ifheaderavatarimage}
+
+                <div class="logo">
+                    {block:ifnotlogoimage}
+                        <a href="/" title="{lang:Home}">{Title}</a>
+                    {/block:ifnotlogoimage}
+                    {block:iflogoimage}
+                        <a href="/"><img src="{image:Logo}" alt="logo" /></a>
+                    {/block:iflogoimage}
+                </div>
+
+                <nav class="navigation cl">
+                    <ul>
+                        {block:IfHomeLink}<li><a href="/">{text:Translate Home Text}</a></li>{/block:IfHomeLink}
+                        {block:HasPages}
+                            {block:Pages}<li> <a href="{URL}">{Label}</a></li>{/block:Pages}
+                        {/block:HasPages}
+                        {block:IfCustomLink1URL}<li><a href="{text:Custom Link 1 URL}">{text:Custom Link 1 Name}</a></li>{/block:IfCustomLink1URL}
+                        {block:IfCustomLink2URL}<li><a href="{text:Custom Link 2 URL}">{text:Custom Link 2 Name}</a></li>{/block:IfCustomLink2URL}
+                        {block:IfCustomLink3URL}<li><a href="{text:Custom Link 3 URL}">{text:Custom Link 3 Name}</a></li>{/block:IfCustomLink3URL}
+                        {block:IfCustomLink4URL}<li><a href="{text:Custom Link 4 URL}">{text:Custom Link 4 Name}</a></li>{/block:IfCustomLink4URL}
+                        {block:IfCustomLink5URL}<li><a href="{text:Custom Link 5 URL}">{text:Custom Link 5 Name}</a></li>{/block:IfCustomLink5URL}
+                        {block:IfCustomLink6URL}<li><a href="{text:Custom Link 6 URL}">{text:Custom Link 6 Name}</a></li>{/block:IfCustomLink6URL}
+                        {block:IfCustomLink7URL}<li><a href="{text:Custom Link 7 URL}">{text:Custom Link 7 Name}</a></li>{/block:IfCustomLink7URL}
+                        {block:IfCustomLink8URL}<li><a href="{text:Custom Link 8 URL}">{text:Custom Link 8 Name}</a></li>{/block:IfCustomLink8URL}
+                        {block:IfCustomLink9URL}<li><a href="{text:Custom Link 9 URL}">{text:Custom Link 9 Name}</a></li>{/block:IfCustomLink9URL}
+                        {block:IfCustomLink10URL}<li><a href="{text:Custom Link 10 URL}">{text:Custom Link 10 Name}</a></li>{/block:IfCustomLink10URL}
+
+                        {block:AskEnabled}<li> <a class="stash-ask-page" href="https://{name}.tumblr.com/ask" title="{text:Ask Link Label}">{text:Ask Link Label}</a></li>{/block:AskEnabled}
+                        {block:SubmissionsEnabled}<li> <a href="https://{name}.tumblr.com/submit" title="{text:Submit Link Label}">{text:Submit Link Label}</a></li>{/block:SubmissionsEnabled}
+                        {block:IfArchiveLink}<li><a href="https://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>{/block:IfArchiveLink}
+                        {block:ifRandomLink}<li><a href="https://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>{/block:ifRandomLink}
+                        {block:ifRSSLink}<li><a href="{RSS}" title="{lang:RSS}">{lang:RSS}</a></li>{/block:ifRSSLink}
+                        &nbsp;
+                    </ul>
+                </nav>
+
+                <nav class="header-social cl">
+                    <ul class="social-links-icons social-links">
+                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}">Twitter</a></li>{/block:ifTwitterURL}
+                        {block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}">Instagram</a></li>{block:ifInstagramURL}
+                        {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}">Facebook</a></li>{/block:ifFacebookURL}
+                        {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}">Youtube</a></li>{/block:ifYoutubeURL}
+                        {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}">Snapchat</a></li>{/block:ifSnapchatURL}
+                        {block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}">Email</a></li>{/block:ifEmailAddress}
+                        {block:if500pxURL}<li><a target="_blank" href="{text:500px URL}">500px</a></li>{/block:if500pxURL}
+                        {block:ifAmazonURL}<li><a target="_blank" href="{text:Amazon URL}">Amazon</a></li>{/block:ifAmazonURL}
+                        {block:ifAppleURL}<li><a target="_blank" href="{text:Apple URL}">Apple</a></li>{/block:ifAppleURL}
+                        {block:ifBandcampURL}<li><a target="_blank" href="{text:Bandcamp URL}">Bandcamp</a></li>{/block:ifBandcampURL}
+                        {block:ifBehanceURL}<li><a target="_blank" href="{text:Behance URL}">Behance</a></li>{/block:ifBehanceURL}
+                        {block:ifDribbbleURL}<li><a target="_blank" href="{text:Dribbble URL}">Dribbble</a></li>{/block:ifDribbbleURL}
+                        {block:ifEtsyURL}<li><a target="_blank" href="{text:Etsy URL}">Etsy</a></li>{/block:ifEtsyURL}
+                        {block:ifFlickrURL}<li><a target="_blank" href="{text:Flickr URL}">Flickr</a></li>{/block:ifFlickrURL}
+                        {block:ifGithubURL}<li><a target="_blank" href="{text:Github URL}">Github</a></li>{/block:ifGithubURL}
+                        {block:ifGooglePlusURL}<li><a target="_blank" href="{text:GooglePlus URL}">Google +</a></li>{/block:ifGooglePlusURL}
+                        {block:ifLinkedinURL}<li><a target="_blank" href="{text:Linkedin URL}">LinkedIn</a></li>{/block:ifLinkedinURL}
+                        {block:ifPayPalURL}<li><a target="_blank" href="{text:PayPal URL}">PayPal</a></li>{/block:ifPayPalURL}
+                        {block:ifPinterestURL}<li><a target="_blank" href="{text:Pinterest URL}">Pinterest</a></li>{/block:ifPinterestURL}
+                        {block:ifPodcastURL}<li><a target="_blank" href="{text:Podcast URL}">Podcast</a></li>{/block:ifPodcastURL}
+                        {block:ifMixcloudURL}<li><a target="_blank" href="{text:Mixcloud URL}">Mixcloud</a></li>{/block:ifMixcloudURL}
+                        {block:ifSoundcloudURL}<li><a target="_blank" href="{text:Soundcloud URL}">Soundcloud</a></li>{/block:ifSoundcloudURL}
+                        {block:ifSkypeURL}<li><a target="_blank" href="{text:Skype URL}">Skype</a></li>{/block:ifSkypeURL}
+                        {block:ifSpotifyURL}<li><a target="_blank" href="{text:Spotify URL}">Spotify</a></li>{/block:ifSpotifyURL}
+                        {block:ifTwitchURL}<li><a target="_blank" href="{text:Twitch URL}">Twitch</a></li>{/block:ifTwitchURL}
+                        {block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}">Vimeo</a></li>{/block:ifVimeoURL}
+                        {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}">VK</a></li>{/block:ifVKURL}
+                        {block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}">Wordpress</a></li>{/block:ifWordpressURL}
+                        &nbsp;
+                    </ul>
+                </nav>
+
+                {block:ShowDescription}
+                    <div class="header-description"><p>{Description}</p></div>
+                    &nbsp;
+                {/block:ShowDescription}
+                
+                {block:IfInstagramUsername}
+                    <div id="instagram-feed">
+                        
+                    </div>
+                {/block:IfInstagramUsername}
+
+                {block:IfMobileMenu}
+                    <div class="sidebar-toggle">
+                        <i class="fa fa-bars fa-lg"></i>
+                    </div>
+                {/block:IfMobileMenu}
+                
+                <div class="close-mobile-modal">
+                    <svg width="16px" height="20px" viewBox="0 0 20 20" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"><path d="M7.172,10 L3.642,6.47 L0.102,2.93 L2.928,0.1 L10,7.173 L17.07,0.103 L19.9,2.93 L12.827,10 L19.897,17.07 L17.07,19.9 L10,12.827 L2.93,19.897 L0.1,17.07 L7.173,10 L7.172,10 Z"></path></g></svg>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+    <div class="page-container">
+        <div id="stash" class="page {block:PermalinkPage}single {/block:PermalinkPage}">
+            {block:IndexPage}<div id="ants-loader" style="opacity: 0;"><div class="loading-icon"></div></div>{/block:IndexPage}
+
+            <div id="posts">
+                <div class="wrap">
+
+                <div id="stash-ants">
+                    <div class="ants-sizer-{select:Posts Columns}"></div>
+                    <div class="ants-gutter-{select:Posts Columns}"></div>
+
+                    {block:Posts inlineMediaWidth="1280"}
+                        {block:Photo}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-photo pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}{block:PermalinkPage}{block:Date} post-single{/block:Date}{/block:PermalinkPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photo">
+                                <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                                <div class="inner">
+                                <div class="media">
+
+                                    {block:IndexPage}
+                                        <a class="open-modal" href="{Permalink}" data-id="{PostID}">
+                                            <div class="overlay-bg"></div>
+                                            <img src="{block:IfHighQualityImages}{PhotoURL-HighRes}{/block:IfHighQualityImages}{block:IfNotHighQualityImages}{PhotoURL-500}{/block:IfNotHighQualityImages}" data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+                                        </a>
+
+                                        <div class="overlay">
+                                            {block:Caption}<div class="post-caption">{Caption}</div>{/block:Caption}
+
+                                        <div class="post-share">
+                                            <div class="close-post-share">
+                                                <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\<path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z" fill="#FFFFFF"></path></g></svg>
+                                            </div>
+
+                                            <div class="social-media">
+                                                <span class="share-facebook" title="Share on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"></a></span><span class="share-twitter" title="Share on Twitter"><a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"></a></span><span class="share-google" title="Share on Google+"><a class="fa fa-google-plus" ref="https://plus.google.com/share?url={Permalink}" target="_new"></a></span><span class="share-pinterest"><a class="fa fa-pinterest" target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"></a></span></div>
+
+                                                <div class="social-media-footer">
+                                                    <a class="btn copy-btn" data-clipboard-text="{Permalink}">Copy Link</a>
+                                                </div>
+                                            </div>
+
+                                            <ul class="post-footer">
+                                                <li class="share-toggle" data-post-id="{PostID}" title="Share this post">{text:Translate Share Text}</li>
+                                                <li class="post-like" title="Like this post">
+                                                    {LikeButton color="grey" size="15"}
+                                                    <span class="like-text">{text:Translate Like Text}</span>
+                                                    <span class="like-text like-text-liked">{text:Translate Liked Text}</span>
+                                                </li>
+                                                <li class="post-reblog" title="Reblog this post"><a href="{ReblogURL}">{text:Translate Reblog Text}</a></li>
+                                                <li class="post-note-count"><span><a class="open-modal" data-id="{PostID}">
+                                                {NoteCount} {text:Translate Notes Text}</a></span></li>
+                                            </ul>
+                                        </div>
+                                    {/block:IndexPage}
+
+
+                                    {block:PermalinkPage}
+                                        {LinkOpenTag}
+                                            <div class="overlay-bg"></div>
+                                            <img src="{PhotoURL-HighRes}" data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" />
+                                        {LinkCloseTag}
+                                    {/block:PermalinkPage}
+
+                                </div>
+
+                                <div class="content">
+                                    {block:Caption}{Caption}{/block:Caption}
+                                </div>
+
+                        {/block:Photo}
+
+                        {block:Photoset}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-photoset pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photoset">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            <div class="media">
+                                <div class="stash-photoset ips">
+                                    <div class="overlay-bg"></div>
+                                    <div class="ps-options ps-nav-left"><i class="im im-arrow-left"></i></div>
+                                    <div class="ps-options ps-nav-right"><i class="im im-arrow-right"></i></div>
+                                    <div class="ps-options photoset-count" data-id="{PostID}"><span>1</span> / {PhotoCount}</div>
+
+                                    <div class="photo-slideshow" id="photoset_{PostID}" data-layout="{PhotosetLayout}">
+                                        {block:Photos}
+                                        {block:IndexPage}
+                                        <a class="open-modal single-photoset" href="{Permalink}" data-id="{PostID}">
+                                        <img data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" src="{block:IfHighQualityImages}{PhotoURL-HighRes}{/block:IfHighQualityImages}{block:IfNotHighQualityImages}{PhotoURL-500}{/block:IfNotHighQualityImages}" />
+                                        </a>
+                                        {/block:IndexPage}
+                                        {block:PermalinkPage}
+                                        <a class="single-photoset" href="{PhotoURL-HighRes}"><img data-img-hq="{PhotoURL-HighRes}" alt="{PhotoAlt}" src="{PhotoURL-HighRes}" /></a>
+                                        {/block:PermalinkPage}
+                                        {/block:Photos}
+                                    </div>
+                                </div>
+                            </div>
+
+                            {block:Caption}<div class="content">{Caption}</div>{/block:Caption}
+                        {/block:Photoset}
+
+
+                        {block:Text}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-text {block:Tags}{Tag} {/block:Tags}{/block:IndexPage} {block:PermalinkPage}{block:Date} post-single single-text{/block:Date}{/block:PermalinkPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="text">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            {block:PermalinkPage}<div class="post-left">{/block:PermalinkPage}
+                            <div class="inside">
+                            <div class="content">
+                                {block:IndexPage}
+                                {block:Title}<h2 class="post-title"><a class="open-modal" href="{Permalink}" data-id="{PostID}">{Title}</a></h2>{/block:Title}
+                                {/block:IndexPage}
+                                {block:PermalinkPage}
+                                {block:Title}<h2 class="post-title">{Title}</h2>{/block:Title}
+                                {/block:PermalinkPage}
+
+                                {block:NotReblog}
+                                {Body}
+                                {/block:NotReblog}
+
+                                {block:RebloggedFrom}
+                                    <div class="reblog-list">
+                                        {block:Reblogs}
+                                        <div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+                                        <div class="post-reblog-header">
+                                        <div class="post-avatar">
+                                        <div class="post-avatar-wrapper">
+                                        {block:IsActive}
+                                        <a class="post-avatar-link{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank">
+                                        <img class="post-avatar-image" src="{PortraitURL-64}">
+                                        </a>
+                                        {/block:IsActive}
+                                        {block:IsDeactivated}
+                                        <span class="inactive reblog-avatar{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}">
+                                        <img class="post-avatar-image" src="{PortraitURL-64}">
+                                        </span>
+                                        {/block:IsDeactivated}
+                                        </div>
+                                        </div>
+                                        {block:IsActive}
+                                        <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>
+                                        {/block:IsActive}
+                                        {block:IsDeactivated}
+                                        <span class="inactive post-tumblelog-name">{Username}</span>
+                                        {/block:IsDeactivated}
+                                        </div>
+                                        <div class="post-reblog-content">
+                                        <div class="post-body">
+                                        {Body}
+                                        </div>
+                                        </div>
+                                        </div>
+                                        {/block:Reblogs}
+                                    </div>
+                                {/block:RebloggedFrom}
+
+                            </div>
+                        {/block:Text}
+
+
+                        {block:Audio}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-audio {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="audio">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            <div class="inside">
+                            <div class="media">
+                                <div class="albumart">{block:AlbumArt}<img src="{AlbumArtURL}" width="500" height="500" />{/block:AlbumArt}</div>
+                                <div class="player">{AudioPlayerBlack}</div>
+                                {block:AudioEmbed}{AudioEmbed}{/block:AudioEmbed}
+                            </div>
+
+                            <a class="ps-options open-modal" href="{Permalink}" data-id="{PostID}"><i class="im im-maximize"></i></a>
+                            <div class="content">{block:Caption}{Caption}{/block:Caption}</div>
+                        {/block:Audio}
+
+
+                        {block:Video}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-video {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="video">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            <div class="inside">
+                            <div class="media">{Video-500}</div>
+                            <a class="ps-options open-modal" href="{Permalink}" data-id="{PostID}"><i class="im im-maximize"></i></a>
+                            <div class="content">{block:Caption}{Caption}{/block:Caption}</div>
+                        {/block:Video}
+
+
+                        {block:Quote}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-quote {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="quote">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            <div class="inside">
+                            <div class="content">
+                                <blockquote>{Quote}</blockquote>
+                                <figcaption>{block:Source}- {Source}{/block:Source}</figcaption>
+                            </div>
+                        {/block:Quote}
+
+                        {block:Link}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-link {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="link">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            <div class="inside">
+                            <div class="content">
+                                <h1><a class="link" href="{URL}">{Name}</a></h1>
+                                {block:Description}{Description}{/block:Description}
+                            </div>
+                        {/block:Link}
+
+                        {block:Chat}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-chat {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="chat">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            <div class="content">
+                                <ul class="chat">
+                                {block:Lines}<li class="{Alt}">{block:Label}<span class="person">{Label}</span>{/block:Label}<span class="said"> {Line} </span></li>{/block:Lines}
+                                </ul>
+                            </div>
+                        {/block:Chat}
+
+                        {block:Answer}
+                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post post-answer {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="answer">
+                            <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                            <div class="inside">
+                            <div class="content">
+                                <div class="asker-box">
+                                 <img src="{AskerPortraitURL-24}" /><span class="the-asker">{Asker}</span> {text:Translate asked Text}: {Question}
+                                </div>
+                                <div class="answer">
+                                    {Answer}
+                                </div>
+                            </div>
+                        {/block:Answer}
+
+                        {block:Date}
+                            <div class="post-meta cl">
+                                <div class="inner cl">
+
+                                    <div class="meta">
+                                        <time class="meta-date"> {text:Translate Posted On Text}: <a class="open-modal" href="{Permalink}" data-id="{PostID}">{DayOfMonth} {Month} {Year}</a></time>
+                                    </div>
+
+                                    <ul class="share">
+                                        <li class="post-share-parent" title="Share this post">
+                                            <a class="post-share-toggle">{text:Translate Share Text}</a>
+                                            <ul class="standard-share">
+                                                <span class="share-facebook" title="Share on Facebook"><a href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"><i class="fa fa-facebook"></i>Facebook</a></span>
+                                                <span class="share-twitter" title="Share on Twitter"><a href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"><i class="fa fa-twitter"></i>Twitter</a></span>
+                                                <span class="share-google" title="Share on Google+"><a href="https://plus.google.com/share?url={Permalink}" target="_new"><i class="fa fa-google-plus"></i>Google +</a></span>
+                                            </ul>
+                                        </li>
+
+                                        <li class="post-like" title="Like this post">
+                                            {LikeButton color="grey" size="15"}
+                                            <span class="like-text">{text:Translate Like Text}</span>
+                                            <span class="like-text like-text-liked">{text:Translate Liked Text}</span>
+                                        </li>
+                                        <li class="post-reblog" title="Reblog this post">
+                                            <a href="{ReblogURL}">{text:Translate Reblog Text}</a>
+                                        </li>
+
+                                        {block:HasTags}
+                                            {block:Tags}<li class="the-tag tag-{Tag}"> <a href="{TagURL}">{Tag}</a> </li>{/block:Tags}
+                                        {/block:HasTags}
+
+                                        <li class="post-note-count"><a href="{Permalink}" data-id="{PostID}" class="meta-notes open-modal">
+                                            {NoteCount} {text:Translate Notes Text}
+                                        </a></li>
+
+                                        <li class="stash-show-share">
+                                            <a><span>{text:Translate Share Text}</span> <i class="im im-share"></i></a>
+                                            <div class="show-share">
+                                                <figure class="show-share-facebook"><a href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"><i class="im im-facebook"></i></a></figure><figure class="show-share-twitter"><a href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"><i class="im im-twitter"></i></a></figure><figure class="show-share-google"><a href="https://plus.google.com/share?url={Permalink}" target="_new"><i class="im im-google-plus"></i></a></figure><figure class="show-share-pinterest"><a target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"><i class="im im-pinterest"></i></a></figure>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            {block:PermalinkPage}
+                                {block:IfShowPostNotes}
+                                    {block:NoteCount}
+                                        <div id="notes" class="cl">
+                                            {PostNotes}
+                                        </div>
+                                    {/block:NoteCount}
+                                {/block:IfShowPostNotes}
+                            {/block:PermalinkPage}
+                        {/block:Date}
+
+                            </article>
+
+                        {block:ContentSource}
+                        {/block:ContentSource}
+                    {/block:Posts}
+                    {block:IndexPage}</div>{/block:IndexPage}
+                </div>
+            </div>
+
+            {block:Pagination}
+                <div class="standard-pagination">
+                    <div class="wrapper">
+                        {block:PreviousPage}<a class="left" href="{PreviousPage}"><i class="fa fa-long-arrow-left"></i> Newer</a>{/block:PreviousPage}
+                        {block:NextPage}<a class="right older" href="{NextPage}">Older <i class="fa fa-long-arrow-right"></i></a>{/block:NextPage}
+                    </div>
+                </div>
+            {/block:Pagination}
+        </div>
+    </div>
+
+    <div id="backToTop" class="footer-icon">
+        <i class="im im-arrow-up"></i>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/VmNqi8shy/plugins.js">
+        </script>
+    <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
+
+    {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/zVmq84bst/modal.js"></script>{/block:IfModalPost}
+    {block:IfTypeKitID}
+        <script type="text/javascript" src="//use.typekit.net/{text:TypeKit ID}.js"></script>
+        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
+    {/block:IfTypeKitID}
+
+    <script type="text/javascript">
         (function($) {
             var windowwidth = $(document).width();
             $(document).ready(function(){
@@ -2020,37 +2101,54 @@ Menu
                 $('.get-started-overlay').addClass('open');
             }
         });
-        
-        {block:IfInstagramWidgetUserID}
-        var userFeed = new Instafeed({get:"user",userId:{text:Instagram Widget UserID},resolution:"standard_resolution", limit:{text:Instagram Widget Feed Count},accessToken:"{text:Instagram Widget Access Token}"});userFeed.run();
-        {/block:IfInstagramWidgetUserID} 
-    </script>
-{block:IfGoogleAnalyticsID}
-<script>
-        var _gaq=[['_setAccount','{text:Google Analytics ID}'],['_trackPageview']];
-        (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-        g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-        s.parentNode.insertBefore(g,s)}(document,'script'));
-    </script>
-{/block:IfGoogleAnalyticsID}
 
-<div class='customize-demo demo-note'>
-    <nav class="cl">
-    <ul>
-    <li class="get-started-toggle demo-toggle"><a>Get Started <i class="im im-angle-down"></i></a></li>
-    <li class="remove-stash-credit demo-toggle"><a>License <i class="im im-angle-down"></i></a></li>
-    </ul>
-    </nav>
-    <div class="get-started-overlay demo-overlay">
-    <p>1. On the Customize screen turn off the Use default mobile theme option under Advanced Options. </br><img src="https://static.tumblr.com/jzzkxgh/o2Yoomruj/default_mobile_theme.png" /></p>
-    <p>2. Remove the stash logo from your website by getting a <a href="https://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
-    <p>3. For the Instagram feed generate your <a href="https://themes.stashfamily.com/instagram" target="_blank">Access Token & User ID here</a>.</p>
-    <p>4. If you still need help check out our <a href="https://themes.stashfamily.com/help/" target="_blank">help section</a> or the <a href="https://themes.stashfamily.com/docs/ten-toes/" target="_blank">theme documentation</a>.</p>
+    </script>
+    
+    {block:IfGoogleAnalyticsID}
+        <script>
+            var _gaq=[['_setAccount','{text:Google Analytics ID}'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+    {/block:IfGoogleAnalyticsID}
+
+    <div class='customize-demo demo-note'>
+        <nav class="cl"><ul><li class="get-started-toggle demo-toggle"><a><b>Get Started</b> <i class="im im-angle-down"></i></a></li></ul></nav>
+        
+        <div class="get-started-overlay demo-overlay">
+            <p><b>Enable mobile theme</b></br> On the Customize screen turn off the Use default mobile theme option under Advanced Options. </br><img src="https://static.tumblr.com/jzzkxgh/o2Yoomruj/default_mobile_theme.png" /></p>
+            
+            <p><b>Add instagram feed</b></br> Enter your username in the "Instagram Username" box. </br><img src="https://static.tumblr.com/jzzkxgh/Uqsqi8zlv/insta-feed.jpg" /></p>
+            
+            <p><b>Display avatar image</b></br> Upload an image to the "Header Avatar" option, square images work best. </br><img src="https://static.tumblr.com/jzzkxgh/Pnhqi7ltv/header-avatar-img.jpg" /></p>
+            
+            <p><b>Remove stash credit</b></br> Remove the stash logo from your website by getting a <a href="https://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
+            
+            <p><b>More help & customization</b></br> If you still need more check out our <a href="https://themes.stashfamily.com/help/" target="_blank">help section</a> or the <a href="https://themes.stashfamily.com/docs/ten-toes/" target="_blank">theme docs</a>.</p>
+        </div>
     </div>
-    <div class="remove-stash-overlay demo-overlay">
-    <p><a href="https://themes.stashfamily.com/add-ons/full-license/">Full License</a>.</p>
-    </div>
-</div>
+
+
+    {block:IfInstagramUsername}
+        <script>
+            (function($) {
+                $.instagramFeed({
+                    'username': '{text:Instagram Username}',
+                    'container': "#instagram-feed",
+                    'display_profile': {block:IfInstagramFeedShowAvatar}true{/block:IfInstagramFeedShowAvatar}{block:IfNotInstagramFeedShowAvatar}false{/block:IfNotInstagramFeedShowAvatar},
+                    'display_biography': {block:IfInstagramFeedShowDescription}true{/block:IfInstagramFeedShowDescription}{block:IfNotInstagramFeedShowDescription}false{/block:IfNotInstagramFeedShowDescription},
+                    'display_gallery': true,
+                    'get_raw_json': false,
+                    'callback': null,
+                    'styling': true,
+                    'items': {text:Instagram Feed Photo Count},
+                    'items_per_row': 2,
+                    'margin': 1
+                });
+            })(jQuery); 
+        </script>
+    {/block:IfInstagramUsername}
 
 
 </body>
