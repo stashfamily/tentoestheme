@@ -203,7 +203,7 @@
     {block:IfBodyFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Body Font}:{select:Body Font Weight}, 400,400italic,700,700italic">{/block:IfBodyFont}
     {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
     {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
-    <link href="https://static.tumblr.com/jzzkxgh/pCDqi8zuc/core.css" rel="stylesheet">
+    <link href="https://static.tumblr.com/jzzkxgh/i2Mqi9da9/core.css" rel="stylesheet">
 
     <style type="text/css">
         
@@ -1446,12 +1446,13 @@
     <div id="sidebar" class="{select:Header Text Case} ">
         <div class="inner animated slow">
             <div class="wrap">
-                <nav class="sidebar-navigation cl">
-
+                <nav class="sidebar-navigation widget cl">
                     <ul>
-                        <li class="avatar widget {select:Avatar Style}">
-                            <img src="{image:Header Avatar}" />
-                        </li>
+                        {block:IfHeaderAvatarimage}
+                            <li class="avatar widget {select:Avatar Style}">
+                                <img src="{image:Header Avatar}" />
+                            </li>
+                        {/block:IfHeaderAvatarimage}
 
                         {block:IfHomeLink}
                             <li><a href="/">{text:Translate Home Text}</a></li>
@@ -1485,6 +1486,11 @@
                         {block:ifRSSLink}
                         <li><a href="{RSS}" title="{lang:RSS}">{lang:RSS}</a></li>
                         {/block:ifRSSLink}
+                    </ul>
+                </nav>
+                        
+                <nav class="sidebar-social widget cl">
+                    <ul class="social-links-icons social-links">
                         {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><i class="fa fa-twitter"></i></a></li>{/block:ifTwitterURL}
                         {block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}"><i class="fa fa-instagram"></i></a></li>{block:ifInstagramURL}
                         {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa fa-facebook"></i></a></li>{/block:ifFacebookURL}
@@ -1513,9 +1519,14 @@
                         {block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}"><i class="fa fa-vimeo"></i></a></li>{/block:ifVimeoURL}
                         {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}"><i class="fa fa-vk"></i></a></li>{/block:ifVKURL}
                         {block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}"><i class="fa fa-wordpress"></i></a></li>{/block:ifWordpressURL}
-                        &nbsp;
+
                     </ul>
                 </nav>
+                
+                {block:ShowDescription}
+                    <div class="sidebar-description widget"><p>{Description}</p></div>
+                    &nbsp;
+                {/block:ShowDescription}
             </div>
         </div>
     </div>
