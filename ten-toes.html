@@ -56,7 +56,7 @@
         <meta name="select:Body Font Weight" content="400" Title="Normal" /><meta name="select:Body Font Weight" content="700" Title="Bold" /><meta name="select:Body Font Weight" content="100" Title="100" /><meta name="select:Body Font Weight" content="200" Title="200" /><meta name="select:Body Font Weight" content="300" Title="300" /><meta name="select:Body Font Weight" content="500" Title="500" /><meta name="select:Body Font Weight" content="600" Title="600" /><meta name="select:Body Font Weight" content="800" Title="800" /><meta name="select:Body Font Weight" content="900" Title="900" />
         <meta name="select:Header Font Weight" content="700" Title="Bold" /><meta name="select:Header Font Weight" content="400" Title="Normal" /><meta name="select:Header Font Weight" content="100" Title="100" /><meta name="select:Header Font Weight" content="200" Title="200" /><meta name="select:Header Font Weight" content="300" Title="300" /><meta name="select:Header Font Weight" content="500" Title="500" /><meta name="select:Header Font Weight" content="600" Title="600" /><meta name="select:Header Font Weight" content="800" Title="800" /><meta name="select:Header Font Weight" content="900" Title="900" />
         <meta name="select:Logo Font Weight" content="700" Title="Bold" /><meta name="select:Logo Font Weight" content="400" Title="Normal" /><meta name="select:Logo Font Weight" content="100" Title="100" /><meta name="select:Logo Font Weight" content="200" Title="200" /><meta name="select:Logo Font Weight" content="300" Title="300" /><meta name="select:Logo Font Weight" content="500" Title="500" /><meta name="select:Logo Font Weight" content="600" Title="600" /><meta name="select:Logo Font Weight" content="800" Title="800" /><meta name="select:Logo Font Weight" content="900" Title="900" />
-        <meta name="select:Logo Text" content="lowercase" Title="Lowercase" /><meta name="select:Logo Text" content="normal" Title="Normal" /><meta name="select:Logo Text" content="uppercase" Title="Uppercase" />
+        <meta name="select:Logo Text Case" content="lowercase" Title="Lowercase" /><meta name="select:Logo Text Case" content="normal" Title="Normal" /><meta name="select:Logo Text Case" content="uppercase" Title="Uppercase" />
         <meta name="select:Photo Overlay Font Weight" content="400" Title="Normal" /><meta name="select:Photo Overlay Font Weight" content="700" Title="Bold" />
         <meta name="select:Banner Text Font Weight" content="400" Title="Normal" /><meta name="select:Banner Text Font Weight" content="700" Title="Bold" /><meta name="select:Banner Text Font Weight" content="100" Title="100" /><meta name="select:Banner Text Font Weight" content="200" Title="200" /><meta name="select:Banner Text Font Weight" content="300" Title="300" /><meta name="select:Banner Text Font Weight" content="500" Title="500" /><meta name="select:Banner Text Font Weight" content="600" Title="600" /><meta name="select:Banner Text Font Weight" content="800" Title="800" /><meta name="select:Banner Text Font Weight" content="900" Title="900" />
 
@@ -1543,7 +1543,7 @@
                     </div>
                 {/block:ifheaderavatarimage}
 
-                <div class="logo">
+                <div class="logo {select:Header Text Case}">
                     {block:ifnotlogoimage}
                         <a href="/" title="{lang:Home}">{Title}</a>
                     {/block:ifnotlogoimage}
