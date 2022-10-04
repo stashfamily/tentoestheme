@@ -4,9 +4,6 @@
 
     Ten Toes v2 Platinum
     by: Stashthemes
-    
-    Updates:
-        - Instagram Feed added (Instagram Username method)
 
 -->
 
@@ -40,6 +37,7 @@
         <meta name="if:Repeat Background Image" content="0">
 
         <meta name="text:Instagram Username" content="" />
+        <meta name="text:Instagram Access Token" content="" />
         <meta name="text:Instagram Feed Photo Count" content="6" />
 
         <meta name="text:Font Size" content="13px" />
@@ -924,9 +922,6 @@
         }
         
         @media (max-width: 740px) { 
-            #instagram-feed {
-                display:none;
-            }
             
             .post {
                 opacity:1 !important;
@@ -1147,8 +1142,8 @@
         }
         
         .demo-note nav {
-            text-transform:uppercase;
-            font-size:16px;
+            text-transform:normal;
+            font-size:15px;
         }
         
         .demo-note nav ul {
@@ -1179,7 +1174,8 @@
         }
         
         .get-started-toggle {
-            background:url('https://static.tumblr.com/jzzkxgh/Nn0qi7lym/glitter-og.gif');
+            background:#111111;
+            border-radius:6px;
         }
         
         .get-started-toggle a {
@@ -1241,6 +1237,30 @@
         body.tagged-page .post {
             opacity:1;
             visibility:visible;
+        }
+        
+        .stash-insta-wrap i {
+            margin-right:3px;
+        }
+        
+        .stash-insta-wrap {
+            margin-bottom:5px;
+        }
+        
+        #instafeed {
+          display: flex;
+          flex-direction: row;
+          flex-wrap: wrap;
+        }
+        
+        #instafeed a {
+            flex: 50%;
+            width:50%;
+        }
+        
+        #instafeed div .insta-username {
+            font-size:{text:Font Size} !important;
+            font-weight:bold;
         }
           
     </style>
@@ -1617,11 +1637,12 @@
                     &nbsp;
                 {/block:ShowDescription}
                 
-                {block:IfInstagramUsername}
-                    <div id="instagram-feed">
+                {block:IfInstagramAccessToken}
+                    {block:IfInstagramUsername}<div class="insta-feed"><a href="{text:Instagram Username}"><i class="fa fa-instagram"></i> {text:Instagram Username}</a></div>{/block:IfInstagramUsername}
+                    <div id="instafeed">
                         
                     </div>
-                {/block:IfInstagramUsername}
+                {/block:IfInstagramAccessToken}
 
                 {block:IfMobileMenu}
                     <div class="sidebar-toggle">
@@ -1946,7 +1967,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/VmNqi8shy/plugins.js">
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/dFOr7iwbp/plugins.js">
         </script>
     <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
 
@@ -2131,6 +2152,13 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
     {/block:IfGoogleAnalyticsID}
+    
+<style type="text/css">
+    body .tmblr-iframe--follow-teaser, body .tmblr-iframe--gdpr-banner {
+        display:none !important;
+    }
+</style>
+ 
 
     <div class='customize-demo demo-note'>
         <nav class="cl"><ul><li class="get-started-toggle demo-toggle"><a><b>Get Started</b> <i class="im im-angle-down"></i></a></li></ul></nav>
@@ -2149,25 +2177,19 @@
     </div>
 
 
-    {block:IfInstagramUsername}
-        <script>
-            (function($) {
-                $.instagramFeed({
-                    'username': '{text:Instagram Username}',
-                    'container': "#instagram-feed",
-                    'display_profile': {block:IfInstagramFeedShowAvatar}true{/block:IfInstagramFeedShowAvatar}{block:IfNotInstagramFeedShowAvatar}false{/block:IfNotInstagramFeedShowAvatar},
-                    'display_biography': {block:IfInstagramFeedShowDescription}true{/block:IfInstagramFeedShowDescription}{block:IfNotInstagramFeedShowDescription}false{/block:IfNotInstagramFeedShowDescription},
-                    'display_gallery': true,
-                    'get_raw_json': false,
-                    'callback': null,
-                    'styling': true,
-                    'items': {text:Instagram Feed Photo Count},
-                    'items_per_row': 2,
-                    'margin': 1
-                });
-            })(jQuery); 
+
+    <!-- Replace with InstafeedJS 2 with similar settings -->
+    <!-- drop instafeedjs into plugins.js the nreupload -->
+
+    {block:IfInstagramAccessToken}
+        <script type="text/javascript">
+            var feed = new Instafeed({
+              accessToken: '{text:Instagram Access Token}',
+              limit: {text:Instagram Feed Photo Count}
+            });
+            feed.run();
         </script>
-    {/block:IfInstagramUsername}
+    {/block:IfInstagramAccessToken}
 
 
 </body>
