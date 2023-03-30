@@ -1276,6 +1276,14 @@
             opacity:0.8;
         }
         
+        .content audio, .content video {
+            width:100%;
+        }
+        
+        figure.tmblr-embed.tmblr-full iframe {
+            max-width: 100%;
+        }
+        
         /** Social Icons Instead **/
         
         .header-social {
@@ -1287,6 +1295,8 @@
             font-size: 18px;
             display:inline-block;
         }
+        
+        
           
     </style>
 </head>
@@ -1536,34 +1546,34 @@
                         
                 <nav class="sidebar-social widget cl">
                     <ul class="social-links-icons social-links">
-                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><i class="fa fa-twitter"></i></a></li>{/block:ifTwitterURL}
-                        {block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}"><i class="fa fa-instagram"></i></a></li>{block:ifInstagramURL}
-                        {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa fa-facebook"></i></a></li>{/block:ifFacebookURL}
-                        {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa fa-youtube"></i></a></li>{/block:ifYoutubeURL}
-                        {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
-                        {block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}"><i class="fa fa-envelope"></i></a></li>{/block:ifEmailAddress}
-                        {block:if500pxURL}<li><a target="_blank" href="{text:500px URL}"><i class="fa fa-500px"></i></a></li>{/block:if500pxURL}
-                        {block:ifAmazonURL}<li><a target="_blank" href="{text:Amazon URL}"><i class="fa fa-amazon"></i></a></li>{/block:ifAmazonURL}
-                        {block:ifAppleURL}<li><a target="_blank" href="{text:Apple URL}"><i class="fa fa-apple"></i></a></li>{/block:ifAppleURL}
-                        {block:ifBandcampURL}<li><a target="_blank" href="{text:Bandcamp URL}"><i class="fa fa-bandcamp"></i></a></li>{/block:ifBandcampURL}
-                        {block:ifBehanceURL}<li><a target="_blank" href="{text:Behance URL}"><i class="fa fa-behance"></i></a></li>{/block:ifBehanceURL}
-                        {block:ifDribbbleURL}<li><a target="_blank" href="{text:Dribbble URL}"><i class="fa fa-dribbble"></i></a></li>{/block:ifDribbbleURL}
-                        {block:ifEtsyURL}<li><a target="_blank" href="{text:Etsy URL}"><i class="fa fa-etsy"></i></a></li>{/block:ifEtsyURL}
-                        {block:ifFlickrURL}<li><a target="_blank" href="{text:Flickr URL}"><i class="fa fa-flickr"></i></a></li>{/block:ifFlickrURL}
-                        {block:ifGithubURL}<li><a target="_blank" href="{text:Github URL}"><i class="fa fa-github"></i></a></li>{/block:ifGithubURL}
-                        {block:ifGooglePlusURL}<li><a target="_blank" href="{text:GooglePlus URL}"><i class="fa fa-google-plus"></i></a></li>{/block:ifGooglePlusURL}
-                        {block:ifLinkedinURL}<li><a target="_blank" href="{text:Linkedin URL}"><i class="fa fa-linkedin"></i></a></li>{/block:ifLinkedinURL}
-                        {block:ifPayPalURL}<li><a target="_blank" href="{text:PayPal URL}"><i class="fa fa-paypal"></i></a></li>{/block:ifPayPalURL}
-                        {block:ifPinterestURL}<li><a target="_blank" href="{text:Pinterest URL}"><i class="fa fa-pinterest"></i></a></li>{/block:ifPinterestURL}
-                        {block:ifPodcastURL}<li><a target="_blank" href="{text:Podcast URL}"><i class="fa fa-podcast"></i></a></li>{/block:ifPodcastURL}
-                        {block:ifMixcloudURL}<li><a target="_blank" href="{text:Mixcloud URL}"><i class="fa fa-mixcloud"></i></a></li>{/block:ifMixcloudURL}
-                        {block:ifSoundcloudURL}<li><a target="_blank" href="{text:Soundcloud URL}"><i class="fa fa-soundcloud"></i></a></li>{/block:ifSoundcloudURL}
-                        {block:ifSkypeURL}<li><a target="_blank" href="{text:Skype URL}"><i class="fa fa-skype"></i></a></li>{/block:ifSkypeURL}
-                        {block:ifSpotifyURL}<li><a target="_blank" href="{text:Spotify URL}"><i class="fa fa-spotify"></i></a></li>{/block:ifSpotifyURL}
-                        {block:ifTwitchURL}<li><a target="_blank" href="{text:Twitch URL}"><i class="fa fa-twitch"></i></a></li>{/block:ifTwitchURL}
-                        {block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}"><i class="fa fa-vimeo"></i></a></li>{/block:ifVimeoURL}
-                        {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}"><i class="fa fa-vk"></i></a></li>{/block:ifVKURL}
-                        {block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}"><i class="fa fa-wordpress"></i></a></li>{/block:ifWordpressURL}
+                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><i class="fa-brands fa-twitter"></i></a></li>{/block:ifTwitterURL}
+                        {block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}"><i class="fa-brands fa-instagram"></i></a></li>{block:ifInstagramURL}
+                        {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa-brands fa-facebook"></i></a></li>{/block:ifFacebookURL}
+                        {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa-brands fa-youtube"></i></a></li>{/block:ifYoutubeURL}
+                        {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa-brands fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
+                        {block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}"><i class="fa-brands fa-envelope"></i></a></li>{/block:ifEmailAddress}
+                        {block:if500pxURL}<li><a target="_blank" href="{text:500px URL}"><i class="fa-brands fa-500px"></i></a></li>{/block:if500pxURL}
+                        {block:ifAmazonURL}<li><a target="_blank" href="{text:Amazon URL}"><i class="fa-brands fa-amazon"></i></a></li>{/block:ifAmazonURL}
+                        {block:ifAppleURL}<li><a target="_blank" href="{text:Apple URL}"><i class="fa-brands fa-apple"></i></a></li>{/block:ifAppleURL}
+                        {block:ifBandcampURL}<li><a target="_blank" href="{text:Bandcamp URL}"><i class="fa-brands fa-bandcamp"></i></a></li>{/block:ifBandcampURL}
+                        {block:ifBehanceURL}<li><a target="_blank" href="{text:Behance URL}"><i class="fa-brands fa-behance"></i></a></li>{/block:ifBehanceURL}
+                        {block:ifDribbbleURL}<li><a target="_blank" href="{text:Dribbble URL}"><i class="fa-brands fa-dribbble"></i></a></li>{/block:ifDribbbleURL}
+                        {block:ifEtsyURL}<li><a target="_blank" href="{text:Etsy URL}"><i class="fa-brands fa-etsy"></i></a></li>{/block:ifEtsyURL}
+                        {block:ifFlickrURL}<li><a target="_blank" href="{text:Flickr URL}"><i class="fa-brands fa-flickr"></i></a></li>{/block:ifFlickrURL}
+                        {block:ifGithubURL}<li><a target="_blank" href="{text:Github URL}"><i class="fa-brands fa-github"></i></a></li>{/block:ifGithubURL}
+                        {block:ifGooglePlusURL}<li><a target="_blank" href="{text:GooglePlus URL}"><i class="fa-brands fa-google-plus"></i></a></li>{/block:ifGooglePlusURL}
+                        {block:ifLinkedinURL}<li><a target="_blank" href="{text:Linkedin URL}"><i class="fa-brands fa-linkedin"></i></a></li>{/block:ifLinkedinURL}
+                        {block:ifPayPalURL}<li><a target="_blank" href="{text:PayPal URL}"><i class="fa-brands fa-paypal"></i></a></li>{/block:ifPayPalURL}
+                        {block:ifPinterestURL}<li><a target="_blank" href="{text:Pinterest URL}"><i class="fa-brands fa-pinterest"></i></a></li>{/block:ifPinterestURL}
+                        {block:ifPodcastURL}<li><a target="_blank" href="{text:Podcast URL}"><i class="fa-brands fa-podcast"></i></a></li>{/block:ifPodcastURL}
+                        {block:ifMixcloudURL}<li><a target="_blank" href="{text:Mixcloud URL}"><i class="fa-brands fa-mixcloud"></i></a></li>{/block:ifMixcloudURL}
+                        {block:ifSoundcloudURL}<li><a target="_blank" href="{text:Soundcloud URL}"><i class="fa-brands fa-soundcloud"></i></a></li>{/block:ifSoundcloudURL}
+                        {block:ifSkypeURL}<li><a target="_blank" href="{text:Skype URL}"><i class="fa-brands fa-skype"></i></a></li>{/block:ifSkypeURL}
+                        {block:ifSpotifyURL}<li><a target="_blank" href="{text:Spotify URL}"><i class="fa-brands fa-spotify"></i></a></li>{/block:ifSpotifyURL}
+                        {block:ifTwitchURL}<li><a target="_blank" href="{text:Twitch URL}"><i class="fa-brands fa-twitch"></i></a></li>{/block:ifTwitchURL}
+                        {block:ifVimeoURL}<li><a target="_blank" href="{text:Vimeo URL}"><i class="fa-brands fa-vimeo"></i></a></li>{/block:ifVimeoURL}
+                        {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}"><i class="fa-brands fa-vk"></i></a></li>{/block:ifVKURL}
+                        {block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}"><i class="fa-brands fa-wordpress"></i></a></li>{/block:ifWordpressURL}
 
                     </ul>
                 </nav>
