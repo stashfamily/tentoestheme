@@ -42,6 +42,7 @@
 
         <meta name="text:Font Size" content="13px" />
         <meta name="text:Logo Size" content="16px" />
+        <meta name="text:Logo Image Height" content="29px" />
         <meta name="text:Header Text Size" content="16px" />
         <meta name="text:Description Text Size" content="11px" />
         <meta name="text:Mobile Header Text Size" content="16px" />
@@ -1293,6 +1294,12 @@
             margin: 0;
             content: "Copy Link";
             font-size: 13px;
+        }
+        
+        @media screen and (min-width:768px) {
+            .logo img {
+                {text:Logo Image Height}
+            }
         }
           
     </style>
