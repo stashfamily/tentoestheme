@@ -6,7 +6,7 @@
     Show Photos Only (off) - Portfolio mode view for text/photo posts. w/ Modal
     Show Post Reblogs (on) - Show/Hide Reblog Headers
 
-    Ten Toes v2.3
+    Ten Toes v2.3 (fri 28jul, 2023)
     by: Stashthemes
 
 -->
@@ -1378,6 +1378,7 @@
             .post-reblog-header {
                 display:none;
             }
+            
         {/block:ifnotshowpostreblogs}
         
         body.index-page article .overlay a {
@@ -2162,7 +2163,6 @@
                 }
         
 
-                
                 {block:ifNotBannerOnTaggedPage}
                     if ( $('body').hasClass('tagged-page') ) {
                         $("#banner").empty();
@@ -2197,6 +2197,18 @@
                 $('#backToTop').on('click', function(){
                     TweenLite.to( window, .5, {scrollTo:{y: 0 }, ease:Power2.easeOut});
                 })
+
+                // Reblogs
+				$( "article" ).each(function(i, v) {
+                    $(this).find('.tumblr_blog').closest('p').addClass('reblog-user');
+                    $( "p:contains('(via')" ).closest('p').empty();
+				});
+                
+                {block:IfNotShowPostReblogs}
+				$( "article" ).each(function(i, v) {
+                    $(this).find('.reblog-user').remove();
+				});
+                {/block:IfNotShowPostReblogs}
 
             });
 
@@ -2256,6 +2268,14 @@
                     }
                 },
               },function( newElements ) {
+                  
+                // Remove Reblogs
+                $(this).find('.tumblr_blog').closest('p').addClass('reblog-user');
+                $( "p:contains('(via')" ).closest('p').remove();
+                {block:IfNotShowPostReblogs}
+                    $(this).find('.reblog-user').remove();
+                {/block:IfNotShowPostReblogs}
+                
                 var $newElems = $(newElements).css({ opacity: 0, visibility:'hidden'});
     
                 $newElems.imagesLoaded(function(){
