@@ -98,6 +98,7 @@
         <meta name="if:Show Post Note Count" content="1" />
         <meta name="if:Show Post Notes" content="0" />
         <meta name="if:Scrollbar" content="0" />
+        <meta name="if:Sidebar Search" content="0"/>
         <meta name="if:Modal Post" content="1" />
         <meta name="if:Modal Post Navigation" content="0">
         <meta name="if:High Quality Images" content="1" />
@@ -1774,6 +1775,14 @@
                     <div class="sidebar-description widget"><p>{Description}</p></div>
                     &nbsp;
                 {/block:ShowDescription}
+
+                {block:IfSidebarSearch}
+                <div class="search widget">
+                    <form action="/search" method="get">
+                        <input type="text" name="q" placeholder="Search" value="{SearchQuery}"/>
+                    </form>
+                </div>
+                {/block:IfSidebarSearch}
             </div>
         </div>
     </div>
@@ -1864,6 +1873,14 @@
                     <div class="header-description"><p>{Description}</p></div>
                     &nbsp;
                 {/block:ShowDescription}
+
+                {block:IfSidebarSearch}
+                <div class="search widget">
+                    <form action="/search" method="get">
+                        <input type="text" name="q" placeholder="Search" value="{SearchQuery}"/>
+                    </form>
+                </div>
+                {/block:IfSidebarSearch}
 
                 {block:IfMobileMenu}
                     <div class="sidebar-toggle">
