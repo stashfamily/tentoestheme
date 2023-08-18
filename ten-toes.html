@@ -2,12 +2,10 @@
 
 <!-- 
 
-    - New Options: 
-    Show Photos Only (off) - Portfolio mode view for text/photo posts. w/ Modal
-    Show Post Reblogs (on) - Show/Hide Reblog Headers
-
-    Ten Toes v2.3 (fri 28jul, 2023)
+    Ten Toes v3 (18 aug 2023)
     by: Stashthemes
+    
+    Simple, clean photo posts & photosets.
 
 -->
 
@@ -39,10 +37,6 @@
         <meta name="color:Banner Button Background" content="#ffffff">
         <meta name="color:Banner Button Text" content="#141414">
         <meta name="if:Repeat Background Image" content="0">
-
-        <meta name="text:Instagram Username" content="" />
-        <meta name="text:Instagram Access Token" content="" />
-        <meta name="text:Instagram Feed Photo Count" content="6" />
 
         <meta name="text:Font Size" content="13px" />
         <meta name="text:Logo Size" content="16px" />
@@ -91,7 +85,6 @@
         <meta name="if:Archive Link" content="0" />
         <meta name="if:RSS Link" content="0" />
         <meta name="if:Home Link" content="0" />
-        <meta name="if:Show Photos Only" content="1"/>
         <meta name="if:Show Post Reblogs" content="0" />
         <meta name="if:Show Photo Overlay" content="1" />
         <meta name="if:Show Photo Overlay Meta" content="1" />
@@ -109,8 +102,6 @@
         <meta name="if:Modal Post Navigation" content="0">
         <meta name="if:High Quality Images" content="1" />
         <meta name="if:Back To Top Icon" content="1" />
-        <meta name="if:Instagram Feed Show Description" content="1" />
-        <meta name="if:Instagram Feed Show Avatar" content="1" />
         <meta name="text:Ask Link Label" content="Ask">
         <meta name="text:Submit Link Label" content="Submit">
         <meta name="text:Archive Link Label" content="Archive">
@@ -212,7 +203,7 @@
     {block:IfBodyFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Body Font}:{select:Body Font Weight}, 400,400italic,700,700italic">{/block:IfBodyFont}
     {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
     {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
-    <link href="https://static.tumblr.com/jzzkxgh/i2Mqi9da9/core.css" rel="stylesheet">
+    <link href="https://static.tumblr.com/jzzkxgh/fUtrzk8bj/core.css" rel="stylesheet">
 
     <style type="text/css">
         
@@ -245,6 +236,7 @@
             ;
             overflow-x:hidden;
             overflow-y:auto;
+            transform:none !important;
         }
 
         {block:ifnotscrollbar}
@@ -270,6 +262,10 @@
             {/block:IfTypeKitBodyFont}
             padding: 0;
             font-style:italic;
+        }
+        
+        .hidden {
+            display:none !important;
         }
         
         .wrapper {
@@ -334,10 +330,10 @@
             .header-social ul li a:hover {
                 border-bottom: 1px solid {color:Accent};
             }
-            .header-description a, .instagram_username a {
+            .header-description a {
                 text-decoration:underline;
             }
-            .header-description a:hover, .instagram_username a:hover {
+            .header-description a:hover {
                 text-decoration:none;
             }
         {/block:IfHeaderTextHoverUnderline}
@@ -391,7 +387,7 @@
             font-size:{text:Header Text Size};
         }
         
-        .header-description, .instagram_biography, .instagram_username {
+        .header-description {
             font-size:{text:Description Text Size} !important;
             text-transform:none;
         }
@@ -686,7 +682,7 @@
         }
 
         {block:IfNotShowPostMeta}
-            .note-count, #stash-ants .meta, #stash-ants .post-meta .share, .meta, .share, .overlay .post-footer, .overlay .post-caption {
+            .note-count, #stash-ants .meta, #stash-ants .post-meta .share, .meta, .share, .overlay .post-footer {
                 display:none;
             }
             
@@ -723,7 +719,7 @@
         {/block:IfNotShowPostTags}
         
         {block:IfNotShowPostCaption}
-            .post-caption, #stash .post-photo .content, #stash .post-photoset .content, #stash .post-video .content, #stash .post-audio .content {
+            .post-caption, .stash-overlay .post-caption, #stash .post-photo .content, #stash .post-photoset .content, #stash .post-video .content, #stash .post-audio .content {
                 display:none;
             }
 
@@ -742,7 +738,7 @@
         {/block:IfNotShowRebloggedFrom}
 
         {block:IfShowPhotoOverlay}
-            .post-photo .post-meta, .post-photo .content, .post-photoset .post-meta, .post-photoset .content {
+            body.index-page .post-photo .post-meta, body.index-page .post-photo .content, body.index-page .post-photoset .post-meta, body.index-page .post-photoset .content {
                 display:none !important;
             }
         {/block:IfShowPhotoOverlay}
@@ -771,7 +767,6 @@
             
             background: {color:Photo Overlay Text};
         }
-        
  
         .overlay .post-footer li:hover, .overlay .post-footer li:hover .post-reblog a {
             /*color:{color:Accent};*/
@@ -933,6 +928,10 @@
         .arr-down, .mute-button, .play-button, .banner-video-option, .banner-video-options {
             color:{color:Banner Text};
         }
+    
+        .banner-text p {
+            margin-bottom:15px;
+        }
         
         @media (max-width: 740px) { 
             
@@ -980,10 +979,6 @@
                 max-width:100%;
             }
             
-            .banner-text p {
-                margin-bottom:15px;
-            }
-            
             .banner-center {
                 max-width:94%;
             }
@@ -1002,7 +997,10 @@
             .close-mobile-modal svg g {
                 fill:{color:Header Text};
             }
-            
+                
+            .stash-overlay, .stash-overlay p, .stash-overlay a, .stash-overlay .post-like, .stash-overlay * {
+                color:white !important;
+            }
         }
         
         @media (min-width: 740px) { 
@@ -1207,7 +1205,7 @@
         
         .stash-credit svg {
             width: auto;
-            height: 37px;
+            height: 55px;
         }
         
         .remove-stash-credit {
@@ -1286,17 +1284,6 @@
             font-weight:bold;
         }
         
-        /** NPF post fix **/
-        
-        .post_media_photo_anchor{
-            width:100%;
-            transition:0.2s ease;
-        }
-        
-        .post_media_photo_anchor:hover {
-            opacity:0.8;
-        }
-        
         /** Social Icons Instead **/
         
         .header-social {
@@ -1322,52 +1309,26 @@
             }
         }
     
-        {block:ifshowphotosonly}
-        
-            body.index-page article p {
+        {block:ifshowphotooverlay}
+            body.index-page #stash-ants article.post-photo p, 
+            body.index-page #stash-ants article.post-photoset p
+            {
                 display:none;
             }
-            body.index-page article .overlay p {
-                display: block !important;
-            }
-            body.index-page article .post-meta {
-                display:none !important;
-            }
-            .tmblr-full {
-                pointer-events:none;
-            }
-            body.index-page article .post-title {display:none;}
-            
-            body.index-page article .open-modal.main-link {
-                position: absolute;
-                left: 0;
-                top: 0;
-                width: 100%;
-                height: 100%;
+            body.index-page #stash-ants article.post-photo .overlay p, 
+            body.index-page #stash-ants article.post-photoset .overlay p
+            {
+                display:block;
             }
             
-            body.index-page article .post-reblog-header, body.index-page article .overlay .post-reblog-header {
+            body article.post-photo .open-modal.photo-modal, body article.post-photoset .open-modal.photo-modal {
+                display:block;
+            }
+            
+            #stash-ants .post-video .post-meta {
                 display:none;
             }
-            
-            .post-caption img, .post-caption video, .post-caption iframe, .post-caption audio, .post-caption embed {
-                display:none;
-            }
-            
-            .reblog-list .post-reblog-trail-item {
-                padding:0;
-            }
-            
-            body.index-page article .npf_row {
-                margin:0;
-            }
-
-        {/block:ifshowphotosonly}
-        {block:ifnotshowphotosonly}
-            .overlay, .overlay-bg {
-                display:none;
-            }
-        {/block:ifnotshowphotosonly}
+        {/block:ifshowphotooverlay}
         
         {block:ifshowpostreblogs}
             body.index-page article .post-reblog-header {
@@ -1385,6 +1346,147 @@
             color:white;
             font-weight:normal
         }
+        
+        body.index-page article .overlay .post-caption {
+            z-index:5;
+        }
+        
+        
+        
+        /** New **/
+        
+        .audio-caption img {
+            position: absolute;
+            right: 0;
+            top: 0;
+            max-height: 100%;
+            z-index: -3;
+        }
+        
+        .post.fallback .overlay, .post.fallback .overlay-bg, .post-text .overlay, .post-text .overlay-bg, .post-video .overlay, .post-video .overlay-bg {
+            display:none !important;
+        }
+        
+        .post-text .media {
+            display:none;
+        }
+        
+        .overlay h1 {
+            color:{color:Photo Overlay Text};
+            font-size:18px;
+            margin-bottom:10px;
+        }
+        
+        /** NPF post fix **/
+        
+        .post_media_photo_anchor{
+            width:100%;
+        }
+        
+        .post-body .npf_row:last-of-type {
+            margin-bottom:20px;
+        }
+        
+        /** New Photoset **/
+        
+        .post-text .photo-modal {
+            display:none;
+        }
+        
+        .post-photoset .npf_col.active {
+            opacity: 1;
+            z-index:1;
+            position: relative;
+        }
+        
+        .ps-options .total {
+            display: inline-block;
+        }
+        
+        .post-photoset .npf_col {
+            display: block;
+            width: 100%;
+            margin: 0 0 2px 0;
+            opacity:0;
+            position: absolute;
+            top: 0;
+        }
+        
+        body.stash-photo-overlay .post-photo figure, body.stash-photo-overlay .post-photoset figure {
+            margin:0;
+        }
+        
+        body.permalink-page .post-photoset .npf_col, .stash-overlay .post-photoset .npf_col {
+            position: relative;
+            top: initial;
+            opacity: 1;
+            display:block;
+        }
+        
+        .post figure {
+            width:100%;
+            margin: 0 0 20px 0;
+        } 
+        
+        article .open-modal.photo-modal {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:1;
+            display:none;
+        }
+        
+        @media (min-width:740px) {
+            body.permalink-page .post-photoset .npf_col, .stash-overlay .post-photoset .npf_col {
+                margin:0 0 var(--spacing) 0;
+            }
+        
+            body.permalink-page .post-photoset .npf_col:last-of-type, .stash-overlay .post-photoset .npf_col:last-of-type {
+                margin:0 0 var(--spacing) 0;
+            }
+        }
+
+        @media (max-width:740px) {
+            body.index-page #stash-ants .photoset-count {
+                top:7.5px;
+                left:15px;
+            }
+        }
+        
+        .stash-overlay.video .stash-caption figure {
+            display:none;
+        }
+        
+        {block:ifshowphotosonly}
+            
+        /*    body.index-page #stash-ants article.stash-post-photo .content {*/
+        /*        display:block;*/
+        /*    }*/
+        /*    body.index-page article .post-title {display:none;}*/
+            
+        /*    body.index-page article .open-modal.main-link {*/
+        /*        position: absolute;*/
+        /*        left: 0;*/
+        /*        top: 0;*/
+        /*        width: 100%;*/
+        /*        height: 100%;*/
+        /*    }*/
+            
+        /*    body.index-page article .post-reblog-header, body.index-page article .overlay .post-reblog-header {*/
+        /*        display:none;*/
+        /*    }*/
+            
+        /*    .reblog-list .post-reblog-trail-item {*/
+        /*        padding:0;*/
+        /*    }*/
+            
+        /*    body.index-page article .npf_row {*/
+        /*        margin:0;*/
+        /*    }*/
+
+        {/block:ifshowphotosonly}
           
     </style>
 </head>
@@ -1762,13 +1864,6 @@
                     <div class="header-description"><p>{Description}</p></div>
                     &nbsp;
                 {/block:ShowDescription}
-                
-                <!--{block:IfInstagramAccessToken}-->
-                <!--    {block:IfInstagramUsername}<div class="insta-feed"><a href="{text:Instagram Username}"><i class="fa fa-instagram"></i> {text:Instagram Username}</a></div>{/block:IfInstagramUsername}-->
-                <!--    <div id="instafeed">-->
-                        
-                <!--    </div>-->
-                <!--{/block:IfInstagramAccessToken}-->
 
                 {block:IfMobileMenu}
                     <div class="sidebar-toggle">
@@ -1800,8 +1895,14 @@
 
                     {block:Posts inlineMediaWidth="1280"}
                         {block:Photo}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-photo pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}{block:PermalinkPage}{block:Date} post-single{/block:Date}{/block:PermalinkPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photo">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post modal post-photo pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}{block:PermalinkPage}{block:Date} post-single{/block:Date}{/block:PermalinkPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photo">
                                 <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                        	<div class="hidden">
+                        		<script type="text/json">
+                        			{NPF}
+                        		</script>
+                        	</div>
+                                
                                 <div class="inner">
                                 <div class="media">
 
@@ -1858,7 +1959,7 @@
                         {/block:Photo}
 
                         {block:Photoset}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-photoset pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photoset">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post modal post-photoset pp {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="photoset">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="media">
                                 <div class="stash-photoset ips">
@@ -1889,101 +1990,106 @@
                         {block:Text}
                             <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-text {block:Tags}{Tag} {/block:Tags}{/block:IndexPage} {block:PermalinkPage}{block:Date} post-single single-text{/block:Date}{/block:PermalinkPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="text">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
+                        	<div class="hidden">
+                        		<script type="text/json">
+                        			{NPF}
+                        		</script>
+                        	</div>
+                        	
+                            {block:IndexPage}
+                                <a class="open-modal photo-modal" href="{Permalink}" data-id="{PostID}"></a>
+                            {/block:IndexPage}
+                            
                             {block:PermalinkPage}<div class="post-left">{/block:PermalinkPage}
                             <div class="inside">
-                            <div class="content">
-                                {block:IndexPage}
-                                    {block:Title}<h2 class="post-title"><a class="open-modal" href="{Permalink}" data-id="{PostID}">{Title}</a></h2>{/block:Title}
+                                <div class="content">
                                     
-                                    {block:IfShowPhotosOnly}
-                                        <a class="open-modal main-link" href="{Permalink}" data-id="{PostID}"></a>
-                                            <div class="overlay-bg"></div>                               
-                                        
-                                        <div class="overlay">
-                                            <div class="post-caption">
-                                                {block:Title} {Title}</br>{/block:Title}
-                                                {Body}
-                                            </div>
-
-                                            <div class="post-share">
-                                                <div class="close-post-share">
-                                                    <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\<path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z" fill="#FFFFFF"></path></g></svg>
-                                                </div>
+                                    {block:IndexPage}
+                                        {block:Title}<h2 class="post-title"><a class="open-modal" href="{Permalink}" data-id="{PostID}">{Title}</a></h2>{/block:Title}
+                                    {/block:IndexPage}
+                                    
+                                    {block:PermalinkPage}
+                                        {block:Title}<h2 class="post-title">{Title}</h2>{/block:Title}
+                                    {/block:PermalinkPage}
     
-                                                <div class="social-media">
-                                                    <span class="share-facebook" title="Share on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"></a></span><span class="share-twitter" title="Share on Twitter"><a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"></a></span><span class="share-pinterest"><a class="fa fa-pinterest" target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"></a></span></div>
-    
-                                                    <div class="social-media-footer">
-                                                        <a class="btn copy-btn"><span style="font-size:0; text-transform:lowercase !important;">{Permalink}</span></a>
-                                                    </div>
-                                                </div>
-    
-                                                <ul class="post-footer">
-                                                    <li class="share-toggle" data-post-id="{PostID}" title="Share this post">{text:Translate Share Text}</li>
-                                                    <li class="post-like" title="Like this post">
-                                                        {LikeButton color="grey" size="15"}
-                                                        <span class="like-text">{text:Translate Like Text}</span>
-                                                        <span class="like-text like-text-liked">{text:Translate Liked Text}</span>
-                                                    </li>
-                                                    <li class="post-reblog" title="Reblog this post"><a href="{ReblogURL}">{text:Translate Reblog Text}</a></li>
-                                                    <li class="post-note-count"><span><a class="open-modal" data-id="{PostID}">
-                                                    {NoteCount} {text:Translate Notes Text}</a></span></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    {/block:IfShowPhotosOnly}
-                                {/block:IndexPage}
-                                
-                                {block:PermalinkPage}
-                                    {block:Title}<h2 class="post-title">{Title}</h2>{/block:Title}
-                                {/block:PermalinkPage}
-
-                                {block:NotReblog}
-                                    {Body}
-                                {/block:NotReblog}
-
-                                {block:RebloggedFrom}
-                                    <div class="reblog-list">
-                                        {block:Reblogs}
-                                        <div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
-                                        <div class="post-reblog-header">
-                                        <div class="post-avatar">
-                                        <div class="post-avatar-wrapper">
-                                        {block:IsActive}
-                                        <a class="post-avatar-link{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank">
-                                        <img class="post-avatar-image" src="{PortraitURL-64}">
-                                        </a>
-                                        {/block:IsActive}
-                                        {block:IsDeactivated}
-                                        <span class="inactive reblog-avatar{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}">
-                                        <img class="post-avatar-image" src="{PortraitURL-64}">
-                                        </span>
-                                        {/block:IsDeactivated}
-                                        </div>
-                                        </div>
-                                        {block:IsActive}
-                                        <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>
-                                        {/block:IsActive}
-                                        {block:IsDeactivated}
-                                        <span class="inactive post-tumblelog-name">{Username}</span>
-                                        {/block:IsDeactivated}
-                                        </div>
-                                        <div class="post-reblog-content">
-                                        <div class="post-body">
+                                    {block:NotReblog}
                                         {Body}
+                                    {/block:NotReblog}
+    
+                                    {block:RebloggedFrom}
+                                        <div class="reblog-list">
+                                            {block:Reblogs}
+                                            <div class="post-reblog-trail-item{block:isOriginalEntry} original-reblog-content{/block:isOriginalEntry}">
+                                            <div class="post-reblog-header">
+                                            <div class="post-avatar">
+                                            <div class="post-avatar-wrapper">
+                                            {block:IsActive}
+                                            <a class="post-avatar-link{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}" href="{Permalink}" target="_blank">
+                                            <img class="post-avatar-image" src="{PortraitURL-64}">
+                                            </a>
+                                            {/block:IsActive}
+                                            {block:IsDeactivated}
+                                            <span class="inactive reblog-avatar{block:isNotOriginalEntry} sub-icon-reblog{/block:isNotOriginalEntry}">
+                                            <img class="post-avatar-image" src="{PortraitURL-64}">
+                                            </span>
+                                            {/block:IsDeactivated}
+                                            </div>
+                                            </div>
+                                            {block:IsActive}
+                                            <a target="_blank" class="post-tumblelog-name" href="{Permalink}">{Username}</a>
+                                            {/block:IsActive}
+                                            {block:IsDeactivated}
+                                            <span class="inactive post-tumblelog-name">{Username}</span>
+                                            {/block:IsDeactivated}
+                                            </div>
+                                            <div class="post-reblog-content">
+                                            <div class="post-body">
+                                            {Body}
+                                            </div>
+                                            </div>
+                                            </div>
+                                            {/block:Reblogs}
                                         </div>
-                                        </div>
-                                        </div>
-                                        {/block:Reblogs}
-                                    </div>
-                                {/block:RebloggedFrom}
+                                    {/block:RebloggedFrom}
+    
+                                </div>
+                                
+                                {block:IndexPage}
+                                    <div class="overlay-bg"></div>                               
+                                    <div class="overlay">
 
-                            </div>
+                                        <div class="post-share">
+                                            <div class="close-post-share">
+                                                <svg width="18px" height="18px" viewBox="0 0 18 18" version="1.1" xmlns="https://www.w3.org/2000/svg" xmlns:xlink="https://www.w3.org/1999/xlink"><g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">\<path d="M18,15.141 L11.76375,8.98425 L17.91375,2.77275 L15.141,0 L8.982,6.2385 L2.7495,0.08625 L-1.77635684e-15,2.83575 L6.24075,9.01575 L0.08625,15.2505 L2.83575,18 L9.0135,11.7615 L15.22725,17.91375 L18,15.141 Z" fill="#FFFFFF"></path></g></svg>
+                                            </div>
+
+                                            <div class="social-media">
+                                                <span class="share-facebook" title="Share on Facebook"><a class="fa fa-facebook" href="https://www.facebook.com/sharer.php?u={Permalink}{block:Title}&t={Title}{/block:Title}" target="_new"></a></span><span class="share-twitter" title="Share on Twitter"><a class="fa fa-twitter" href="https://twitter.com/intent/tweet?url={ShortURL}" target="_new"></a></span><span class="share-pinterest"><a class="fa fa-pinterest" target="_new" href="https://pinterest.com/pin/create/button/?url={Permalink}&media={PhotoURL-500}"></a></span></div>
+
+                                                <div class="social-media-footer">
+                                                    <a class="btn copy-btn"><span style="font-size:0; text-transform:lowercase !important;">{Permalink}</span></a>
+                                                </div>
+                                            </div>
+
+                                            <ul class="post-footer">
+                                                <li class="share-toggle" data-post-id="{PostID}" title="Share this post">{text:Translate Share Text}</li>
+                                                <li class="post-like" title="Like this post">
+                                                    {LikeButton color="grey" size="15"}
+                                                    <span class="like-text">{text:Translate Like Text}</span>
+                                                    <span class="like-text like-text-liked">{text:Translate Liked Text}</span>
+                                                </li>
+                                                <li class="post-reblog" title="Reblog this post"><a href="{ReblogURL}">{text:Translate Reblog Text}</a></li>
+                                                <li class="post-note-count"><span><a class="open-modal" data-id="{PostID}">
+                                                {NoteCount} {text:Translate Notes Text}</a></span></li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                {/block:IndexPage}
                         {/block:Text}
 
 
                         {block:Audio}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-audio {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="audio">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post modal post-audio {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="audio">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inside">
                             <div class="media">
@@ -1998,7 +2104,7 @@
 
 
                         {block:Video}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-video {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="video">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post modal post-video {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="video">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inside">
                             <div class="media">{Video-500}</div>
@@ -2008,7 +2114,7 @@
 
 
                         {block:Quote}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-quote {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="quote">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post modal post-quote {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="quote">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inside">
                             <div class="content">
@@ -2018,7 +2124,7 @@
                         {/block:Quote}
 
                         {block:Link}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-link {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="link">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post modal post-link {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="link">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inside">
                             <div class="content">
@@ -2028,7 +2134,7 @@
                         {/block:Link}
 
                         {block:Chat}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post modal post-chat {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="chat">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post modal post-chat {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="chat">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="content">
                                 <ul class="chat">
@@ -2038,12 +2144,12 @@
                         {/block:Chat}
 
                         {block:Answer}
-                            <article id="{PostID}" class="{block:IndexPage} ants-item-{select:Posts Columns} post post-answer {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="answer">
+                            <article id="{PostID}" class="{block:IndexPage} parsed default ants-item-{select:Posts Columns} post post-answer {block:Tags}{Tag} {/block:Tags}{/block:IndexPage}" data-id="{PostID}" data-notes="{PostNotesURL}" data-pt="answer">
                             <input id="post-notes-url" type="hidden" value="{PostNotesURL}">
                             <div class="inside">
                             <div class="content">
                                 <div class="asker-box">
-                                 <img src="{AskerPortraitURL-24}" /><span class="the-asker">{Asker}</span> {text:Translate asked Text}: {Question}
+                                 <img class="asker-avatar" src="{AskerPortraitURL-24}" /><span class="the-asker">{Asker}</span> {text:Translate asked Text}: {Question}
                                 </div>
                                 <div class="answer">
                                     {Answer}
@@ -2132,11 +2238,13 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/lFFrsk2b5/plugins.js">
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/4gvrzk8as/plugins.js">
         </script>
     <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
 
-    {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/zVmq84bst/modal.js"></script>{/block:IfModalPost}
+    {block:IfModalPost}<script src="https://themes.stashfamily.com/labs/themes/ten-toes/js/modal.js"></script>{/block:IfModalPost}
+    <!--{block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/zVmq84bst/modal.js"></script>{/block:IfModalPost}-->
+    
     {block:IfTypeKitID}
         <script type="text/javascript" src="//use.typekit.net/{text:TypeKit ID}.js"></script>
         <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
@@ -2144,6 +2252,11 @@
 
     <script type="text/javascript">
         (function($) {
+                    
+                    
+
+                    
+                    
             var windowwidth = $(document).width();
             $(document).ready(function(){
                 
@@ -2170,7 +2283,7 @@
                 {/block:ifNotBannerOnTaggedPage}
                 
                 setTimeout(function(){
-                    $('#posts').css({
+                    $('body.index-page').css({
                         'opacity': '1',
                         'visibility' : 'visible'
                     });
@@ -2209,15 +2322,16 @@
                     $(this).find('.reblog-user').remove();
 				});
                 {/block:IfNotShowPostReblogs}
-
+                
             });
 
             {block:IndexPage}
                 $antsIsoCont = $('#stash-ants');
                 antsIsotope = $antsIsoCont.imagesLoaded(function(){
+            	    stashFuel();
                     $("article").fitVids();
                     $('.stash-photoset.ips').stashIPS();
-                    TweenMax.fromTo("#posts", 1, {opacity:0, y:100, ease:Power2.easeOut, force3D: true},{opacity:1, y:0, ease:Power2.easeOut, force3D: true});   
+                    TweenMax.fromTo("body.index-page", 1, {opacity:0, y:100, ease:Power2.easeOut, force3D: true},{opacity:1, y:0, ease:Power2.easeOut, force3D: true});   
 
                     $antsIsoCont.isotope({
                         itemSelector: '.ants-item-{select:Posts Columns}',
@@ -2288,6 +2402,7 @@
                     });
                         
                     $container.isotope( 'appended', $newElems, true );  
+                    stashFuel();
                     $('.stash-photoset.ips').stashIPS();
                     $("article").fitVids();
                 });
@@ -2369,11 +2484,6 @@
             </br>
             <!--<p><b>Add instagram feed</b></br> Enter your username in the "Instagram Username" box. </br><img src="https://static.tumblr.com/jzzkxgh/Uqsqi8zlv/insta-feed.jpg" /></p>-->
             
-            <p><b>Photo posts not showing correctly?</b></br> Turn on the new "Show Photos Only" option. </br> <img src="https://themes.stashfamily.com/wp-content/uploads/2023/07/show-photos-only.png"/>
-                
-            </br></br> Further instructions here <a href="https://themes.stashfamily.com/help/my-photo-posts-are-not-showing-correctly/" target="_blank">fix photo posts</a>.</p>
-            </br>
-            
             <p><b>Display avatar image</b></br> Upload an image to the "Header Avatar" option, square images work best. </br><img src="https://static.tumblr.com/jzzkxgh/Pnhqi7ltv/header-avatar-img.jpg" /></p>
             </br>
             <p><b>Remove stash credit</b></br> Remove the stash logo from your website by getting a <a href="https://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
@@ -2382,20 +2492,6 @@
         </div>
     </div>
 
-
-
-    <!-- Replace with InstafeedJS 2 with similar settings -->
-    <!-- drop instafeedjs into plugins.js the nreupload -->
-
-    <!--{block:IfInstagramAccessToken}-->
-    <!--    <script type="text/javascript">-->
-    <!--        var feed = new Instafeed({-->
-    <!--          accessToken: '{text:Instagram Access Token}',-->
-    <!--          limit: {text:Instagram Feed Photo Count}-->
-    <!--        });-->
-    <!--        feed.run();-->
-    <!--    </script>-->
-    <!--{/block:IfInstagramAccessToken}-->
 
 
 </body>
