@@ -211,7 +211,7 @@
     {block:IfBodyFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Body Font}:{select:Body Font Weight}, 400,400italic,700,700italic">{/block:IfBodyFont}
     {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
     {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
-    <link href="https://static.tumblr.com/jzzkxgh/3Tarzl9ii/core.css" rel="stylesheet">
+    <link href="https://static.tumblr.com/jzzkxgh/47vrzlhll/core.css" rel="stylesheet">
 
     <style type="text/css">
         
@@ -1383,13 +1383,14 @@
         
         .post-body .npf_row:last-of-type {
             margin-bottom:20px;
-        }
+        }       
+        
+        .post figure {
+            width:100%;
+            margin: 0 0 20px 0;
+        } 
         
         /** New Photoset **/
-        
-        .post-text .photo-modal {
-            display:none;
-        }
         
         .post-photoset .npf_col.active {
             opacity: 1;
@@ -1421,21 +1422,6 @@
             display:block;
         }
         
-        .post figure {
-            width:100%;
-            margin: 0 0 20px 0;
-        } 
-        
-        article .open-modal.photo-modal {
-            position:absolute;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            z-index:1;
-            display:none;
-        }
-        
         @media (min-width:740px) {
             body.permalink-page .post-photoset .npf_col, .stash-overlay .post-photoset .npf_col {
                 margin:0 0 var(--spacing) 0;
@@ -1453,39 +1439,27 @@
             }
         }
         
+        
+        /** New Posts **/
+        
+        article .open-modal.photo-modal {
+            position:absolute;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            z-index:1;
+            display:none;
+        }
+        
+        .post-text .photo-modal {
+            display:none;
+        }
+        
         .stash-overlay.video .stash-caption figure {
             display:none;
         }
         
-        {block:ifshowphotosonly}
-            
-        /*    body.index-page #stash-ants article.stash-post-photo .content {*/
-        /*        display:block;*/
-        /*    }*/
-        /*    body.index-page article .post-title {display:none;}*/
-            
-        /*    body.index-page article .open-modal.main-link {*/
-        /*        position: absolute;*/
-        /*        left: 0;*/
-        /*        top: 0;*/
-        /*        width: 100%;*/
-        /*        height: 100%;*/
-        /*    }*/
-            
-        /*    body.index-page article .post-reblog-header, body.index-page article .overlay .post-reblog-header {*/
-        /*        display:none;*/
-        /*    }*/
-            
-        /*    .reblog-list .post-reblog-trail-item {*/
-        /*        padding:0;*/
-        /*    }*/
-            
-        /*    body.index-page article .npf_row {*/
-        /*        margin:0;*/
-        /*    }*/
-
-        {/block:ifshowphotosonly}
-          
     </style>
 </head>
 
