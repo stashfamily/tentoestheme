@@ -1303,7 +1303,7 @@
         @media screen and (min-width:768px) {
             .logo img {
                 max-height:100%;
-                {text:Logo Image Height}
+                height:{text:Logo Image Height};
             }
         }
     
@@ -1318,12 +1318,7 @@
             {
                 display:block;
             }
-            
-            body article.post-photo .open-modal.photo-modal, body article.post-photoset .open-modal.photo-modal {
-                display:block;
-            }
-            
-            #stash-ants .post-video .post-meta {
+            #stash-ants .post-video .post-meta, #stash-ants .post-video .overlay-bg, #stash-ants .post-video .overlay {
                 display:none;
             }
         {/block:ifshowphotooverlay}
@@ -1349,9 +1344,6 @@
             z-index:5;
         }
         
-        
-        
-        
         /** New **/
         
         .audio-caption img {
@@ -1375,8 +1367,6 @@
             font-size:18px;
             margin-bottom:10px;
         }
-        
-        /** NPF post fix **/
         
         .post_media_photo_anchor{
             width:100%;
@@ -1455,6 +1445,18 @@
             height:100%;
             z-index:1;
             display:none;
+        }
+    
+        body article.post-photo .open-modal.photo-modal, body article.post-photoset .open-modal.photo-modal {
+            display:block;
+        }
+        
+        .post-photoset .ps-nav-left, .post-photoset .ps-nav-right {
+            z-index:4;
+        }
+        
+        .overlay-bg {
+            pointer-events:none;
         }
         
         .post-text .photo-modal {
@@ -2325,6 +2327,7 @@
                 antsIsotope = $antsIsoCont.imagesLoaded(function(){
             	    stashFuel();
                     $("article").fitVids();
+                    $('#stash-ants').isotope(true).isotope('layout');
                     $('.stash-photoset.ips').stashIPS();
                     TweenMax.fromTo("body.index-page", 1, {opacity:0, y:100, ease:Power2.easeOut, force3D: true},{opacity:1, y:0, ease:Power2.easeOut, force3D: true});   
 
@@ -2400,6 +2403,7 @@
                     stashFuel();
                     $('.stash-photoset.ips').stashIPS();
                     $("article").fitVids();
+                    $('#stash-ants').isotope(true).isotope('layout');
                 });
                 
                 var $newElemsIDs = $(newElements).map(function () { return this.id; }).get();
