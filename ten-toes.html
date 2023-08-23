@@ -1470,6 +1470,14 @@
         .stash-overlay.video .stash-caption figure {
             display:none;
         }
+
+        @media (max-width:740px) {
+    		.post {
+    			position:relative !important;
+    			top:initial !important;
+    			left:initial !important;
+    		}
+        }
         
     </style>
 </head>
@@ -2397,6 +2405,7 @@
                         var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
                             scene.addTo(controller);
                             scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
+                                        $('#stash-ants').isotope(true).isotope('layout');
                     });
                         
                     $container.isotope( 'appended', $newElems, true );  
