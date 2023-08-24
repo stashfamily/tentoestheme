@@ -2245,7 +2245,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/5HOrzsue0/plugins.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/Djlrzx2br/plugins.js"></script>
     <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
 
     {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/qNbrzl8aw/modal.js"></script>{/block:IfModalPost}
@@ -2407,14 +2407,12 @@
                             scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
                                         $('#stash-ants').isotope(true).isotope('layout');
                     });
-                        
-                    $container.isotope( 'appended', $newElems, true );  
                     stashFuel();
+                    $container.isotope( 'appended', $newElems, true );  
                     $('.stash-photoset.ips').stashIPS();
                     $("article").fitVids();
                     $('#stash-ants').isotope(true).isotope('layout');
                 });
-                
                 var $newElemsIDs = $(newElements).map(function () { return this.id; }).get();
                 Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
               });
