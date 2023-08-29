@@ -71,7 +71,7 @@
         <meta name="text:Banner Button 2 Text" content="">
         <meta name="text:Banner Button 2 URL" content="">
         <meta name="text:Banner Overlay Opacity" content="0.7">
-        <meta name="text:&#x2584;&#x2580;&#x2584;&#x2580; Banner &#x2580;&#x2584;&#x2580;&#x2584;" content="">
+        <meta name="if:&#x2584;&#x2580;&#x2584;&#x2580; Banner &#x2580;&#x2584;&#x2580;&#x2584;" content="">
         <meta name="if:Banner" content="0" />
         <meta name="if:Banner Video Buttons" content="1" />
         <meta name="if:Banner Overlay" content="0" />
@@ -1470,6 +1470,10 @@
         .stash-overlay.video .stash-caption figure {
             display:none;
         }
+        
+        .stash-overlay.text .caption {
+            display:none;
+        }
 
         @media (max-width:740px) {
     		.post {
@@ -1478,6 +1482,8 @@
     			left:initial !important;
     		}
         }
+        
+        
         
     </style>
 </head>
@@ -2250,7 +2256,7 @@
     <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/Djlrzx2br/plugins.js"></script>
     <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
 
-    {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/Ucfrzzmo3/modal.js"></script>{/block:IfModalPost}
+    {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/seIs05v44/modal.js"></script>{/block:IfModalPost}
     
     {block:IfTypeKitID}
         <script type="text/javascript" src="//use.typekit.net/{text:TypeKit ID}.js"></script>
