@@ -1789,12 +1789,14 @@
                     </div>
                 {/block:ifheaderavatarimage}
                 <div class="logo {select:Header Text Case}">
-                    {block:ifnotlogoimage}
-                        <a {block:ifnotlogocustomlink}href="/"{/block:ifnotlogocustomlink}{block:iflogocustomlink}href="{text:Logo Custom Link}"{/block:iflogocustomlink} title="{lang:Home}">{Title}</a>
-                    {/block:ifnotlogoimage}
-                    {block:iflogoimage}
-                        <a {block:ifnotlogocustomlink}href="/"{/block:ifnotlogocustomlink}{block:iflogocustomlink}href="{text:Logo Custom Link}"{/block:iflogocustomlink}><img src="{image:Logo}" alt="logo" /></a>
-                    {/block:iflogoimage}
+                    {block:ShowTitle} 
+                        {block:ifnotlogoimage}
+                            <a {block:ifnotlogocustomlink}href="/"{/block:ifnotlogocustomlink}{block:iflogocustomlink}href="{text:Logo Custom Link}"{/block:iflogocustomlink} title="{lang:Home}">{Title}</a>
+                        {/block:ifnotlogoimage}
+                        {block:iflogoimage}
+                            <a {block:ifnotlogocustomlink}href="/"{/block:ifnotlogocustomlink}{block:iflogocustomlink}href="{text:Logo Custom Link}"{/block:iflogocustomlink}><img src="{image:Logo}" alt="logo" /></a>
+                        {/block:iflogoimage}
+                    {/block:ShowTitle} 
                 </div>
 
                 <nav class="navigation cl">
