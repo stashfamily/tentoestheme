@@ -11,6 +11,8 @@
 
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
+
+
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
@@ -1491,6 +1493,7 @@
 
 <body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner}">
 
+
     <div id="stash-preloader"><div id="stash-loader"><div class="loading-icon"></div></div></div>
     <div class="dark-overlay"></div>
 
@@ -1771,6 +1774,7 @@
                     <div class="sidebar-description widget"><p>{Description}</p></div>
                     &nbsp;
                 {/block:ShowDescription}
+                
 
                 {block:IfSidebarSearch}
                 <div class="search widget">
@@ -1866,6 +1870,8 @@
                         &nbsp;
                     </ul>
                 </nav>
+                
+                
 
                 {block:ShowDescription}
                     <div class="header-description"><p>{Description}</p></div>
@@ -2253,7 +2259,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/Djlrzx2br/plugins.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/esXs0au5d/plugins.js"></script>
     <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
 
     {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/seIs05v44/modal.js"></script>{/block:IfModalPost}
@@ -2366,6 +2372,13 @@
                         $('.banner-text').css({
                             'opacity': '1'
                         });
+                        
+                        setTimeout(function(){
+                            if ( $('.post-video').length > 0 ) {
+                                $("article").fitVids();
+                                $('#stash-ants').isotope(true).isotope('layout');
+                            }
+                        }, 200);
                     }
                 });
                 
@@ -2374,6 +2387,10 @@
                     $('.post').each(function(){
                         TweenMax.to(".post", 0.4, {autoAlpha:1, ease:Power2.easeOut});
                     });
+
+                    setTimeout(function(){
+                        $('#stash-ants').isotope(true).isotope('layout');
+                    }, 1200);
                 }
             {/block:IndexPage}
             
@@ -2413,10 +2430,11 @@
                         var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
                             scene.addTo(controller);
                             scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
-                                        $('#stash-ants').isotope(true).isotope('layout');
+                        $('#stash-ants').isotope(true).isotope('layout');
                     });
                     stashFuel();
                     $container.isotope( 'appended', $newElems, true );  
+                    
                     $('.stash-photoset.ips').stashIPS();
                     $("article").fitVids();
                     $('#stash-ants').isotope(true).isotope('layout');
