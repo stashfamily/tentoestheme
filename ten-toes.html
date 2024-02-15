@@ -12,7 +12,6 @@
 <html xmlns="https://www.w3.org/1999/xhtml">
 <head>
 
-
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
@@ -1485,9 +1484,9 @@
     		}
         }
         
-        
-        
     </style>
+
+    
 </head>
 
 
@@ -2349,7 +2348,7 @@
                 antsIsotope = $antsIsoCont.imagesLoaded(function(){
             	    stashFuel();
                     $("article").fitVids();
-                    $('#stash-ants').isotope(true).isotope('layout');
+
                     $('.stash-photoset.ips').stashIPS();
                     TweenMax.fromTo("body.index-page", 1, {opacity:0, y:100, ease:Power2.easeOut, force3D: true},{opacity:1, y:0, ease:Power2.easeOut, force3D: true});   
 
@@ -2387,11 +2386,17 @@
                     $('.post').each(function(){
                         TweenMax.to(".post", 0.4, {autoAlpha:1, ease:Power2.easeOut});
                     });
-
+                    
                     setTimeout(function(){
                         $('#stash-ants').isotope(true).isotope('layout');
-                    }, 1200);
+                    }, 1000);
+                    
+                    setTimeout(function(){
+                        $('#stash-ants').isotope(true).isotope('layout');
+                    }, 2000);
                 }
+                
+                $('#stash-ants').isotope(true).isotope('layout');
             {/block:IndexPage}
             
             
