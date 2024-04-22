@@ -2,10 +2,15 @@
 
 <!-- 
 
-    Ten Toes v3
+    Ten Toes v3.2
     by: Stashthemes
     
     Simple, clean photo posts & photosets.
+    
+    Newest Update  Options:
+    - Photoset Post Type option - Carousel / normal
+    - Homepage Featured Tag option (redirect homepage to a tagged page)
+    - LinkTree Social Link added
 
 -->
 
@@ -38,6 +43,10 @@
         <meta name="color:Banner Button Background" content="#ffffff">
         <meta name="color:Banner Button Text" content="#141414">
         <meta name="if:Repeat Background Image" content="0">
+        
+        <!-- Posts -->
+        <meta name="text:&#x2584;&#x2580;&#x2584;&#x2580; Homepage Redirect &#x2580;&#x2584;&#x2580;&#x2584;" content="">
+        <meta name="text:Default Homepage Tag" content="">
 
         <meta name="text:Font Size" content="13px" />
         <meta name="text:Logo Size" content="16px" />
@@ -121,6 +130,7 @@
         <meta name="text:Facebook URL" content="">
         <meta name="text:Youtube URL" content="">
         <meta name="text:Snapchat URL" content="">
+        <meta name="text:LinkTree URL" content="">
         <meta name="text:500px URL" content="">
         <meta name="text:Amazon URL" content="">
         <meta name="text:Apple URL" content="">
@@ -173,6 +183,9 @@
         <meta name="text:Google Analytics ID" content='' />
         <meta name="select:Header Text Case" content="lowercase" Title="Lowercase" /><meta name="select:Header Text Case" content="normal" Title="Normal" /><meta name="select:Header Text Case" content="uppercase" Title="Uppercase" />
         <meta name="select:Posts Columns" content="three" Title="3" /><meta name="select:Posts Columns" content="one" Title="1" /><meta name="select:Posts Columns" content="two" Title="2" /><meta name="select:Posts Columns" content="four" Title="4" />
+        
+        <meta name="select:Photoset Post Type" content="true" Title="Carousel" /><meta name="select:Photoset Post Type" content="false" Title="Normal" />
+        
         <meta name="select:Modal Post Image Size" content="modal-post-fit" Title="Fit" /><meta name="select:Modal Post Image Size" content="modal-post-full" Title="Full" />
 
         <meta name="text:&#x2584;&#x2580;&#x2584;&#x2580; Translations &#x2580;&#x2584;&#x2580;&#x2584;" content="">
@@ -202,7 +215,8 @@
             SHOW_POST_NOTES = {block:IfShowPostNotes}true{/block:IfShowPostNotes}{block:IfNotShowPostNotes}false{/block:IfNotShowPostNotes},
             BANNER_VIDEO_VOLUME = "{select:Banner Video Volume}",
             BANNER_VIDEO_AUTOPLAY = "{select:Banner Video Autoplay}",
-            VIMEO_BANNER = {block:IfNotBannerVimeoVideoID} false{/block:IfNotBannerVimeoVideoID}{block:IndexPage}{block:IfBannerVimeoVideoID} true{/block:IfBannerVimeoVideoID}{/block:IndexPage}{block:PermalinkPage}{block:IfBannerVimeoVideoID} false{/block:IfBannerVimeoVideoID}{/block:PermalinkPage};
+            VIMEO_BANNER = {block:IfNotBannerVimeoVideoID} false{/block:IfNotBannerVimeoVideoID}{block:IndexPage}{block:IfBannerVimeoVideoID} true{/block:IfBannerVimeoVideoID}{/block:IndexPage}{block:PermalinkPage}{block:IfBannerVimeoVideoID} false{/block:IfBannerVimeoVideoID}{/block:PermalinkPage},
+            PHOTOSET_POST_TYPE = "{select:Photoset Post Type}";
     </script>
     
 
@@ -1484,6 +1498,10 @@
     		}
         }
         
+        .navigation .description {
+            margin:0 0 30px 0;
+        }
+        
     </style>
 
     
@@ -1492,6 +1510,13 @@
 
 <body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner}">
 
+    {block:ifDefaultHomepageTag}{block:IndexPage}<script type="text/javascript">
+    var url = location.href;
+        if (url == "{BlogURL}") {
+        window.location = "{BlogURL}tagged/{text:Default Homepage Tag}";
+    }
+    </script>{/block:IndexPage}
+    {/block:ifDefaultHomepageTag}
 
     <div id="stash-preloader"><div id="stash-loader"><div class="loading-icon"></div></div></div>
     <div class="dark-overlay"></div>
@@ -1741,6 +1766,7 @@
                         {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa-brands fa-facebook"></i></a></li>{/block:ifFacebookURL}
                         {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa-brands fa-youtube"></i></a></li>{/block:ifYoutubeURL}
                         {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa-brands fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
+                        {block:ifLinkTreeURL}<li><a target="_blank" href="{text:LinkTree URL}"><i class="fa-solid fa-tree"></i></a></li>{/block:ifLinkTreeURL}
                         {block:ifPhoneNumber}<li><a target="_blank" href="tel:{text:Phone Number}"><i class="fa fa-phone"></i></a></li>{/block:ifPhoneNumber} 
                         {block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}"><i class="fa fa-envelope"></i></a></li>{/block:ifEmailAddress}
                         {block:if500pxURL}<li><a target="_blank" href="{text:500px URL}"><i class="fa-brands fa-500px"></i></a></li>{/block:if500pxURL}
@@ -1842,6 +1868,7 @@
                         {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa-brands fa-facebook"></i></a></li>{/block:ifFacebookURL}
                         {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa-brands fa-youtube"></i></a></li>{/block:ifYoutubeURL}
                         {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa-brands fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
+                        {block:ifLinkTreeURL}<li><a target="_blank" href="{text:LinkTree URL}"><i class="fa-solid fa-tree"></i></a></li>{/block:ifLinkTreeURL}
                         {block:ifPhoneNumber}<li><a target="_blank" href="tel:{text:Phone Number}"><i class="fa fa-phone"></i></a></li>{/block:ifPhoneNumber} 
                         {block:ifEmailAddress}<li><a target="_blank" href="mailto:{text:Email Address}"><i class="fa fa-envelope"></i></a></li>{/block:ifEmailAddress}
                         {block:if500pxURL}<li><a target="_blank" href="{text:500px URL}"><i class="fa-brands fa-500px"></i></a></li>{/block:if500pxURL}
@@ -2258,7 +2285,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/esXs0au5d/plugins.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/ELQsccfvm/plugins.js"></script>
     <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
 
     {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/seIs05v44/modal.js"></script>{/block:IfModalPost}
@@ -2432,7 +2459,7 @@
                     
                     $($newElems).each(function(){
                         var currentPost = this;
-                        var scene = new ScrollMagic.Scene({triggerElement: currentPost, triggerHook: "onEnter", offset:-150, reverse: true});
+                        var scene = new ScrollMagic.Scene({offset:100, reverse: true});
                             scene.addTo(controller);
                             scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
                         $('#stash-ants').isotope(true).isotope('layout');
