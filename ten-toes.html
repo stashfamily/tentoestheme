@@ -184,7 +184,8 @@
         <meta name="select:Header Text Case" content="lowercase" Title="Lowercase" /><meta name="select:Header Text Case" content="normal" Title="Normal" /><meta name="select:Header Text Case" content="uppercase" Title="Uppercase" />
         <meta name="select:Posts Columns" content="three" Title="3" /><meta name="select:Posts Columns" content="one" Title="1" /><meta name="select:Posts Columns" content="two" Title="2" /><meta name="select:Posts Columns" content="four" Title="4" />
         
-        <meta name="select:Photoset Post Type" content="true" Title="Carousel" /><meta name="select:Photoset Post Type" content="false" Title="Normal" />
+        <meta name="select:Photoset Post Type" content="true" Title="Carousel" />
+        <meta name="select:Photoset Post Type" content="false" Title="Normal" />
         
         <meta name="select:Modal Post Image Size" content="modal-post-fit" Title="Fit" /><meta name="select:Modal Post Image Size" content="modal-post-full" Title="Full" />
 
@@ -216,7 +217,7 @@
             BANNER_VIDEO_VOLUME = "{select:Banner Video Volume}",
             BANNER_VIDEO_AUTOPLAY = "{select:Banner Video Autoplay}",
             VIMEO_BANNER = {block:IfNotBannerVimeoVideoID} false{/block:IfNotBannerVimeoVideoID}{block:IndexPage}{block:IfBannerVimeoVideoID} true{/block:IfBannerVimeoVideoID}{/block:IndexPage}{block:PermalinkPage}{block:IfBannerVimeoVideoID} false{/block:IfBannerVimeoVideoID}{/block:PermalinkPage},
-            PHOTOSET_POST_TYPE = "{select:Photoset Post Type}";
+            PHOTOSET_POST_TYPE = {select:Photoset Post Type};
     </script>
     
 
@@ -1387,6 +1388,10 @@
             width:100%;
         }
         
+        .post-body .npf_row:first-of-type {
+            margin-top:0;
+        }
+        
         .post-body .npf_row:last-of-type {
             margin-bottom:20px;
         }       
@@ -1500,6 +1505,14 @@
         
         .navigation .description {
             margin:0 0 30px 0;
+        }
+        
+        p:empty {
+            margin:0;
+        }
+        
+        .reblog-list .post-reblog-trail-item:first-child {
+            padding:0;
         }
         
     </style>
@@ -2285,7 +2298,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/ELQsccfvm/plugins.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/W9jsccmh1/plugins.js"></script>
     <script src="https://static.tumblr.com/jzzkxgh/SDfqi8suw/ten-toes.js"></script>
 
     {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/seIs05v44/modal.js"></script>{/block:IfModalPost}
