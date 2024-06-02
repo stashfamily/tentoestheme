@@ -1540,12 +1540,12 @@
         
         /** Instagram Post **/
         
-        .instagram-post iframe, .fuse-overlay.instagram iframe  {
+        .instagram-post iframe, .stash-overlay.instagram iframe  {
             position:absolute;
             height:100%;
         }
         
-        .instagram-post .media, .fuse-overlay.instagram .media, .insta-video {
+        .instagram-post .media, .stash-overlay.instagram .media, .insta-video {
             display:block;
             padding-bottom: 116.111111%;
         }
@@ -2465,7 +2465,7 @@
                         $("article").fitVids();
                     $('video').on('loadeddata',function (){
                         $("article").fitVids();
-                        $('#fuse-ants').isotope(true).isotope('layout');
+                        $('#stash-ants').isotope(true).isotope('layout');
                     });
                 }
                 
@@ -2518,7 +2518,7 @@
                     
                     if ( $('.post-video').length > 0 ) {
                         $('video').on('loadeddata',function (){
-                            $('#fuse-ants').isotope(true).isotope('layout');
+                            $('#stash-ants').isotope(true).isotope('layout');
                             $(this).attr('playsinline', '');
                         });
                     }
