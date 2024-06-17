@@ -2,12 +2,14 @@
 
 <!-- 
 
-    Ten Toes v3.3
+    Ten Toes v3.4
     by: Stashthemes
     
     Simple, clean photo posts & photosets.
     
     Newest Update Options:
+    - Mobile Post Columns (default: 3)
+    - Featured Tag cloud on sidebar
     - Photoset Post Type option - Carousel / normal
     - Homepage Featured Tag option (redirect homepage to a tagged page)
     - LinkTree Social Link added
@@ -24,7 +26,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>{Title}{block:PostSummary} - {PostSummary}{/block:PostSummary}</title>
     <meta name="description" content="{block:Description}{MetaDescription}{/block:Description}" />
-    {MobileAppHeaders}
     <meta name="viewport" content="initial-scale=1.0, width=device-width" />
     {block:Hidden}
         <meta name="image:Logo" content="" />
@@ -58,6 +59,7 @@
         <meta name="text:Description Text Size" content="11px" />
         <meta name="text:Mobile Header Text Size" content="16px" />
         <meta name="text:Title Font Size" content="30px" />
+        <meta name="text:Font Embed Code" content="">
         <meta name="text:Body Font" content="" />
         <meta name="text:Logo Font" content="" />
         <meta name="text:Banner Font" content="" />
@@ -86,7 +88,6 @@
         <meta name="text:Banner Overlay Opacity" content="0.7">
         <meta name="if:&#x2584;&#x2580;&#x2584;&#x2580; Banner &#x2580;&#x2584;&#x2580;&#x2584;" content="">
         <meta name="if:Banner" content="0" />
-        <meta name="if:Banner Video Buttons" content="1" />
         <meta name="if:Banner Overlay" content="0" />
         <meta name="if:Mobile Hide Banner" content="0">
         <meta name="if:Banner Only No Posts" content="0" />
@@ -180,12 +181,13 @@
         <meta name="text:Custom Link 10 URL" content="" />
         <meta name="text:Custom Link 10 Name" content="" />
 
-        <meta name="text:TypeKit ID" content="" />
-        <meta name="text:TypeKit Body Font" content="" />
-        <meta name="text:TypeKit Logo Font" content="" />
         <meta name="text:Google Analytics ID" content='' />
         <meta name="select:Header Text Case" content="lowercase" Title="Lowercase" /><meta name="select:Header Text Case" content="normal" Title="Normal" /><meta name="select:Header Text Case" content="uppercase" Title="Uppercase" />
+
+        <meta name="select:&#x2584;&#x2580;&#x2584;&#x2580; Post Columns &#x2580;&#x2584;&#x2580;&#x2584;" content="">
         <meta name="select:Posts Columns" content="three" Title="3" /><meta name="select:Posts Columns" content="one" Title="1" /><meta name="select:Posts Columns" content="two" Title="2" /><meta name="select:Posts Columns" content="four" Title="4" />
+        
+        <meta name="select:Mobile Posts Columns" content="three" Title="3" /><meta name="select:Mobile Posts Columns" content="one" Title="1" />
         
         <meta name="select:Photoset Post Type" content="true" Title="Carousel" />
         <meta name="select:Photoset Post Type" content="false" Title="Normal" />
@@ -210,8 +212,7 @@
     <link rel="alternate" type="application/rss+xml" href="{RSS}" />
 
     <script>
-        var TUMBLR_API_KEY = "5c9EqEvjoBVXriaQDOluhj9kUOElq0oIl9EQCxSWTmQ0Ifk7Cs",
-            TUMBLR_HOSTNAME = {JSPlaintextHost},
+        var TUMBLR_HOSTNAME = {JSPlaintextHost},
             TUMBLR_TITLE = {JSPlaintextTitle},
             TUMBLR_DESC = {JSPlaintextDescription},
             TUMBLR_URL = {JSPlaintextBlogURL},
@@ -230,7 +231,8 @@
     {block:IfBodyFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Body Font}:{select:Body Font Weight}, 400,400italic,700,700italic">{/block:IfBodyFont}
     {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
     {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
-    <link href="https://static.tumblr.com/jzzkxgh/0Mqsdloog/core.css" rel="stylesheet">
+    <!--<link href="https://static.tumblr.com/jzzkxgh/4b5sf7nkn/core.css" rel="stylesheet">-->
+    <link href="https://themes.stashfamily.com/labs/themes/ten-toes/core.css" rel="stylesheet">
 
     <style type="text/css">
         
@@ -251,9 +253,6 @@
         
         body {
             font: {text:Font Size} {block:IfBodyFont}"{text:Body Font}",{/block:IfBodyFont} "{select:Font}", Helvetica Neue, Helvetica, Arial, sans-serif;
-            {block:IfTypeKitBodyFont}
-                font:{text:Font Size} "{text:TypeKit Body Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            {/block:IfTypeKitBodyFont}
             color: {color:Text};
             font-weight:{select:Body Font Weight};
             line-height:1.4;
@@ -284,9 +283,6 @@
 
         blockquote {
             font:{text:Font Size} {block:IfBodyFont}"{text:Body Font}",{/block:IfBodyFont} "{select:Font}", Helvetica Neue, Helvetica, Times New Roman, sans-serif;
-            {block:IfTypeKitBodyFont}
-                font:{text:Font Size} "{text:TypeKit Body Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            {/block:IfTypeKitBodyFont}
             padding: 0;
             font-style:italic;
         }
@@ -309,9 +305,6 @@
             font-size:12px;
             font-weight:normal;
             font-family:{block:IfBodyFont}"{text:Body Font}",{/block:IfBodyFont} "{select:Font}", Helvetica Neue, Helvetica, Times New Roman, sans-serif;
-            {block:IfTypeKitBodyFont}
-                font-family:"{text:TypeKit Body Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            {/block:IfTypeKitBodyFont}
             text-transform:uppercase;
             -webkit-transition:all 0.2s ease-out;
             transition:all 0.2s ease-out;
@@ -364,6 +357,10 @@
                 text-decoration:none;
             }
         {/block:IfHeaderTextHoverUnderline}
+        
+        .navigation ul:empty, .header-social ul:empty {
+            display:none;
+        }
         
         .content p a:hover {
             color:{color:Text};
@@ -445,7 +442,7 @@
         
         .asker-box {
             background:{color:Accent};
-            padding:8px;
+            padding:14px;
             color:{color:Background};
         }
         
@@ -885,18 +882,9 @@
         }
         .banner-text {
             font:{select:Banner Text Font Weight} {text:Banner Text Size} {block:IfBannerFont}"{text:Banner Font}",{/block:IfBannerFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            {block:IfTypeKitBannerFont}
-                font:{select:Banner Text Font Weight} {text:Banner Text Size} "{text:Typekit Banner Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            {/block:IfTypeKitBannerFont}
             transition:font 0.25s ease-out;
             color:{color:Banner Text};
         }
-        
-        {block:ifnotBannerVideoButtons}
-            .banner-video-options, .arr-down {
-                display:none;   
-            }
-        {/block:ifnotBannerVideoButtons}
         
         {block:ifBannerOverlay}
             .banner-youtube-video, #banner-vimeo-video, .banner-img, .mobile-banner-img {
@@ -962,20 +950,12 @@
         
         @media (max-width: 740px) { 
             
-            .post {
-                opacity:1 !important;
-                visibility:visible !important;
-            }
-            
             .stash-overlay {
                 background: {color:Background};
             }
         
             .logo a {
                 font:{select:Logo Font Weight} 19px/30px {block:IfLogoFont}"{text:Logo Font}",{/block:IfLogoFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                {block:IfTypeKitLogoFont}
-                    font:{select:Logo Font Weight} 19px/30px "{text:Typekit Logo Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                {/block:IfTypeKitLogoFont}
                 width:auto;
                 color:{color:Header Text};
             }
@@ -986,10 +966,7 @@
             
             .sidebar-logo a {
                 font:{select:Logo Font Weight} 19px {block:IfLogoFont}"{text:Logo Font}",{/block:IfLogoFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                
-                {block:IfTypeKitLogoFont}
-                    font:{select:Logo Font Weight} 19px "{text:Typekit Logo Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                {/block:IfTypeKitLogoFont}
+            
             }
             
             {block:ifmobilebannerbackgroundimage}
@@ -1000,9 +977,6 @@
             
             .banner-text {
                 font:{select:Banner Text Font Weight} 16px {block:IfBannerFont}"{text:Banner Font}",{/block:IfBannerFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                {block:IfTypeKitBannerFont}
-                    font:{select:Banner Text Font Weight} 16px "{text:Typekit Banner Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                {/block:IfTypeKitBannerFont}
                 max-width:100%;
             }
             
@@ -1074,23 +1048,28 @@
         .navigation a, .header-social a  {
             color:{color:Header Text};
         }
+        
+        .featured-tags li a, #sidebar .featured-tags li a {
+            color:{color:Background};
+            background-color:{color:Header Text};
+            padding:5px 9px;
+            border-radius:50px;
+            font-size:13px;
+        }
+        
+        .featured-tags li {
+            display:inline-block;
+            margin:0 3px 10px 0;
+        }
 
         .logo, .logo a {
             font:{select:Logo Font Weight} {text:Logo Size} {block:IfLogoFont}"{text:Logo Font}",{/block:IfLogoFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            
-            {block:IfTypeKitLogoFont}
-                font:{select:Logo Font Weight} {text:Logo Size} "{text:Typekit Logo Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            {/block:IfTypeKitLogoFont}
             color:{color:Logo};
             font-weight:{select:Logo Font Weight};
         }
         
         .sidebar-logo, .sidebar-logo a {
             font:{select:Logo Font Weight} 19px {block:IfLogoFont}"{text:Logo Font}",{/block:IfLogoFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            
-            {block:IfTypeKitLogoFont}
-                font:{select:Logo Font Weight} 19px "{text:Typekit Logo Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-            {/block:IfTypeKitLogoFont}
         }
         
         #sidebar .social-links a {
@@ -1108,9 +1087,6 @@
         
             .logo a {
                 font:{select:Logo Font Weight} {text:Mobile Header Text Size}/30px {block:IfLogoFont}"{text:Logo Font}",{/block:IfLogoFont} "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                {block:IfTypeKitLogoFont}
-                    font:{select:Logo Font Weight} {text:Mobile Header Text Size}/30px "{text:Typekit Logo Font}", "{select:Font}", Helvetica Neue, Arial, sans-serif;
-                {/block:IfTypeKitLogoFont}
                 width:auto;
             }
             
@@ -1123,7 +1099,7 @@
                 line-height:50px;
             }
             
-            .navigation, .header-social, .header-widget {
+            .navigation, .header-social, .header-widget, #header .featured-tags {
                 display:none;
             }
             
@@ -1277,30 +1253,6 @@
             visibility:visible;
         }
         
-        .stash-insta-wrap i {
-            margin-right:3px;
-        }
-        
-        .stash-insta-wrap {
-            margin-bottom:5px;
-        }
-        
-        #instafeed {
-          display: flex;
-          flex-direction: row;
-          flex-wrap: wrap;
-        }
-        
-        #instafeed a {
-            flex: 50%;
-            width:50%;
-        }
-        
-        #instafeed div .insta-username {
-            font-size:{text:Font Size} !important;
-            font-weight:bold;
-        }
-        
         /** Social Icons Instead **/
         
         .header-social {
@@ -1364,6 +1316,13 @@
         }
         
         /** New **/
+        
+        .spotify_audio_player,
+        article iframe[src*='soundcloud'] {
+        	max-height: 170px;
+        	border: 0;
+        	width:100%;
+        }
         
         .audio-caption img {
             position: absolute;
@@ -1449,7 +1408,7 @@
         @media (max-width:740px) {
             body.index-page #stash-ants .photoset-count {
                 top:7.5px;
-                left:15px;
+                left:7.5px;
             }
             
             #header .search.widget {
@@ -1497,14 +1456,6 @@
         .stash-overlay.text .caption {
             display:none;
         }
-
-        @media (max-width:740px) {
-    		.post {
-    			position:relative !important;
-    			top:initial !important;
-    			left:initial !important;
-    		}
-        }
         
         .navigation .description {
             margin:0 0 30px 0;
@@ -1540,12 +1491,12 @@
         
         /** Instagram Post **/
         
-        .instagram-post iframe, .stash-overlay.instagram iframe  {
+        .instagram-post iframe, .fuse-overlay.instagram iframe  {
             position:absolute;
             height:100%;
         }
         
-        .instagram-post .media, .stash-overlay.instagram .media, .insta-video {
+        .instagram-post .media, .fuse-overlay.instagram .media, .insta-video {
             display:block;
             padding-bottom: 116.111111%;
         }
@@ -1561,12 +1512,12 @@
         
         
     </style>
-
     
+    {text:Font Embed Code}
 </head>
 
 
-<body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner}">
+<body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner} mobile-post-columns-{select:Posts Columns} photoset-type-{select:Photoset Post Type}">
 
     {block:ifDefaultHomepageTag}{block:IndexPage}<script type="text/javascript">
     var url = location.href;
@@ -1816,6 +1767,18 @@
                         {/block:ifRSSLink}
                     </ul>
                 </nav>
+                
+                {block:HasFeaturedTags}
+                    <div class="featured-tags widget">
+                    <ul>
+                    {block:FeaturedTags}
+                        <li>
+                            <a href="{TagURL}">{Tag}</a>
+                        </li>
+                    {/block:FeaturedTags}
+                    </ul>
+                    </div>
+                {/block:HasFeaturedTags}
                         
                 <nav class="sidebar-social widget cl">
                     <ul class="social-links-icons social-links">
@@ -1892,7 +1855,7 @@
                     {/block:ShowTitle} 
                 </div>
 
-                <nav class="navigation cl">
+                <nav class="navigation widget cl">
                     <ul>
                         {block:IfHomeLink}<li><a href="/">{text:Translate Home Text}</a></li>{/block:IfHomeLink}
                         {block:HasPages}
@@ -1914,9 +1877,21 @@
                         {block:IfArchiveLink}<li><a href="https://{name}.tumblr.com/archive" title="{text:Archive Link Label}">{text:Archive Link Label}</a></li>{/block:IfArchiveLink}
                         {block:ifRandomLink}<li><a href="https://{name}.tumblr.com/random" title="{text:Random Link Label}">{text:Random Link Label}</a></li>{/block:ifRandomLink}
                         {block:ifRSSLink}<li><a href="{RSS}" title="{lang:RSS}">{lang:RSS}</a></li>{/block:ifRSSLink}
-                        &nbsp;
+                        
                     </ul>
                 </nav>
+
+                {block:HasFeaturedTags}
+                    <div class="featured-tags widget">
+                    <ul>
+                    {block:FeaturedTags}
+                        <li>
+                            <a href="{TagURL}">{Tag}</a>
+                        </li>
+                    {/block:FeaturedTags}
+                    </ul>
+                    </div>
+                {/block:HasFeaturedTags}
 
                 <nav class="header-social cl">
                     <ul class="social-links-icons social-links">
@@ -1951,7 +1926,6 @@
                         {block:ifVKURL}<li><a target="_blank" href="{text:VK URL}"><i class="fa-brands fa-vk"></i></a></li>{/block:ifVKURL}
                         {block:ifWordpressURL}<li><a target="_blank" href="{text:Wordpress URL}"><i class="fa-brands fa-wordpress"></i></a></li>{/block:ifWordpressURL}
                         {block:ifShopURL}<li><a target="_blank" href="{text:Shop URL}"><i class="fa fa-store"></i></a></li>{/block:ifShopURL}
-                        &nbsp;
                     </ul>
                 </nav>
                 
@@ -2254,9 +2228,16 @@
                             <div class="inside">
                             <div class="content">
                                 <div class="asker-box">
-                                 <img class="asker-avatar" src="{AskerPortraitURL-24}" /><span class="the-asker">{Asker}</span> {text:Translate asked Text}: {Question}
+                                 <img class="asker-avatar" src="{AskerPortraitURL-24}" /><span class="the-asker">{Asker} </span> {text:Translate asked Text}: {Question}
                                 </div>
+                                
                                 <div class="answer">
+                                    {block:Answerer}
+                                    	<p class="user">
+                                    		<img class="asker-avatar" src="{AnswererPortraitURL-24}"/><span class="the-asker">{Answerer}:</span>
+                                    	</p>
+                                    {/block:Answerer}
+                                    
                                     {Answer}
                                 </div>
                             </div>
@@ -2343,15 +2324,10 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/E3asec2or/plugins.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/G62sdlqjx/plugins.js"></script>
     <script src="https://static.tumblr.com/jzzkxgh/yw1sdlnzy/ten-toes.js"></script>
 
-    {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/seIs05v44/modal.js"></script>{/block:IfModalPost}
-    
-    {block:IfTypeKitID}
-        <script type="text/javascript" src="//use.typekit.net/{text:TypeKit ID}.js"></script>
-        <script type="text/javascript">try{Typekit.load();}catch(e){}</script>
-    {/block:IfTypeKitID}
+    {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/62Lsesgj1/modal.js"></script>{/block:IfModalPost}
 
     <script type="text/javascript">
         (function($) {
@@ -2388,7 +2364,7 @@
                         'opacity': '1',
                         'visibility' : 'visible'
                     });
-                }, 5000);
+                }, 3000);
        
                 // $(window).scroll(function(){
                 //     if ($("body").scrollTop() > 200) {
@@ -2462,10 +2438,11 @@
                         TweenMax.to(".post", 0.4, {autoAlpha:1, ease:Power2.easeOut});
                     });
                     
-                        $("article").fitVids();
+                    $("article").fitVids();
+                    
                     $('video').on('loadeddata',function (){
                         $("article").fitVids();
-                        $('#stash-ants').isotope(true).isotope('layout');
+                        $('#fuse-ants').isotope(true).isotope('layout');
                     });
                 }
                 
@@ -2480,8 +2457,9 @@
                 navSelector: ".standard-pagination",
                 nextSelector: ".standard-pagination a.older",
                 itemSelector: ".ants-item-{select:Posts Columns}",
-                bufferPx : 1600,
-                extraScrollPx: 300,
+                bufferPx : 200,
+                behavior:'local',
+                localMode: true,
                 loading: {
                     msgText: '<div id="ants-loader"><div class="loading-icon"></div></div>',
                     finishedMsg: "",
@@ -2492,6 +2470,8 @@
                 },
               },function( newElements ) {
                   
+                stashFuel();
+                  
                 // Remove Reblogs
                 $(this).find('.tumblr_blog').closest('p').addClass('reblog-user');
                 $( "p:contains('(via')" ).closest('p').remove();
@@ -2499,36 +2479,36 @@
                     $(this).find('.reblog-user').remove();
                 {/block:IfNotShowPostReblogs}
                 
-                var $newElems = $(newElements).css({ opacity: 0, visibility:'hidden'});
+                var $newElems = $( newElements ).css({ opacity: 0 });
     
                 $newElems.imagesLoaded(function(){
                     
-                    $($newElems).each(function(){
-                        var currentPost = this;
-                        var scene = new ScrollMagic.Scene({offset:100, reverse: true});
-                            scene.addTo(controller);
-                            scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
-                        $('#stash-ants').isotope(true).isotope('layout');
-                    });
-                    stashFuel();
-                    
                     $('.stash-photoset.ips').stashIPS();
                     $("article").fitVids();
+                    
+                    $($newElems).each(function(){
+                        var currentPost = this;
+                        var scene = new ScrollMagic.Scene({offset:0, reverse: true});
+                            scene.addTo(controller);
+                            scene.setTween(TweenMax.fromTo(currentPost, 0.7, { autoAlpha:0, y:30, ease: Power2.easeInOut},{autoAlpha:1, y:0, ease: Power2.easeInOut, force3D: true}, 0));
+                    });
+                    $container.isotope( 'appended', $newElems, true );  
+                    
                     $('#stash-ants').isotope(true).isotope('layout');
                     
                     if ( $('.post-video').length > 0 ) {
                         $('video').on('loadeddata',function (){
-                            $('#stash-ants').isotope(true).isotope('layout');
+                            $('#fuse-ants').isotope(true).isotope('layout');
                             $(this).attr('playsinline', '');
                         });
                     }
      
-                    
-                    $container.isotope( 'appended', $newElems, true );  
+                    $('#infscr-loading').remove();
                     
                 });
                 var $newElemsIDs = $(newElements).map(function () { return this.id; }).get();
                 Tumblr.LikeButton.get_status_by_post_ids($newElemsIDs);
+                $('#stash-ants').isotope(true).isotope('layout');
               });
 
             if ( $('.permalink #stash-preloader').length ) {
@@ -2592,12 +2572,6 @@
         </script>
     {/block:IfGoogleAnalyticsID}
     
-<style type="text/css">
-    body .tmblr-iframe--follow-teaser, body .tmblr-iframe--gdpr-banner {
-        display:none !important;
-    }
-</style>
- 
 
     <div class='customize-demo demo-note'>
         <nav class="cl"><ul><li class="get-started-toggle demo-toggle"><a><b>Get Started</b> <i class="im im-angle-down"></i></a></li></ul></nav>
