@@ -1432,6 +1432,10 @@
         body article.post-photo .open-modal.photo-modal, body article.post-photoset .open-modal.photo-modal {
             display:block;
         }
+
+        body.photoset-type-false #posts article.post-photoset .open-modal.photo-modal {
+            height: 80%;
+        }
         
         .post-photoset .ps-nav-left, .post-photoset .ps-nav-right {
             z-index:4;
@@ -2324,7 +2328,7 @@
     </div>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/G62sdlqjx/plugins.js"></script>
+    <script type="text/javascript" src="https://static.tumblr.com/jzzkxgh/MCXsf7y7a/plugins.js"></script>
     <script src="https://static.tumblr.com/jzzkxgh/yw1sdlnzy/ten-toes.js"></script>
 
     {block:IfModalPost}<script src="https://static.tumblr.com/jzzkxgh/62Lsesgj1/modal.js"></script>{/block:IfModalPost}
