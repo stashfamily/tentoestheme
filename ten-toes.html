@@ -116,6 +116,7 @@
         <meta name="if:Show Post Notes" content="0" />
         <meta name="if:Scrollbar" content="0" />
         <meta name="if:Sidebar Search" content="0"/>
+        <meta name="if:Sidebar Featured Tags" content="0" />
         <meta name="if:Modal Post" content="1" />
         <meta name="if:Modal Post Navigation" content="0">
         <meta name="if:High Quality Images" content="1" />
@@ -1772,17 +1773,19 @@
                     </ul>
                 </nav>
                 
-                {block:HasFeaturedTags}
-                    <div class="featured-tags widget">
-                    <ul>
-                    {block:FeaturedTags}
-                        <li>
-                            <a href="{TagURL}">{Tag}</a>
-                        </li>
-                    {/block:FeaturedTags}
-                    </ul>
-                    </div>
-                {/block:HasFeaturedTags}
+                {block:IfSidebarFeaturedTags}
+                    {block:HasFeaturedTags}
+                        <div class="featured-tags widget">
+                        <ul>
+                        {block:FeaturedTags}
+                            <li>
+                                <a href="{TagURL}">{Tag}</a>
+                            </li>
+                        {/block:FeaturedTags}
+                        </ul>
+                        </div>
+                    {/block:HasFeaturedTags}
+                {/block:IfSidebarFeaturedTags}
                         
                 <nav class="sidebar-social widget cl">
                     <ul class="social-links-icons social-links">
@@ -1885,17 +1888,19 @@
                     </ul>
                 </nav>
 
-                {block:HasFeaturedTags}
-                    <div class="featured-tags widget">
-                    <ul>
-                    {block:FeaturedTags}
-                        <li>
-                            <a href="{TagURL}">{Tag}</a>
-                        </li>
-                    {/block:FeaturedTags}
-                    </ul>
-                    </div>
-                {/block:HasFeaturedTags}
+                {block:IfSidebarFeaturedTags}
+                    {block:HasFeaturedTags}
+                        <div class="featured-tags widget">
+                        <ul>
+                        {block:FeaturedTags}
+                            <li>
+                                <a href="{TagURL}">{Tag}</a>
+                            </li>
+                        {/block:FeaturedTags}
+                        </ul>
+                        </div>
+                    {/block:HasFeaturedTags}
+                {/block:IfSidebarFeaturedTags}
 
                 <nav class="header-social cl">
                     <ul class="social-links-icons social-links">
