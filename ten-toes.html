@@ -744,7 +744,7 @@
         {/block:IfNotShowPostTags}
         
         {block:IfNotShowPostCaption}
-            .post-caption, .stash-overlay .post-caption, #stash .post-photo .content, #stash .post-photoset .content, #stash .post-video .content, #stash .post-audio .content {
+            .post-caption, .stash-overlay .post-caption, #stash .post-photo .content, #stash .post-photoset .content, #stash .post-video .content, #stash .post-audio .content, body.index-page #stash-ants .post-video .content {
                 display:none;
             }
 
@@ -1447,10 +1447,6 @@
         }
         
         .post-text .photo-modal {
-            display:none;
-        }
-    
-        body.index-page #stash-ants .post-video .content {
             display:none;
         }
         
