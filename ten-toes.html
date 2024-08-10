@@ -188,7 +188,7 @@
         <meta name="select:&#x2584;&#x2580;&#x2584;&#x2580; Post Columns &#x2580;&#x2584;&#x2580;&#x2584;" content="">
         <meta name="select:Posts Columns" content="three" Title="3" /><meta name="select:Posts Columns" content="one" Title="1" /><meta name="select:Posts Columns" content="two" Title="2" /><meta name="select:Posts Columns" content="four" Title="4" />
         
-        <meta name="select:Mobile Posts Columns" content="one" Title="1" /><meta name="select:Mobile Posts Columns" content="three" Title="3" />
+        <meta name="select:Mobile Posts Columns" content="one" Title="1" /><meta name="select:Mobile Posts Columns" content="two" Title="2" /><meta name="select:Mobile Posts Columns" content="three" Title="3" />
         
         <meta name="select:Photoset Post Type" content="true" Title="Carousel" />
         <meta name="select:Photoset Post Type" content="false" Title="Normal" />
@@ -232,8 +232,7 @@
     {block:IfBodyFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Body Font}:{select:Body Font Weight}, 400,400italic,700,700italic">{/block:IfBodyFont}
     {block:IfBannerFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Banner Font}:{select:Banner Text Font Weight}, 400,400italic,700,700italic">{/block:IfBannerFont}
     {block:IfLogoFont}<link rel="stylesheet" href="https://fonts.googleapis.com/css?family={text:Logo Font}:{select:Logo Font Weight}, 400,400italic,700,700italic">{/block:IfLogoFont}
-    <!--<link href="https://static.tumblr.com/jzzkxgh/4b5sf7nkn/core.css" rel="stylesheet">-->
-    <link href="https://themes.stashfamily.com/labs/themes/ten-toes/core.css" rel="stylesheet">
+    <link href="https://static.tumblr.com/jzzkxgh/VXjshzf58/core.css" rel="stylesheet">
 
     <style type="text/css">
         
@@ -1509,6 +1508,43 @@
         .instagram-post .media iframe, .insta-video iframe {
             position:absolute;
             height:100%;
+        }
+        
+                
+        @media (max-width: 740px) { 
+            .mobile-post-columns-one .post { margin:0 !important; padding:7.5px 15px !important; opacity:1 !important; visibility:visible !important;
+                position:relative !important;
+                top:initial !important;
+                left:initial !important;
+            }
+        
+           .mobile-post-columns-one .ants-sizer-{select:Posts Columns}, .mobile-post-columns-one .post { width: 100% !important; }
+        
+            /* Mobile 2 columns */
+           .mobile-post-columns-two .ants-sizer-{select:Posts Columns}, .mobile-post-columns-two .post { width: 48% !important; }
+           .mobile-post-columns-two .post {margin:0 0 4%}
+           .mobile-post-columns-two .post.x2 { width:100% !important; }
+           .mobile-post-columns-two .ants-gutter-{select:Posts Columns} { width: 4%; }
+           
+            /* Mobile 3 columns */
+           .mobile-post-columns-three .ants-sizer-{select:Posts Columns}, .mobile-post-columns-three .post { width: 31.33% !important; }
+           .mobile-post-columns-three .post {margin:0 0 3%}
+            .mobile-post-columns-three .post.x2 { width:65.66% !important; }
+           .mobile-post-columns-three .ants-gutter-{select:Posts Columns} { width: 3%; }
+        
+            .mobile-post-columns-three  .post-text, .mobile-post-columns-three  .post-quote, .mobile-post-columns-three  .post-chat, .mobile-post-columns-three  .post-answer, .mobile-post-columns-three  .post-link {
+                padding:10px !important;
+            }
+            body.mobile-post-columns-three #posts, body.mobile-post-columns-two #posts {
+                padding:0 15px;
+            }
+        
+            body.index-page.mobile-post-columns-three #stash-ants .photoset-count {
+                width:30px;
+                height:30px;
+                line-height:30px;
+                font-size:7px;
+            }
         }
         
         
