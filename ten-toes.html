@@ -50,7 +50,6 @@
         
         <!-- Posts -->
         <meta name="text:&#x2584;&#x2580;&#x2584;&#x2580; Homepage Redirect &#x2580;&#x2584;&#x2580;&#x2584;" content="">
-        <meta name="text:Default Homepage Tag" content="">
 
         <meta name="text:Font Size" content="13px" />
         <meta name="text:Logo Size" content="16px" />
@@ -1555,14 +1554,6 @@
 
 
 <body class="{block:IndexPage}index-page index {/block:IndexPage}{block:PermalinkPage}permalink post-page {/block:PermalinkPage} {block:TagPage}tagged-page {/block:TagPage} post-columns-{select:Posts Columns} {select:Modal Post Image Size}  {block:ifbanner} has-banner {block:IfBannerVimeoVideoID}has-vimeo-video {/block:IfBannerVimeoVideoID} {block:ifmobilebannerbackgroundimage}has-mobile-banner-image {/block:ifmobilebannerbackgroundimage}{/block:ifbanner} mobile-post-columns-{select:Mobile Posts Columns} photoset-type-{select:Photoset Post Type}">
-
-    {block:ifDefaultHomepageTag}{block:IndexPage}<script type="text/javascript">
-    var url = location.href;
-        if (url == "{BlogURL}") {
-        window.location = "{BlogURL}tagged/{text:Default Homepage Tag}";
-    }
-    </script>{/block:IndexPage}
-    {/block:ifDefaultHomepageTag}
 
     <div id="stash-preloader"><div id="stash-loader"><div class="loading-icon"></div></div></div>
     <div class="dark-overlay"></div>
