@@ -2,7 +2,7 @@
 
 <!-- 
 
-    Ten Toes v3.4
+    Ten Toes v3.5
     by: Stashthemes
     
     Simple, clean photo posts & photosets.
@@ -15,6 +15,7 @@
     
     - Support for Instagram posts
     - Video poster added to video posts on mobile
+    - New Icon for X and Bluesky Social added
 
 -->
 
@@ -131,6 +132,7 @@
         <meta name="text:TikTok URL" content="">
         <meta name="text:Facebook URL" content="">
         <meta name="text:Youtube URL" content="">
+        <meta name="text:Bluesky URL" content="">
         <meta name="text:Snapchat URL" content="">
         <meta name="text:LinkTree URL" content="">
         <meta name="text:500px URL" content="">
@@ -1041,6 +1043,22 @@
         .navigation, .header-social, .sidebar-toggle, .sidebar-navigation, .post-title {
             font-weight:{select:Header Font Weight};
         }
+        
+        .header-social .bluesky-icon {
+    			transform:translateY(1.5px);
+    		}
+    
+        .header-social ul li svg, .x-icon, .sidebar-social ul li svg, .bluesky-icon svg {
+            height:14px;
+            width:auto;
+        }
+        .header-social ul li svg path {
+            fill:{color:Header Text};
+        }
+    
+        .sidebar-social ul li svg path {
+            fill:{color:Sidebar Text};
+        }
 
         .navigation a, .header-social a  {
             color:{color:Header Text};
@@ -1815,10 +1833,11 @@
                         
                 <nav class="sidebar-social widget cl">
                     <ul class="social-links-icons social-links">
-                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><i class="fa-brands fa-twitter"></i></a></li>{/block:ifTwitterURL}
+                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><svg class="x-icon" width="13.69" height="14" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/></svg></a></li>{/block:ifTwitterURL}
                         {block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}"><i class="fa-brands fa-instagram"></i></a></li>{block:ifInstagramURL}
                         {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa-brands fa-facebook"></i></a></li>{/block:ifFacebookURL}
                         {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa-brands fa-youtube"></i></a></li>{/block:ifYoutubeURL}
+                        {block:ifBlueskyURL}<li class="bluesky-icon"><a target="_blank" href="{text:Bluesky URL}"><svg width="18" height="16.56" viewBox="0 0 25 23" fill="none" xmlns="<http://www.w3.org/2000/svg>"><path d="M5.65498 1.83464C8.42565 3.91468 11.4058 8.13214 12.5 10.3955C13.5942 8.13231 16.5742 3.91464 19.345 1.83464C21.3441 0.333764 24.5833 -0.827528 24.5833 2.86776C24.5833 3.60576 24.1602 9.06735 23.912 9.95401C23.0494 13.0367 19.906 13.8229 17.1099 13.3471C21.9974 14.1789 23.2408 16.9342 20.5556 19.6896C15.4561 24.9225 13.2261 18.3766 12.6544 16.6993C12.5496 16.3918 12.5006 16.248 12.4999 16.3703C12.4992 16.248 12.4502 16.3918 12.3454 16.6993C11.774 18.3766 9.54405 24.9226 4.44417 19.6896C1.759 16.9342 3.0023 14.1787 7.88988 13.3471C5.09371 13.8229 1.9503 13.0367 1.0878 9.95401C0.839621 9.06726 0.416504 3.60568 0.416504 2.86776C0.416504 -0.827528 3.65575 0.333764 5.65484 1.83464H5.65498Z" fill="white"/></svg></a></li>{/block:ifBlueskyURL}
                         {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa-brands fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
                         {block:ifLinkTreeURL}<li><a target="_blank" href="{text:LinkTree URL}"><i class="fa-solid fa-tree"></i></a></li>{/block:ifLinkTreeURL}
                         {block:ifPhoneNumber}<li><a target="_blank" href="tel:{text:Phone Number}"><i class="fa fa-phone"></i></a></li>{/block:ifPhoneNumber} 
@@ -1930,11 +1949,14 @@
 
                 <nav class="header-social cl">
                     <ul class="social-links-icons social-links">
-                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><i class="fa-brands fa-twitter"></i></a></li>{/block:ifTwitterURL}
+                        {block:ifTwitterURL}<li><a target="_blank" href="{text:Twitter URL}"><svg class="x-icon" width="13.69" height="14" viewBox="0 0 1200 1227" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M714.163 519.284L1160.89 0H1055.03L667.137 450.887L357.328 0H0L468.492 681.821L0 1226.37H105.866L515.491 750.218L842.672 1226.37H1200L714.137 519.284H714.163ZM569.165 687.828L521.697 619.934L144.011 79.6944H306.615L611.412 515.685L658.88 583.579L1055.08 1150.3H892.476L569.165 687.854V687.828Z" fill="white"/></svg></a></li>{/block:ifTwitterURL}
                         {block:ifInstagramURL}<li><a target="_blank" href="{text:Instagram URL}"><i class="fa-brands fa-instagram"></i></a></li>{block:ifInstagramURL}
                         {block:ifTikTokURL}<li><a target="_blank" href="{text:TikTok URL}"><i class="fa-brands fa-tiktok"></i></a></li>{block:ifTikTokURL}
                         {block:ifFacebookURL}<li><a target="_blank" href="{text:Facebook URL}"><i class="fa-brands fa-facebook"></i></a></li>{/block:ifFacebookURL}
                         {block:ifYoutubeURL}<li><a target="_blank" href="{text:Youtube URL}"><i class="fa-brands fa-youtube"></i></a></li>{/block:ifYoutubeURL}
+                    
+                        {block:ifBlueskyURL}<li class="bluesky-icon"><a target="_blank" href="{text:Bluesky URL}"><svg width="18" height="16.56" viewBox="0 0 25 23" fill="none" xmlns="<http://www.w3.org/2000/svg>"><path d="M5.65498 1.83464C8.42565 3.91468 11.4058 8.13214 12.5 10.3955C13.5942 8.13231 16.5742 3.91464 19.345 1.83464C21.3441 0.333764 24.5833 -0.827528 24.5833 2.86776C24.5833 3.60576 24.1602 9.06735 23.912 9.95401C23.0494 13.0367 19.906 13.8229 17.1099 13.3471C21.9974 14.1789 23.2408 16.9342 20.5556 19.6896C15.4561 24.9225 13.2261 18.3766 12.6544 16.6993C12.5496 16.3918 12.5006 16.248 12.4999 16.3703C12.4992 16.248 12.4502 16.3918 12.3454 16.6993C11.774 18.3766 9.54405 24.9226 4.44417 19.6896C1.759 16.9342 3.0023 14.1787 7.88988 13.3471C5.09371 13.8229 1.9503 13.0367 1.0878 9.95401C0.839621 9.06726 0.416504 3.60568 0.416504 2.86776C0.416504 -0.827528 3.65575 0.333764 5.65484 1.83464H5.65498Z" fill="white"/></svg></a></li>{/block:ifBlueskyURL}
+                        
                         {block:ifSnapchatURL}<li><a target="_blank" href="{text:Snapchat URL}"><i class="fa-brands fa-snapchat-ghost"></i></a></li>{/block:ifSnapchatURL}
                         {block:ifLinkTreeURL}<li><a target="_blank" href="{text:LinkTree URL}"><i class="fa-solid fa-tree"></i></a></li>{/block:ifLinkTreeURL}
                         {block:ifPhoneNumber}<li><a target="_blank" href="tel:{text:Phone Number}"><i class="fa fa-phone"></i></a></li>{/block:ifPhoneNumber} 
