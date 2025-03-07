@@ -1138,21 +1138,21 @@
                 fill:{color:Header Text};
             }
         }
-          
+        
         /* Customize Help */
         
         .demo-note {
             position: fixed;
-            bottom: 0;
-            right:0;
-            background: black;
+            bottom: 20px;
+            right:20px;
+            background: #1b1b1b;
             font-size: 14px;
             text-align: left;
             line-height: 1;
             font-family: Helvetica Neue, Helvetica, Arial, sans-serif;
             z-index: 999999;
             width:100%;
-            max-width:240px;
+            max-width:340px;
             opacity:0;
             visibility:hidden;
             transform:translateY(100%);
@@ -1173,10 +1173,10 @@
         .demo-note nav {
             text-transform:normal;
             font-size:15px;
+            padding: 15px;
         }
         
         .demo-note nav ul {
-            padding:0;
             margin:0;
         }
         
@@ -1184,11 +1184,6 @@
             float:left;
             list-style:none;
             width:100%;
-        }
-        
-        .demo-note nav ul li a {
-            padding:14px;
-            display:block;
         }
         
         .demo-note  a {
@@ -1202,31 +1197,36 @@
             transition:all 0.2s;
         }
         
+        .more-toggle {
+            cursor:pointer;
+            display:inline-block;
+        }
+        
+        .more-toggle i {
+            padding-left:3px;
+            transform:translateY(2px);
+        }
+        
         .get-started-toggle {
-            background:#111111;
-            border-radius:6px;
+            background:#1b1b1b;
+            font-weight:600;
+            font-size:15px;
+            color:white;
         }
         
         .get-started-toggle a {
             color:white;
+            display:inline-block;
+            margin-right:10px;
         }
         
-        .demo-toggle.open .im {
+        .get-started-toggle a:hover, .more-toggle:hover {
+            opacity:0.6;
+        }
+        
+        .demo-toggle.open .fa {
             -webkit-transform:rotate(180deg);
             transform:rotate(180deg);
-        }
-        
-        .remove-stash-credit {
-            background:white url('https://static.tumblr.com/jzzkxgh/Ud7ppcbpu/remove-stash-credit.gif');
-            background-position:center center;
-        }
-        
-        .remove-stash-credit a {
-            color:black;
-        }
-
-        .remove-stash-credit a:hover {
-            text-decoration:none;
         }
         
         .demo-overlay {
@@ -1239,10 +1239,10 @@
         }
 
         .demo-overlay.open {
-            margin-top:10px;
+            margin-top:15px;
             height:auto;
-            -webkit-transition:all 0.8s ease;
-            transition:all 0.8s ease;
+            -webkit-transition:all 0.3s ease;
+            transition:all 0.3s ease;
             opacity:1;
             visibility:visible;
             padding: 10px;
@@ -1736,7 +1736,7 @@
         <svg><g><circle cx="0" cy="0" r="20" class="animated-circle" transform="translate(50,50) rotate(-90)" /></g><g><circle cx="0" cy="0" r="38" transform="translate(50,50)" /></g></svg>
     </div>
 
-    <a href="https://themes.stashfamily.com/themes/ten-toes/" class="stash-credit" target="_blank">
+    <a href="https://stashthemes.com/themes/ten-toes/" class="stash-credit" target="_blank">
         <svg fill="none" viewBox="0 0 322 89"><path fill="#000" d="M0 25h322v64H0z"/><path fill="#fff" d="M48.851 48.998c-.671-2.566-3.524-3.848-8.559-3.848-2.909 0-4.95.25-6.153.724-1.231.502-1.818 1.2-1.818 2.12 0 .78.391 1.366 1.174 1.728.784.39 2.154.642 4.14.753l17.594 1.31c2.769.224 5.174.586 7.188 1.144 2.014.558 3.748 1.31 5.203 2.286 1.454 1.004 2.573 2.259 3.3 3.765.727 1.505 1.091 3.318 1.091 5.41 0 1.728-.224 3.29-.615 4.628-.42 1.338-1.007 2.537-1.79 3.54-.783 1.033-1.846 1.925-3.133 2.65-1.315.753-2.77 1.366-4.364 1.84-1.594.502-3.496.892-5.733 1.171-2.238.28-4.56.502-6.993.614-2.462.111-5.259.167-8.447.167-4.364 0-8.112-.112-11.217-.39-3.104-.28-5.93-.725-8.475-1.394-2.573-.67-4.615-1.562-6.181-2.705-1.567-1.116-2.77-2.566-3.636-4.294-.868-1.729-1.343-3.82-1.427-6.246h21.901c.448 1.784 1.399 3.067 2.881 3.792 1.483.725 3.664 1.087 6.545 1.087 5.734 0 8.615-1.087 8.615-3.262 0-.892-.42-1.533-1.23-1.924-.812-.39-2.182-.67-4.084-.864l-16.783-1.478a46.853 46.853 0 01-5.734-.78 24.362 24.362 0 01-4.643-1.45c-1.454-.614-2.657-1.395-3.58-2.287-.923-.892-1.65-2.036-2.154-3.374-.531-1.338-.783-2.872-.783-4.629 0-2.119.42-3.987 1.259-5.576.839-1.59 2.07-2.9 3.636-3.96 1.566-1.032 3.608-1.868 6.098-2.51 2.46-.64 5.202-1.087 8.223-1.366 2.993-.25 6.49-.39 10.461-.39 3.944 0 7.384.14 10.35.39 2.964.28 5.677.725 8.167 1.367 2.461.641 4.503 1.477 6.07 2.537 1.566 1.06 2.824 2.398 3.72 4.015.894 1.617 1.37 3.514 1.482 5.689H48.85zM129.491 36.617v14.11h-19.272v26.656H91.423V50.726H72.15V36.617h57.34zM169.657 77.383l-2.434-4.74h-21.957l-2.405 4.74h-20.586l21.957-40.766h24.138l21.817 40.766h-20.53zM156.455 50.81h-.448a503.06 503.06 0 01-5.37 11.153h11.188l-5.37-11.153zM226.969 48.998c-.671-2.566-3.524-3.848-8.559-3.848-2.909 0-4.951.25-6.154.724-1.23.502-1.818 1.2-1.818 2.12 0 .78.392 1.366 1.175 1.728.783.39 2.154.642 4.14.753l17.593 1.31c2.769.224 5.175.586 7.189 1.144 2.014.558 3.748 1.31 5.202 2.286 1.455 1.004 2.574 2.259 3.301 3.765.727 1.505 1.091 3.318 1.091 5.41 0 1.728-.224 3.29-.616 4.628-.419 1.338-1.007 2.537-1.79 3.54-.783 1.033-1.846 1.925-3.132 2.65-1.315.753-2.77 1.366-4.364 1.84-1.594.502-3.496.892-5.734 1.171a89.377 89.377 0 01-6.993.614c-2.461.111-5.258.167-8.447.167-4.363 0-8.111-.112-11.216-.39-3.105-.28-5.93-.725-8.475-1.394-2.573-.67-4.615-1.562-6.182-2.705-1.566-1.116-2.769-2.566-3.636-4.294-.867-1.729-1.342-3.82-1.426-6.246h21.901c.447 1.784 1.398 3.067 2.881 3.792 1.482.725 3.664 1.087 6.545 1.087 5.734 0 8.615-1.087 8.615-3.262 0-.892-.42-1.533-1.231-1.924-.811-.39-2.182-.67-4.084-.864l-16.782-1.478a46.837 46.837 0 01-5.734-.78 24.355 24.355 0 01-4.643-1.45c-1.455-.614-2.657-1.395-3.58-2.287-.923-.892-1.651-2.036-2.154-3.374-.532-1.338-.783-2.872-.783-4.629 0-2.119.419-3.987 1.258-5.576.839-1.59 2.07-2.9 3.637-3.96 1.566-1.032 3.608-1.868 6.097-2.51 2.462-.64 5.203-1.087 8.224-1.366 2.992-.25 6.489-.39 10.461-.39 3.943 0 7.384.14 10.349.39 2.965.28 5.678.725 8.167 1.367 2.462.641 4.503 1.477 6.07 2.537 1.566 1.06 2.825 2.398 3.72 4.015.895 1.617 1.371 3.514 1.482 5.689h-21.565zM293.204 36.617H312v40.766h-18.796V63.05h-21.426v14.332H253.01V36.617h18.768v13.886h21.426V36.617z"/><path fill="#FE0" d="M222 0h100v25H222z"/><path fill="#000" d="M232.482 19V7.948h-4.122V6.13h10.368v1.818h-4.104V19h-2.142zm7.708-12.87h2.142v5.328h6.084V6.13h2.142V19h-2.142v-5.706h-6.084V19h-2.142V6.13zm14.71 5.31h6.282v1.836H254.9v3.906h7.344V19h-9.486V6.13h9.306v1.818H254.9v3.492zm9.091 7.56V6.13h2.772l3.6 9.9h.036l3.582-9.9h2.772V19h-2.088V9.244h-.036L271.227 19h-1.71l-3.402-9.756h-.036V19h-2.088zm17.101-7.56h6.282v1.836h-6.282v3.906h7.344V19h-9.486V6.13h9.306v1.818h-7.164v3.492zm22.22-2.07c0 1.584-.936 2.322-1.998 2.682v.036c1.35.234 2.502 1.224 2.502 3.15 0 2.484-1.71 3.762-4.374 3.762h-5.832V6.13h5.526c2.646 0 4.176 1.17 4.176 3.24zm-7.56 2.088h3.312c1.53 0 2.106-.612 2.106-1.746s-.702-1.764-1.98-1.764h-3.438v3.51zm0 1.602v4.122h3.528c1.836 0 2.394-.864 2.394-2.07 0-1.314-.81-2.052-2.16-2.052h-3.762zm8.645-6.93h2.286l3.33 5.976h.036l3.348-5.976h2.286l-4.572 7.758V19h-2.142v-5.112l-4.572-7.758z"/></svg>
     </a>
     
@@ -2600,7 +2600,7 @@
             }
         });
         
-        $(document).on('click', '.get-started-toggle', function(){
+        $(document).on('click', '.more-toggle', function(){
             if ( $('.remove-stash-credit').hasClass( "open" ) ) {
                 $('.remove-stash-credit').removeClass('open');
                 $('.remove-stash-overlay').removeClass('open');
@@ -2631,8 +2631,13 @@
     {/block:IfGoogleAnalyticsID}
     
 
-    <div class='customize-demo demo-note'>
-        <nav class="cl"><ul><li class="get-started-toggle demo-toggle"><a><b>Get Started</b> <i class="im im-angle-down"></i></a></li></ul></nav>
+    <div class="customize-demo demo-note">
+        <nav class="cl"><ul>
+            <li class="get-started-toggle demo-toggle">
+            <a target="_blank" href="https://stashthemes.com/support">Support</a> 
+            <a target="_blank" href="https://stashthemes.com/themes/full-license/">Remove Branding</a> 
+            <span class="more-toggle">More<i class="fa fa-caret-up"></i></span>
+            </li></ul></nav>
         
         <div class="get-started-overlay demo-overlay">
             <p><b>Enable mobile theme</b></br> On the Customize screen turn off the Use default mobile theme option under Advanced Options. </br><img src="https://static.tumblr.com/jzzkxgh/o2Yoomruj/default_mobile_theme.png" /></p>
@@ -2641,9 +2646,11 @@
             
             <p><b>Display avatar image</b></br> Upload an image to the "Header Avatar" option, square images work best. </br><img src="https://static.tumblr.com/jzzkxgh/Pnhqi7ltv/header-avatar-img.jpg" /></p>
             </br>
-            <p><b>Remove stash credit</b></br> Remove the stash logo from your website by getting a <a href="https://themes.stashfamily.com/add-ons/full-license" target="_blank">Full License</a>.</p>
+            <p><b>Remove stash credit</b></br> Remove the stash logo from your website by getting a <a href="https://stashthemes.com/themes/full-license" target="_blank">Full License</a>.</p>
             </br>
-            <p><b>More help & customization</b></br> If you still need more check out our <a href="https://themes.stashfamily.com/help/" target="_blank">help section</a> or the <a href="https://themes.stashfamily.com/docs/ten-toes/" target="_blank">theme docs</a>.</p>
+            <p><b>Customizations</b></br> You can see our customization options <a href="https://stashthemes.com/customizations">here</a> we can help with minor adjustments or if you would like to make major changes to your website. We can also code custom themes both on Tumblr and Wordpress.</p>
+            </br>
+            <p><b>More help</b></br> If you still need more check out our <a href="https://stashthemes.com/support/" target="_blank">help section</a> or the <a href="https://stashthemes.com/support/ten-toes/" target="_blank">theme docs</a>. <a href="https://stashthemes.com/tumblr-themes/" target="_blank">View all our themes</a></p>
         </div>
     </div>
 
